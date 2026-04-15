@@ -1,4 +1,4 @@
-// Data model — see Section 3 of lens-spec.md.
+// Data model, see Section 3 of lens-spec.md.
 // Kept in /src/types so it is imported by both the content build script
 // and the app code. The build script writes JSON that conforms to this
 // shape; the app reads it back with the same types.

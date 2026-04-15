@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
 
-// Palette is strict — see Section 6.1 of lens-spec.md.
+// Palette is strict, see Section 6.1 of lens-spec.md.
 // Two ink colors max on any screen, plus pencil gray. No other colors.
 const config: Config = {
   content: ['./src/**/*.{ts,tsx}'],
@@ -16,7 +16,7 @@ const config: Config = {
         'ink-green': '#2f5234', // "fits", checkmarks
         'body-subtle': '#5a544a', // body subtle text on cream
         // kept for completeness, used only in hypothetical phone chrome
-        // mockups — the app itself never renders this color.
+        // mockups, the app itself never renders this color.
         'phone-chrome': '#1f1d1a',
       },
       fontFamily: {
@@ -26,14 +26,14 @@ const config: Config = {
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       fontWeight: {
-        // Two weights only — never 600+ (breaks inkwell feel).
+        // Two weights only, never 600+ (breaks inkwell feel).
         normal: '400',
         medium: '500',
       },
       maxWidth: {
         // Single source of truth for the mobile column width used on
         // every screen. On desktop this column is centered with air
-        // on either side — no phone-frame chrome, just cream paper.
+        // on either side, no phone-frame chrome, just cream paper.
         phone: '400px',
       },
       letterSpacing: {

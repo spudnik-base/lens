@@ -4,17 +4,17 @@ import { Ornament } from '@/components/field/Ornament';
 import { getSubject, DEFAULT_SUBJECT_ID } from '@/lib/content';
 import { HomeProgressLine } from './_home/HomeProgressLine';
 
-// Home — "inside cover" of the journal. Section 7.1.
+// Home, "inside cover" of the journal. Section 7.1.
 //
 // Intentionally static on the server, with a small client island
 // (HomeProgressLine) that reveals studied-count once localStorage has
-// been read. Everything else — the title plate, contents page, credit
-// line — is server-rendered so the first paint is complete and paper.
+// been read. Everything else, the title plate, contents page, credit
+// line, is server-rendered so the first paint is complete and paper.
 
 export default function HomePage() {
   const subject = getSubject(DEFAULT_SUBJECT_ID);
   if (!subject) {
-    // Build-time guarantee — the content registry always has biology.
+    // Build-time guarantee, the content registry always has biology.
     throw new Error('Missing biology subject');
   }
   const totalQuestions = subject.questions.length;
@@ -48,7 +48,7 @@ export default function HomePage() {
 
       {/* Contents page ------------------------------------------------- */}
       <nav aria-label="modes" className="px-1">
-        <div className="marg mb-5">— CONTENTS —</div>
+        <div className="marg mb-5">CONTENTS</div>
 
         <ul className="flex flex-col gap-6">
           <ModeRow
@@ -69,7 +69,7 @@ export default function HomePage() {
         </ul>
       </nav>
 
-      {/* Progress line — client island reveals studied count ----------- */}
+      {/* Progress line, client island reveals studied count ----------- */}
       <div className="mt-10">
         <HomeProgressLine total={totalQuestions} />
       </div>

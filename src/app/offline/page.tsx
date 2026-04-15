@@ -27,7 +27,7 @@ export default function OfflinePage() {
           className="editorial mt-6 px-6"
           style={{ fontSize: 14, lineHeight: 1.5, color: 'var(--body-subtle)' }}
         >
-          This page isn&rsquo;t cached yet. Rejoin a network and try again —
+          This page isn&rsquo;t cached yet. Rejoin a network and try again,
           or head back to a lens you&rsquo;ve already opened.
         </p>
       </div>

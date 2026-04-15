@@ -12,14 +12,14 @@ const BASE = '/lens';
 export default function manifest(): MetadataRoute.Manifest {
   return {
     id: `${BASE}/`,
-    name: 'Lens — IB Biology',
+    name: 'Lens for IB Biology',
     short_name: 'Lens',
     description: 'A Cramly study guide to the 32 linking questions in IB Biology.',
     start_url: `${BASE}/?source=pwa`,
     scope: `${BASE}/`,
     display: 'standalone',
     orientation: 'portrait',
-    background_color: '#F2E9D0', // cream paper — iOS splash matches
+    background_color: '#F2E9D0', // cream paper, iOS splash matches
     theme_color: '#2A2520', // ink black
     categories: ['education', 'productivity'],
     icons: [

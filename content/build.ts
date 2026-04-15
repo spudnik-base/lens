@@ -1,5 +1,5 @@
 /**
- * Content build script — xlsx → json.
+ * Content build script, xlsx → json.
  *
  * Reads every *.xlsx file in content/source/ and writes the matching
  * JSON to content/generated/. Enforces the validations in Section 9 of
@@ -30,15 +30,30 @@ function die(file: string, msg: string): never {
   process.exit(1);
 }
 
-/** Normalize a cell: trim, collapse autocorrect smart-quotes → straight. */
+/**
+ * Normalize a cell value before it lands in the JSON.
+ *
+ * Trims, collapses autocorrect smart quotes to straight quotes, strips
+ * non-breaking spaces, and eliminates en-/em-dashes. The em-dash pass
+ * is a house-style rule, not pure character cleanup: we prefer periods
+ * and hyphens to dashes in both the UI and the content, so the build
+ * catches any em-dash that sneaks in via autocorrect.
+ *
+ * Transformations:
+ *   word\u2014word   -> word-word                (compound noun)
+ *   " \u2014 X"      -> ". X"  (capitalized)     (clause joiner)
+ *   remaining \u2014 -> single space             (edge cases)
+ */
 function normalize(v: unknown): string {
   if (v == null) return '';
-  const s = String(v).trim();
-  return s
-    .replace(/[\u2018\u2019]/g, "'")
-    .replace(/[\u201C\u201D]/g, '"')
-    .replace(/\u2013|\u2014/g, '—') // keep em-dashes; normalize en-dash to em
-    .replace(/\u00A0/g, ' '); // nbsp → space
+  let s = String(v).trim();
+  s = s.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"').replace(/\u00A0/g, ' ');
+  // Treat en-dash like em-dash for this pass.
+  s = s.replace(/\u2013/g, '\u2014');
+  s = s.replace(/(\w)\u2014(\w)/g, '$1-$2');
+  s = s.replace(/ \u2014 (\w)/g, (_m, c: string) => `. ${c.toUpperCase()}`);
+  s = s.replace(/\u2014/g, ' ').replace(/ {2,}/g, ' ').trim();
+  return s;
 }
 
 function readCell(row: ExcelJS.Row, col: number): string {
@@ -67,7 +82,7 @@ function readInt(row: ExcelJS.Row, col: number): number | null {
 async function buildSubject(subjectFile: string): Promise<void> {
   const id = basename(subjectFile, extname(subjectFile)) as SubjectId;
   if (!(id in SUBJECT_NAMES)) {
-    die(subjectFile, `unknown subject id "${id}" — must be biology | chemistry | physics`);
+    die(subjectFile, `unknown subject id "${id}", must be biology | chemistry | physics`);
   }
 
   const wb = new ExcelJS.Workbook();
@@ -99,7 +114,7 @@ async function buildSubject(subjectFile: string): Promise<void> {
     if (qNums[i] !== i + 1) {
       die(
         subjectFile,
-        `Questions sheet: Q# sequence is not contiguous — expected ${i + 1}, got ${qNums[i]}`
+        `Questions sheet: Q# sequence is not contiguous, expected ${i + 1}, got ${qNums[i]}`
       );
     }
   }
@@ -208,7 +223,7 @@ async function main() {
     .map((f) => join(SOURCE_DIR, f));
 
   if (sources.length === 0) {
-    console.warn('[content/build] no xlsx files found in content/source/ — nothing to build');
+    console.warn('[content/build] no xlsx files found in content/source/, nothing to build');
     return;
   }
   for (const src of sources) {

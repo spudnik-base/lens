@@ -1,4 +1,4 @@
-// Pencil tally marks — score rendered as | | | |, not numerals.
+// Pencil tally marks, score rendered as | | | |, not numerals.
 // Standard lab-notebook convention: four singles, then the fifth as a
 // diagonal slash through the previous four. Groups of five run into
 // the next group on the same row with a small gap.

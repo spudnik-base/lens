@@ -41,7 +41,7 @@
       "options": [
         {
           "text": "Hydrogen bonds pairing DNA bases",
-          "why": "H-bonds hold the double helix together — weak but specific."
+          "why": "H-bonds hold the double helix together. Weak but specific."
         },
         {
           "text": "Water cohesion pulling xylem sap up",
@@ -67,7 +67,7 @@
       "options": [
         {
           "text": "Alveolar gas exchange in the lungs",
-          "why": "Thin moist membrane, huge area — exchange happens nowhere else."
+          "why": "Thin moist membrane, huge area. Exchange happens nowhere else."
         },
         {
           "text": "Water uptake by root hairs",
@@ -83,7 +83,7 @@
         },
         {
           "text": "Glycolysis in muscle cells",
-          "why": "Happens in cytoplasm — solution-phase chemistry, no surface involved.",
+          "why": "Happens in cytoplasm. Solution-phase chemistry, no surface involved.",
           "impostor": true
         }
       ]
@@ -109,7 +109,7 @@
         },
         {
           "text": "Kangaroo joey developing in the pouch",
-          "why": "Offspring stays attached to the mother — the opposite of dispersal.",
+          "why": "Offspring stays attached to the mother. The opposite of dispersal.",
           "impostor": true
         }
       ]
@@ -135,7 +135,7 @@
         },
         {
           "text": "Sessile coral polyps filter feeding",
-          "why": "Corals don't move — no locomotion to contribute to anything.",
+          "why": "Corals don't move. No locomotion to contribute to anything.",
           "impostor": true
         }
       ]
@@ -160,7 +160,7 @@
           "why": "Hydrophobic and van der Waals interactions between stacked bases."
         },
         {
-          "text": "Predator—prey population cycles",
+          "text": "Predator-prey population cycles",
           "why": "An emergent system-level pattern, not a property of a component.",
           "impostor": true
         }
@@ -179,7 +179,7 @@
         },
         {
           "text": "Chemosynthetic vent tube worms",
-          "why": "Whole ecosystems thrive in total darkness — light isn't essential everywhere."
+          "why": "Whole ecosystems thrive in total darkness. Light isn't essential everywhere."
         },
         {
           "text": "Circadian rhythms entrained by daylight",
@@ -187,7 +187,7 @@
         },
         {
           "text": "Fireflies producing bioluminescence",
-          "why": "They make light, don't depend on it — keyword trap.",
+          "why": "They make light, don't depend on it. Keyword trap.",
           "impostor": true
         }
       ]
@@ -197,10 +197,10 @@
       "options": [
         {
           "text": "Enzyme active site specificity",
-          "why": "One shape fits one substrate — extreme specificity."
+          "why": "One shape fits one substrate. Extreme specificity."
         },
         {
-          "text": "Antibody—antigen recognition",
+          "text": "Antibody-antigen recognition",
           "why": "Each antibody binds one molecular target with high precision."
         },
         {
@@ -209,11 +209,11 @@
         },
         {
           "text": "Stem cell pluripotency",
-          "why": "One cell type can become many — maximum versatility."
+          "why": "One cell type can become many. Maximum versatility."
         },
         {
           "text": "Mitochondrial ATP production",
-          "why": "A universal core process — neither specific nor versatile in the relevant sense.",
+          "why": "A universal core process. Neither specific nor versatile in the relevant sense.",
           "impostor": true
         }
       ]
@@ -253,19 +253,19 @@
         },
         {
           "text": "Fluid mosaic model of membranes",
-          "why": "Visualizes proteins floating in a lipid sea — guides thinking."
+          "why": "Visualizes proteins floating in a lipid sea. Guides thinking."
         },
         {
           "text": "Lincoln index for population size",
           "why": "Mark-recapture math estimates what can't be counted directly."
         },
         {
-          "text": "Hardy—Weinberg equation",
+          "text": "Hardy-Weinberg equation",
           "why": "An idealized baseline that reveals when evolution is happening."
         },
         {
           "text": "Direct microscopy of a cell",
-          "why": "This is observation, not modeling — the opposite approach.",
+          "why": "This is observation, not modeling. The opposite approach.",
           "impostor": true
         }
       ]
@@ -279,11 +279,11 @@
         },
         {
           "text": "Enzyme Vmax at substrate saturation",
-          "why": "All active sites occupied — rate can't go higher."
+          "why": "All active sites occupied. Rate can't go higher."
         },
         {
           "text": "Hemoglobin oxygen-carrying capacity",
-          "why": "Four binding sites per molecule — a hard ceiling."
+          "why": "Four binding sites per molecule. A hard ceiling."
         },
         {
           "text": "Photosynthesis limited by CO₂",
@@ -305,7 +305,7 @@
         },
         {
           "text": "Elephant heat retention at night",
-          "why": "Large mass, low SA:V — heat is lost slowly."
+          "why": "Large mass, low SA:V. Heat is lost slowly."
         },
         {
           "text": "Insect tracheal gas delivery",
@@ -343,7 +343,7 @@
         },
         {
           "text": "Binary fission in bacteria",
-          "why": "Produces identical daughter cells — no differentiation at all.",
+          "why": "Produces identical daughter cells. No differentiation at all.",
           "impostor": true
         }
       ]
@@ -369,7 +369,7 @@
         },
         {
           "text": "Paramecium beating cilia to feed",
-          "why": "Unicellular — no multicellular problem to solve.",
+          "why": "Unicellular. No multicellular problem to solve.",
           "impostor": true
         }
       ]
@@ -395,7 +395,7 @@
         },
         {
           "text": "Hemoglobin cooperative O₂ binding",
-          "why": "This is transport — sits between exchange and metabolism, is neither.",
+          "why": "This is transport. Sits between exchange and metabolism, is neither.",
           "impostor": true
         }
       ]
@@ -421,7 +421,7 @@
         },
         {
           "text": "ATP activating muscle contraction",
-          "why": "This is activation, not inhibition — the opposite.",
+          "why": "This is activation, not inhibition. The opposite.",
           "impostor": true
         }
       ]
@@ -447,7 +447,7 @@
         },
         {
           "text": "Identical twins sharing DNA",
-          "why": "Genetic sameness — the opposite of diversification.",
+          "why": "Genetic sameness. The opposite of diversification.",
           "impostor": true
         }
       ]
@@ -473,7 +473,7 @@
         },
         {
           "text": "CFCs depleting the ozone layer",
-          "why": "Different molecules, different problem — atmospheric but unrelated.",
+          "why": "Different molecules, different problem. Atmospheric but unrelated.",
           "impostor": true
         }
       ]
@@ -499,7 +499,7 @@
         },
         {
           "text": "Osmosis across a membrane",
-          "why": "Passive movement down a gradient — no energy transformed.",
+          "why": "Passive movement down a gradient. No energy transformed.",
           "impostor": true
         }
       ]
@@ -509,7 +509,7 @@
       "options": [
         {
           "text": "Semi-conservative DNA replication",
-          "why": "Each new strand templated from an original — sequence preserved."
+          "why": "Each new strand templated from an original. Sequence preserved."
         },
         {
           "text": "Meiosis halving then fertilization restoring",
@@ -525,7 +525,7 @@
         },
         {
           "text": "Crossing over in prophase I",
-          "why": "Generates variation — the opposite of continuity.",
+          "why": "Generates variation. The opposite of continuity.",
           "impostor": true
         }
       ]
@@ -535,7 +535,7 @@
       "options": [
         {
           "text": "Transcription proceeding 5' to 3'",
-          "why": "RNA polymerase only adds at the 3' end — direction is built in."
+          "why": "RNA polymerase only adds at the 3' end. Direction is built in."
         },
         {
           "text": "Phloem flow from source to sink",
@@ -551,7 +551,7 @@
         },
         {
           "text": "CO₂ diffusion across an alveolus",
-          "why": "Direction depends entirely on the gradient — no inherent direction.",
+          "why": "Direction depends entirely on the gradient. No inherent direction.",
           "impostor": true
         }
       ]
@@ -561,7 +561,7 @@
       "options": [
         {
           "text": "Wolf pack hunting together",
-          "why": "Intraspecific cooperation — same species working as one."
+          "why": "Intraspecific cooperation. Same species working as one."
         },
         {
           "text": "Lions and hyenas fighting over carrion",
@@ -573,11 +573,11 @@
         },
         {
           "text": "Mycorrhizal fungi and plant roots",
-          "why": "Interspecific mutualism — different species exchanging resources."
+          "why": "Interspecific mutualism. Different species exchanging resources."
         },
         {
           "text": "A cell undergoing mitosis",
-          "why": "No interaction between organisms at all — wrong scale.",
+          "why": "No interaction between organisms at all. Wrong scale.",
           "impostor": true
         }
       ]
@@ -603,7 +603,7 @@
         },
         {
           "text": "Clownfish and anemone mutualism",
-          "why": "Cooperation between species — not a competition mechanism at all.",
+          "why": "Cooperation between species. Not a competition mechanism at all.",
           "impostor": true
         }
       ]
@@ -613,11 +613,11 @@
       "options": [
         {
           "text": "Selective breeding of modern wheat",
-          "why": "Humans chose the traits — deliberate, artificial selection."
+          "why": "Humans chose the traits. Deliberate, artificial selection."
         },
         {
           "text": "Darwin's finches evolving naturally",
-          "why": "No human hand — pure natural selection."
+          "why": "No human hand. Pure natural selection."
         },
         {
           "text": "CRISPR-edited crops",
@@ -629,7 +629,7 @@
         },
         {
           "text": "Mitosis in an onion root tip",
-          "why": "A neutral biological process — doesn't engage the distinction.",
+          "why": "A neutral biological process. Doesn't engage the distinction.",
           "impostor": true
         }
       ]
@@ -655,7 +655,7 @@
         },
         {
           "text": "Avogadro's constant",
-          "why": "A number, not a timescale — not even time.",
+          "why": "A number, not a timescale. Not even time.",
           "impostor": true
         }
       ]
@@ -681,7 +681,7 @@
         },
         {
           "text": "Counting every tree in a forest",
-          "why": "That's a census, not sampling — the opposite approach.",
+          "why": "That's a census, not sampling. The opposite approach.",
           "impostor": true
         }
       ]
@@ -691,11 +691,11 @@
       "options": [
         {
           "text": "DNA replication in S phase",
-          "why": "Every chromosome becomes two sister chromatids — exact doubling."
+          "why": "Every chromosome becomes two sister chromatids. Exact doubling."
         },
         {
           "text": "Meiosis I separating homologues",
-          "why": "2n becomes n — halving is the defining feature."
+          "why": "2n becomes n. Halving is the defining feature."
         },
         {
           "text": "Bacterial binary fission",
@@ -721,7 +721,7 @@
         },
         {
           "text": "Phloem delivering sugars to sinks",
-          "why": "Leaves make more than they use — growing tissues need the surplus."
+          "why": "Leaves make more than they use. Growing tissues need the surplus."
         },
         {
           "text": "Xylem carrying water to leaves",
@@ -759,7 +759,7 @@
         },
         {
           "text": "Human ABO blood type",
-          "why": "Set by alleles at conception — temperature has no effect.",
+          "why": "Set by alleles at conception. Temperature has no effect.",
           "impostor": true
         }
       ]
@@ -769,7 +769,7 @@
       "options": [
         {
           "text": "ATP as universal energy currency",
-          "why": "Every known cell uses ATP — bacteria, plants, animals, fungi."
+          "why": "Every known cell uses ATP. Bacteria, plants, animals, fungi."
         },
         {
           "text": "DNA as universal genetic material",
@@ -785,7 +785,7 @@
         },
         {
           "text": "Chitin in fungal cell walls",
-          "why": "Only fungi and arthropods — not universal at all.",
+          "why": "Only fungi and arthropods. Not universal at all.",
           "impostor": true
         }
       ]
@@ -799,7 +799,7 @@
         },
         {
           "text": "Cell theory unifying biology",
-          "why": "All life is cells — sweeping, testable, predictive."
+          "why": "All life is cells. Sweeping, testable, predictive."
         },
         {
           "text": "Endosymbiotic origin of mitochondria",
@@ -811,7 +811,7 @@
         },
         {
           "text": "A catalogue of every known beetle",
-          "why": "That's a list, not a theory — no explanatory power.",
+          "why": "That's a list, not a theory. No explanatory power.",
           "impostor": true
         }
       ]
@@ -837,7 +837,7 @@
         },
         {
           "text": "Individual aging and death",
-          "why": "Organism-level mortality — doesn't determine whether a species persists.",
+          "why": "Organism-level mortality. Doesn't determine whether a species persists.",
           "impostor": true
         }
       ]
@@ -847,7 +847,7 @@
       "options": [
         {
           "text": "Human height as a continuous trait",
-          "why": "Many genes and environment combine — any value possible."
+          "why": "Many genes and environment combine. Any value possible."
         },
         {
           "text": "ABO blood groups as discrete categories",
@@ -858,7 +858,7 @@
           "why": "Multiple loci add up to a smooth range of shades."
         },
         {
-          "text": "Mendel's pea shape — round or wrinkled",
+          "text": "Mendel's pea shape. Round or wrinkled",
           "why": "One gene, two sharp categories, classic discontinuous variation."
         },
         {

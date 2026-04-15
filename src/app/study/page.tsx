@@ -2,7 +2,7 @@ import { PageFrame } from '@/components/layout/PageFrame';
 import { getSubject, DEFAULT_SUBJECT_ID } from '@/lib/content';
 import { StudyClient } from './StudyClient';
 
-// Study mode — Section 4.1 and 7.4 / 7.5.
+// Study mode, Section 4.1 and 7.4 / 7.5.
 //
 // The page is a thin server component that loads the subject and hands
 // it to the client. Everything interactive (shuffle, reveal, progress)

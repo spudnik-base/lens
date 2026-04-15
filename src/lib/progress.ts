@@ -1,11 +1,11 @@
 'use client';
 
-// Progress tracking — which linking questions the student has examined
+// Progress tracking, which linking questions the student has examined
 // (i.e. completed one reveal for) in Study mode. Stored client-side in
 // localStorage, namespaced by subject id.
 //
 // No accounts, no sync, no backend. If the user clears their storage,
-// progress resets — that is acceptable for the MVP.
+// progress resets, that is acceptable for the MVP.
 
 import { useEffect, useState, useCallback } from 'react';
 
@@ -33,12 +33,12 @@ function save(subjectId: string, set: Set<number>) {
   try {
     window.localStorage.setItem(storageKey(subjectId), JSON.stringify([...set]));
   } catch {
-    /* quota — ignore */
+    /* quota, ignore */
   }
 }
 
 /**
- * useProgress — returns the studied Q# set for a subject plus helpers.
+ * useProgress, returns the studied Q# set for a subject plus helpers.
  * `hydrated` indicates whether the client-side state has been loaded,
  * which matters because SSR renders 0/32 and we want to delay revealing
  * the progress UI until we know the real number (prevents a flash).
@@ -52,7 +52,7 @@ export function useProgress(subjectId: string) {
     setHydrated(true);
   }, [subjectId]);
 
-  // Cross-tab sync — if Study mode in another tab marks a question,
+  // Cross-tab sync, if Study mode in another tab marks a question,
   // the overview in this tab updates live.
   useEffect(() => {
     if (typeof window === 'undefined') return;

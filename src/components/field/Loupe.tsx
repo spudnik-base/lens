@@ -1,4 +1,4 @@
-// The loupe — signature motif. Hand-drawn ink. See Section 6.3.
+// The loupe, signature motif. Hand-drawn ink. See Section 6.3.
 // Full size is ~46×68. Compact is ~32×46 for the Study header.
 // The `why` lives outside: this component is pure SVG, no label.
 
@@ -17,12 +17,12 @@ export function Loupe({ size = 'full', className }: LoupeProps) {
       className={className}
       aria-hidden="true"
     >
-      {/* Ring interior — subtle cream fill so the question is visible
+      {/* Ring interior, subtle cream fill so the question is visible
           "through" the lens when layered above it. */}
       <circle cx="22" cy="22" r="17" fill="#FBF6E5" stroke="#2A2520" strokeWidth={1.6} />
       {/* Inner bevel suggestion. */}
       <circle cx="22" cy="22" r="13" fill="none" stroke="#2A2520" strokeWidth={0.5} opacity={0.35} />
-      {/* Highlight arc — the sheen on a polished lens. */}
+      {/* Highlight arc, the sheen on a polished lens. */}
       <path
         d="M 13 17 Q 17 12 23 11"
         fill="none"
@@ -32,7 +32,7 @@ export function Loupe({ size = 'full', className }: LoupeProps) {
       />
       {/* Handle neck. */}
       <line x1="34" y1="34" x2="42" y2="46" stroke="#2A2520" strokeWidth={2.5} strokeLinecap="round" />
-      {/* Grip — a small ink rectangle, rotated. */}
+      {/* Grip, a small ink rectangle, rotated. */}
       <rect
         x="38"
         y="44"

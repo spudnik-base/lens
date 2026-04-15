@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import { EB_Garamond, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 
-// Editorial serif — linking questions, examples, whys, title plates.
-// 400 and 500 only (see Section 6.2 — never 600+).
+// Editorial serif, linking questions, examples, whys, title plates.
+// 400 and 500 only (see Section 6.2, never 600+).
 const serif = EB_Garamond({
   subsets: ['latin'],
   weight: ['400', '500'],
@@ -12,7 +12,7 @@ const serif = EB_Garamond({
   variable: '--font-serif',
 });
 
-// Marginalia — round counters, timers, tallies, section labels.
+// Marginalia, round counters, timers, tallies, section labels.
 const mono = IBM_Plex_Mono({
   subsets: ['latin'],
   weight: ['400'],
@@ -23,7 +23,7 @@ const mono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://cramly.study'),
   title: {
-    default: 'Lens — a Cramly study guide',
+    default: 'Lens: a Cramly study guide',
     template: '%s · Lens',
   },
   description:
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Cramly',
-    title: 'Lens — a Cramly study guide',
+    title: 'Lens: a Cramly study guide',
     description:
       'A field guide to the 32 linking questions in IB Biology. Part of Cramly.',
     url: '/lens',
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
         url: '/lens/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Lens — a Cramly study guide',
+        alt: 'Lens: a Cramly study guide',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lens — a Cramly study guide',
+    title: 'Lens: a Cramly study guide',
     description:
       'A field guide to the 32 linking questions in IB Biology. Part of Cramly.',
     images: ['/lens/og-image.png'],
@@ -81,7 +81,7 @@ export const viewport: Viewport = {
   userScalable: false,
   viewportFit: 'cover',
   themeColor: '#2A2520',
-  colorScheme: 'light', // no dark mode — paper is cream
+  colorScheme: 'light', // no dark mode, paper is cream
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

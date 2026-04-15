@@ -1,4 +1,4 @@
-// Hand-drawn checkmark. Never Unicode ✓ (Section 6.3).
+// Hand-drawn checkmark. Never a Unicode tick character (Section 6.3).
 export function Checkmark({ size = 14, className }: { size?: number; className?: string }) {
   return (
     <svg

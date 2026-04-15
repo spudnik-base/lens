@@ -85,7 +85,7 @@ export function StudyClient({
   };
 
   // Wrap the whole reveal area in a click-to-advance listener once the
-  // card is revealed — spec says "tap anywhere to advance."
+  // card is revealed, spec says "tap anywhere to advance."
   const revealWrapperRef = useRef<HTMLDivElement>(null);
 
   return (

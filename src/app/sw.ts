@@ -2,7 +2,7 @@
 //
 // This file is bundled into public/sw.js at build time. Since it runs
 // in a WebWorker context, there is no DOM and no React. Do not import
-// app code from here — treat it as its own little program.
+// app code from here, treat it as its own little program.
 
 import { defaultCache } from '@serwist/next/worker';
 import type { PrecacheEntry, SerwistGlobalConfig } from 'serwist';

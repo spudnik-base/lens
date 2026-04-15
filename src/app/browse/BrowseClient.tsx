@@ -60,7 +60,7 @@ export function BrowseClient({ subject }: { subject: Subject }) {
             className="font-mono"
             style={{ fontSize: 10, color: 'var(--pencil)', letterSpacing: '0.1em' }}
           >
-            {hydrated ? `${doneCount} / ${total}` : `— / ${total}`}
+            {hydrated ? `${doneCount} / ${total}` : `0 / ${total}`}
           </div>
         </div>
         <PencilProgressBar pct={pct} />
@@ -145,7 +145,7 @@ export function BrowseClient({ subject }: { subject: Subject }) {
 }
 
 // Pencil-style progress bar. Thin tan outline containing a hatched
-// pencil fill up to `pct`. No gradients, no rounded corners — it looks
+// pencil fill up to `pct`. No gradients, no rounded corners, it looks
 // like ruled graph paper filled in by hand.
 function PencilProgressBar({ pct }: { pct: number }) {
   const clamped = Math.max(0, Math.min(1, pct));

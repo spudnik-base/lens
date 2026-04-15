@@ -2,11 +2,11 @@
 //   - Fits / Does not fit verdict buttons in Lens Sort
 //   - Play again / Home actions on results screens
 //
-// Not used for the diagonal IMPOSTOR reveal — that is ImpostorStamp.
+// Not used for the diagonal IMPOSTOR reveal, that is ImpostorStamp.
 //
 // Two color variants: red ink (negative) and green ink (affirmative).
 // Slight hand-pressed rotation per button. Wide letterspacing, serif
-// uppercase — matches a real rubber stamp.
+// uppercase, matches a real rubber stamp.
 
 type StampProps = {
   variant: 'red' | 'green' | 'ink';

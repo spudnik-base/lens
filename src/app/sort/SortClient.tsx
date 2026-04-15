@@ -1,6 +1,6 @@
 'use client';
 
-// Lens Sort — Section 4.2 and 7.2 / 7.3.
+// Lens Sort, Section 4.2 and 7.2 / 7.3.
 //
 // State machine:
 //   idle     → press "begin" to start. This gesture is needed because
@@ -280,7 +280,7 @@ function PlayingScreen({
       </div>
 
       {/* Lens header -------------------------------------------------- */}
-      <div className="marg mt-2">EXAMINING THROUGH —</div>
+      <div className="marg mt-2">EXAMINING THROUGH</div>
       <div className="mt-2 flex items-start gap-3">
         <Loupe size="full" className="shrink-0" />
         <p
@@ -405,7 +405,7 @@ function ResultsScreen({ judgments, onAgain }: { judgments: Judgment[]; onAgain:
         </p>
       ) : (
         <section>
-          <div className="marg text-center mb-3">INCORRECT JUDGMENTS — REVIEW</div>
+          <div className="marg text-center mb-3">INCORRECT JUDGMENTS · REVIEW</div>
           <ul className="flex flex-col gap-3">
             {wrong.map((j, i) => (
               <li key={i}>

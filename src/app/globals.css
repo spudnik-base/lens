@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* --------------------------------------------------------------------
-   Lens — field-notebook base styles
+   Lens, field-notebook base styles
 
    See Section 6 of lens-spec.md. The whole identity is a naturalist's
    field journal: cream paper, ink illustrations, pinned specimen cards,
@@ -45,10 +45,10 @@ body {
   min-height: 100dvh;
   /* Desktop framing: on large viewports the cream background fills the
      entire screen and the phone column sits centered with air. No phone
-     chrome, no bezel, no shadow — the spec is explicit about this. */
+     chrome, no bezel, no shadow, the spec is explicit about this. */
 }
 
-/* Disable italic for mono — marginalia is always upright. */
+/* Disable italic for mono, marginalia is always upright. */
 .font-mono,
 .font-mono * {
   font-style: normal;
@@ -73,7 +73,7 @@ body {
     min-height: 100dvh;
   }
 
-  /* Raised specimen card — cream on cream, hairline tan border. Never
+  /* Raised specimen card, cream on cream, hairline tan border. Never
      a drop shadow. Slight difference in tone + the 1px tan stroke does
      all the lifting. */
   .specimen {
@@ -96,7 +96,7 @@ body {
     width: 100%;
   }
 
-  /* Mono caps marginalia — small pencil-gray labels at unusual margins. */
+  /* Mono caps marginalia, small pencil-gray labels at unusual margins. */
   .marg {
     font-family: var(--font-mono), ui-monospace, monospace;
     font-style: normal;
@@ -107,7 +107,7 @@ body {
     text-transform: uppercase;
   }
 
-  /* Body editorial — serif italic, what linking questions and examples
+  /* Body editorial, serif italic, what linking questions and examples
      are set in. Size is set per-usage. */
   .editorial {
     font-family: var(--font-serif), Georgia, serif;
@@ -130,7 +130,7 @@ body {
   }
 }
 
-/* Flash overlay for Lens Sort judgments — brief page tint, no bounce. */
+/* Flash overlay for Lens Sort judgments, brief page tint, no bounce. */
 .flash-green {
   animation: flash-green-kf 150ms ease-out forwards;
 }
@@ -154,13 +154,13 @@ body {
   }
 }
 
-/* Tap highlight disabled — flashes handle feedback. */
+/* Tap highlight disabled, flashes handle feedback. */
 button,
 a {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Focus styles in ink — no blue Chrome rings. */
+/* Focus styles in ink, no blue Chrome rings. */
 :focus-visible {
   outline: 1.5px dashed var(--ink);
   outline-offset: 3px;

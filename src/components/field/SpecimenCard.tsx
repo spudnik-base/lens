@@ -1,4 +1,4 @@
-// Specimen card — cream-on-cream raised panel with hairline tan border.
+// Specimen card, cream-on-cream raised panel with hairline tan border.
 // Optional masking-tape corners for the Lens Sort hero specimen, which
 // is the only card that reads as "physically pinned into a journal."
 //

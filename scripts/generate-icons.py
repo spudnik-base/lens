@@ -12,7 +12,7 @@ Output goes to public/icons/:
   - favicon.ico          (16/32/48 multi-size)
 
 The master is the hand-drawn loupe motif from Section 6.3 of lens-spec.md.
-Ink on cream, no gradients, no shadows — keeps the field-notebook feel.
+Ink on cream, no gradients, no shadows, keeps the field-notebook feel.
 """
 import os
 from io import BytesIO
@@ -26,7 +26,7 @@ os.makedirs(OUT, exist_ok=True)
 CREAM = '#F2E9D0'
 INK = '#2A2520'
 
-# Master SVG — the loupe on a cream square. Safe area accounts for
+# Master SVG, the loupe on a cream square. Safe area accounts for
 # Android adaptive icons which clip to circles or rounded squares.
 def build_square_svg(size: int, safe_area: float) -> str:
     """safe_area: fraction of the canvas the art should occupy (0..1)."""
@@ -55,21 +55,21 @@ def render_png(svg: str, size: int, out_path: str):
         f.write(png)
 
 def main():
-    # Standard icons — art fills ~88% of the canvas.
+    # Standard icons, art fills ~88% of the canvas.
     for size in (192, 512):
         render_png(build_square_svg(size, 0.88), size, os.path.join(OUT, f'icon-{size}.png'))
-    # Maskable icons — art contained within inner 66% for safe area.
+    # Maskable icons, art contained within inner 66% for safe area.
     for size in (192, 512):
         render_png(build_square_svg(size, 0.66), size, os.path.join(OUT, f'icon-maskable-{size}.png'))
-    # Apple touch icon — iOS doesn't mask, use standard.
+    # Apple touch icon, iOS doesn't mask, use standard.
     render_png(build_square_svg(180, 0.88), 180, os.path.join(OUT, 'apple-touch-icon.png'))
-    # Favicon .ico — multi-resolution.
+    # Favicon .ico, multi-resolution.
     img16 = Image.open(BytesIO(cairosvg.svg2png(bytestring=build_square_svg(16, 0.92).encode('utf-8'), output_width=16, output_height=16)))
     img32 = Image.open(BytesIO(cairosvg.svg2png(bytestring=build_square_svg(32, 0.9).encode('utf-8'), output_width=32, output_height=32)))
     img48 = Image.open(BytesIO(cairosvg.svg2png(bytestring=build_square_svg(48, 0.88).encode('utf-8'), output_width=48, output_height=48)))
     img48.save(os.path.join(OUT, 'favicon.ico'), sizes=[(16, 16), (32, 32), (48, 48)], append_images=[img16, img32])
 
-    # Open Graph card — 1200×630 cream paper with the loupe + wordmark.
+    # Open Graph card, 1200×630 cream paper with the loupe + wordmark.
     og_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="{CREAM}"/>
   <!-- hairline tan border inset -->

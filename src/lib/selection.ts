@@ -1,7 +1,7 @@
-// Study-mode option selection — see Section 4.1 of lens-spec.md.
+// Study-mode option selection, see Section 4.1 of lens-spec.md.
 //
 // We show exactly three of a card's five options: the impostor plus
-// two randomly chosen fits. Variety across runs is pedagogical — the
+// two randomly chosen fits. Variety across runs is pedagogical, the
 // same card looks different next time, which forces re-examining the
 // lens rather than memorizing option positions.
 

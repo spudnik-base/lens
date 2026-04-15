@@ -3,7 +3,7 @@
  *
  * Imports every generated subject JSON and re-exports them as a typed
  * array. When a new subject is added to content/source/*.xlsx, run the
- * content build and append the import here — that's the only code change
+ * content build and append the import here, that's the only code change
  * required to register a new subject.
  */
 import biologyJson from './generated/biology.json';

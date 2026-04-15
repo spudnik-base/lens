@@ -2,7 +2,7 @@
   "name": "lens",
   "version": "0.1.0",
   "private": true,
-  "description": "Lens — a Cramly study guide to IB Biology's 32 linking questions",
+  "description": "Lens: a Cramly study guide to IB Biology's 32 linking questions",
   "scripts": {
     "build:content": "tsx content/build.ts",
     "prebuild": "npm run build:content",
