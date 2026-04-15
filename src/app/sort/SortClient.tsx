@@ -1,0 +1,457 @@
+'use client';
+
+// Lens Sort, Section 4.2 and 7.2 / 7.3.
+//
+// State machine:
+//   idle     → press "begin" to start. This gesture is needed because
+//              audio / animation timings kick off here.
+//   playing  → 60s timer, deck of cards, each card yields 5 options
+//              presented one-at-a-time, user answers Fits / Does-not-fit.
+//              Flash feedback, advance.
+//   results  → score + review list of incorrect judgments.
+
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useEffect, useMemo, useReducer, useRef } from 'react';
+import type { Subject, Card } from '@/types/subject';
+import { shuffle } from '@/lib/shuffle';
+import { Loupe } from '@/components/field/Loupe';
+import { Stamp } from '@/components/field/Stamp';
+import { SpecimenCard } from '@/components/field/SpecimenCard';
+import { Tally } from '@/components/field/Tally';
+
+const ROUND_SECONDS = 60;
+
+// ---------------------------------------------------------------------
+// State model
+// ---------------------------------------------------------------------
+
+type Judgment = {
+  qIndex: number;
+  question: string;
+  text: string;
+  why: string;
+  wasImpostor: boolean; // the ground truth: true → did NOT fit
+  userSaidFits: boolean; // what the user answered
+  correct: boolean;
+};
+
+type DeckItem = {
+  qIndex: number;
+  optionIdx: number;
+  isImpostor: boolean;
+};
+
+type State =
+  | { phase: 'idle' }
+  | {
+      phase: 'playing';
+      deck: DeckItem[];
+      cursor: number;
+      secondsLeft: number;
+      flash: 'green' | 'red' | null;
+      judgments: Judgment[];
+      cardsSeenThisRound: number;
+    }
+  | {
+      phase: 'results';
+      judgments: Judgment[];
+    };
+
+type Action =
+  | { type: 'start'; deck: DeckItem[] }
+  | { type: 'tick' }
+  | {
+      type: 'judge';
+      userSaidFits: boolean;
+      judgment: Judgment;
+    }
+  | { type: 'end' }
+  | { type: 'clearFlash' }
+  | { type: 'again'; deck: DeckItem[] };
+
+function initialState(): State {
+  return { phase: 'idle' };
+}
+
+function reducer(state: State, action: Action): State {
+  switch (action.type) {
+    case 'start':
+      return {
+        phase: 'playing',
+        deck: action.deck,
+        cursor: 0,
+        secondsLeft: ROUND_SECONDS,
+        flash: null,
+        judgments: [],
+        cardsSeenThisRound: 0,
+      };
+    case 'tick': {
+      if (state.phase !== 'playing') return state;
+      if (state.secondsLeft <= 1) {
+        return { phase: 'results', judgments: state.judgments };
+      }
+      return { ...state, secondsLeft: state.secondsLeft - 1 };
+    }
+    case 'judge': {
+      if (state.phase !== 'playing') return state;
+      return {
+        ...state,
+        cursor: state.cursor + 1,
+        judgments: [...state.judgments, action.judgment],
+        flash: action.judgment.correct ? 'green' : 'red',
+      };
+    }
+    case 'clearFlash':
+      if (state.phase !== 'playing') return state;
+      return { ...state, flash: null };
+    case 'end':
+      if (state.phase !== 'playing') return state;
+      return { phase: 'results', judgments: state.judgments };
+    case 'again':
+      return {
+        phase: 'playing',
+        deck: action.deck,
+        cursor: 0,
+        secondsLeft: ROUND_SECONDS,
+        flash: null,
+        judgments: [],
+        cardsSeenThisRound: 0,
+      };
+  }
+}
+
+// Build a deck: shuffle cards, and for each card shuffle its 5 options.
+// Flatten into (qIndex, optionIdx) entries so the cursor advances one
+// option at a time.
+function buildDeck(subject: Subject): DeckItem[] {
+  const cards = shuffle(subject.cards);
+  const out: DeckItem[] = [];
+  for (const card of cards) {
+    const optIdxs = shuffle(card.options.map((_, i) => i));
+    for (const optionIdx of optIdxs) {
+      out.push({
+        qIndex: card.qIndex,
+        optionIdx,
+        isImpostor: !!card.options[optionIdx].impostor,
+      });
+    }
+  }
+  return out;
+}
+
+// ---------------------------------------------------------------------
+// Component
+// ---------------------------------------------------------------------
+
+export function SortClient({ subject }: { subject: Subject }) {
+  const [state, dispatch] = useReducer(reducer, undefined, initialState);
+
+  // Timer ticking. One interval only, cleared on phase change.
+  useEffect(() => {
+    if (state.phase !== 'playing') return;
+    const id = window.setInterval(() => dispatch({ type: 'tick' }), 1000);
+    return () => window.clearInterval(id);
+  }, [state.phase]);
+
+  // Clear flash after 150ms so the background returns to cream.
+  useEffect(() => {
+    if (state.phase !== 'playing' || !state.flash) return;
+    const id = window.setTimeout(() => dispatch({ type: 'clearFlash' }), 150);
+    return () => window.clearTimeout(id);
+  }, [state.phase, state.phase === 'playing' ? state.flash : null]);
+
+  // Infinite deck: if we ran off the end of the deck before the timer
+  // ran out, reshuffle and continue (Section 4.2).
+  useEffect(() => {
+    if (state.phase !== 'playing') return;
+    if (state.cursor < state.deck.length) return;
+    // Replace the deck with a fresh shuffle and reset the cursor.
+    const fresh = buildDeck(subject);
+    dispatch({ type: 'again', deck: fresh });
+  }, [state, subject]);
+
+  if (state.phase === 'idle') return <IdleScreen onBegin={() => dispatch({ type: 'start', deck: buildDeck(subject) })} />;
+
+  if (state.phase === 'results') {
+    return (
+      <ResultsScreen
+        judgments={state.judgments}
+        onAgain={() => dispatch({ type: 'again', deck: buildDeck(subject) })}
+      />
+    );
+  }
+
+  return <PlayingScreen subject={subject} state={state} dispatch={dispatch} />;
+}
+
+// ---------------------------------------------------------------------
+// Idle
+// ---------------------------------------------------------------------
+function IdleScreen({ onBegin }: { onBegin: () => void }) {
+  return (
+    <div>
+      <div className="flex items-center justify-between pb-4">
+        <Link href="/" className="marg" style={{ color: 'var(--pencil)' }}>
+          ← HOME
+        </Link>
+        <div className="marg">LENS SORT</div>
+        <div className="marg">60 SEC</div>
+      </div>
+
+      <div className="pt-16 text-center">
+        <div className="flex justify-center mb-8">
+          <Loupe size="full" />
+        </div>
+        <h1 className="editorial" style={{ fontSize: 32, lineHeight: 1.1 }}>
+          Lens Sort
+        </h1>
+        <p
+          className="editorial mt-4 px-6"
+          style={{ fontSize: 14, lineHeight: 1.5, color: 'var(--body-subtle)' }}
+        >
+          Sixty seconds. One lens at a time. For each specimen, decide
+          whether it fits the lens or is an impostor.
+        </p>
+        <div className="mt-12 flex justify-center">
+          <Stamp variant="ink" size={120} rotate={-2} onClick={onBegin}>
+            Begin
+          </Stamp>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------
+// Playing
+// ---------------------------------------------------------------------
+function PlayingScreen({
+  subject,
+  state,
+  dispatch,
+}: {
+  subject: Subject;
+  state: Extract<State, { phase: 'playing' }>;
+  dispatch: React.Dispatch<Action>;
+}) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  const current = state.deck[state.cursor];
+  const card = useMemo(
+    () => subject.cards.find((c) => c.qIndex === current.qIndex) as Card,
+    [subject.cards, current.qIndex]
+  );
+  const option = card.options[current.optionIdx];
+  const question = subject.questions[current.qIndex - 1];
+
+  const handleJudge = (userSaidFits: boolean) => {
+    const wasImpostor = current.isImpostor;
+    const correct = userSaidFits !== wasImpostor; // "fits" correct iff not impostor
+    const j: Judgment = {
+      qIndex: current.qIndex,
+      question,
+      text: option.text,
+      why: option.why,
+      wasImpostor,
+      userSaidFits,
+      correct,
+    };
+    dispatch({ type: 'judge', userSaidFits, judgment: j });
+  };
+
+  // Running score: correct judgments so far.
+  const correctSoFar = state.judgments.filter((j) => j.correct).length;
+
+  const flashClass = state.flash === 'green' ? 'flash-green' : state.flash === 'red' ? 'flash-red' : '';
+
+  return (
+    <div ref={wrapperRef} className={flashClass}>
+      {/* Status bar --------------------------------------------------- */}
+      <div className="flex items-center justify-between pb-3">
+        <div className="marg">ROUND 01</div>
+        <div className="marg flex items-center gap-1.5">
+          <Loupe size="mini" />
+          <span>
+            0:{String(state.secondsLeft).padStart(2, '0')}
+          </span>
+        </div>
+        <Tally count={correctSoFar} />
+      </div>
+
+      {/* Lens header -------------------------------------------------- */}
+      <div className="marg mt-2">EXAMINING THROUGH</div>
+      <div className="mt-2 flex items-start gap-3">
+        <Loupe size="full" className="shrink-0" />
+        <p
+          className="editorial"
+          style={{ fontSize: 15, lineHeight: 1.3, paddingTop: 4 }}
+        >
+          {question}
+        </p>
+      </div>
+
+      <div className="rule my-5" />
+
+      {/* Specimen card ------------------------------------------------ */}
+      <div className="relative">
+        <SpecimenCard masked>
+          <div className="marg mb-2" style={{ color: 'var(--pencil)' }}>
+            SPECIMEN {String((state.cursor % 99) + 1).padStart(2, '0')}
+          </div>
+          <div
+            className="editorial editorial--medium"
+            style={{ fontSize: 20, lineHeight: 1.3 }}
+          >
+            {option.text}
+          </div>
+        </SpecimenCard>
+
+        {/* Vertical "no. X of Y" marginalia up the right edge */}
+        <div
+          className="absolute"
+          style={{
+            top: '50%',
+            right: -16,
+            transform: 'translateY(-50%) rotate(90deg)',
+            transformOrigin: 'right center',
+          }}
+        >
+          <span className="marg">
+            NO. {String(state.cursor + 1).padStart(2, '0')} OF {state.deck.length}
+          </span>
+        </div>
+      </div>
+
+      {/* Prompt ------------------------------------------------------- */}
+      <div className="marg text-center mt-6">DOES IT FIT THE LENS?</div>
+
+      {/* Verdict stamps ----------------------------------------------- */}
+      <div className="mt-5 flex items-center justify-center gap-6">
+        <Stamp
+          variant="red"
+          rotate={-5}
+          onClick={() => handleJudge(false)}
+          aria-label="does not fit"
+        >
+          Does not
+          <br />
+          fit
+        </Stamp>
+        <Stamp
+          variant="green"
+          rotate={4}
+          onClick={() => handleJudge(true)}
+          aria-label="fits"
+        >
+          Fits
+        </Stamp>
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------
+// Results
+// ---------------------------------------------------------------------
+function ResultsScreen({ judgments, onAgain }: { judgments: Judgment[]; onAgain: () => void }) {
+  const router = useRouter();
+  const total = judgments.length;
+  const correct = judgments.filter((j) => j.correct).length;
+  const wrong = judgments.filter((j) => !j.correct);
+  const cleanSweep = total > 0 && wrong.length === 0;
+
+  return (
+    <div>
+      <div className="flex items-center justify-between pb-4">
+        <Link href="/" className="marg" style={{ color: 'var(--pencil)' }}>
+          ← HOME
+        </Link>
+        <div className="marg">ROUND COMPLETE</div>
+        <div className="marg">LENS SORT</div>
+      </div>
+
+      {/* Score stamp */}
+      <div className="pt-4 pb-8 flex flex-col items-center">
+        <div
+          className="relative flex items-center justify-center"
+          style={{ width: 140, height: 140 }}
+        >
+          <svg width={140} height={140} viewBox="0 0 100 100" className="absolute inset-0">
+            <circle
+              cx={50}
+              cy={50}
+              r={46}
+              fill="none"
+              stroke="#2A2520"
+              strokeWidth={2.5}
+              strokeDasharray="0.5 0.1"
+            />
+            <circle cx={50} cy={50} r={41} fill="none" stroke="#2A2520" strokeWidth={0.7} opacity={0.4} />
+          </svg>
+          <div
+            className="editorial editorial--medium"
+            style={{ fontSize: 30, lineHeight: 1 }}
+          >
+            {correct}/{total}
+          </div>
+        </div>
+      </div>
+
+      {/* Review list -------------------------------------------------- */}
+      {cleanSweep ? (
+        <p className="editorial text-center" style={{ fontSize: 18 }}>
+          A clean sweep.
+        </p>
+      ) : (
+        <section>
+          <div className="marg text-center mb-3">INCORRECT JUDGMENTS · REVIEW</div>
+          <ul className="flex flex-col gap-3">
+            {wrong.map((j, i) => (
+              <li key={i}>
+                <SpecimenCard impostor>
+                  <div className="marg mb-2" style={{ color: 'var(--pencil)' }}>
+                    {truncate(j.question, 70)}
+                  </div>
+                  <div
+                    className="editorial editorial--medium"
+                    style={{ fontSize: 14, lineHeight: 1.3 }}
+                  >
+                    {j.text}
+                  </div>
+                  <div className="marg mt-2">
+                    YOU SAID {j.userSaidFits ? 'FITS' : "DOESN'T FIT"} ·{' '}
+                    ACTUALLY {j.wasImpostor ? "DOESN'T FIT" : 'FITS'}
+                  </div>
+                  <div
+                    className="editorial mt-2"
+                    style={{ fontSize: 12, color: 'var(--body-subtle)', lineHeight: 1.45 }}
+                  >
+                    {j.why}
+                  </div>
+                </SpecimenCard>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Actions ------------------------------------------------------ */}
+      <div className="mt-10 flex items-center justify-center gap-6">
+        <Stamp variant="ink" size={96} rotate={-3} onClick={onAgain}>
+          Play
+          <br />
+          again
+        </Stamp>
+        <Stamp variant="ink" size={96} rotate={3} onClick={() => router.push('/')}>
+          Home
+        </Stamp>
+      </div>
+    </div>
+  );
+}
+
+function truncate(s: string, max: number) {
+  if (s.length <= max) return s;
+  return s.slice(0, max - 1).trimEnd() + '…';
+}

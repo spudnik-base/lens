@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --------------------------------------------------------------------
+   Lens, field-notebook base styles
+
+   See Section 6 of lens-spec.md. The whole identity is a naturalist's
+   field journal: cream paper, ink illustrations, pinned specimen cards,
+   rubber stamps, pencil marginalia. Two ink colors max on any screen
+   plus pencil gray. No sans-serif, no gradients, no animated
+   celebrations, no bright colors.
+   -------------------------------------------------------------------- */
+
+:root {
+  --paper: #f2e9d0;
+  --card: #fbf6e5;
+  --border: #c8bd9e;
+  --ink: #2a2520;
+  --pencil: #8a8170;
+  --ink-red: #9c3a2c;
+  --ink-green: #2f5234;
+  --body-subtle: #5a544a;
+
+  /* Hairline = always 1px, even on 2x screens. We use box-shadow insets
+     for card borders since CSS borders can render as 2px on hi-dpi. */
+  --hairline: 0 0 0 1px var(--border);
+}
+
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* Prevent the pull-to-refresh overscroll that breaks the standalone
+     feel once installed to home screen. */
+  overscroll-behavior: none;
+}
+
+body {
+  min-height: 100dvh;
+  /* Desktop framing: on large viewports the cream background fills the
+     entire screen and the phone column sits centered with air. No phone
+     chrome, no bezel, no shadow, the spec is explicit about this. */
+}
+
+/* Disable italic for mono, marginalia is always upright. */
+.font-mono,
+.font-mono * {
+  font-style: normal;
+}
+
+/* Field-notebook utility classes that are reused across screens
+   enough to justify component classes rather than long utility chains. */
+@layer components {
+  .paper {
+    background: var(--paper);
+  }
+
+  /* The mobile column. On wide viewports the column stays centered at
+     ~400px, flanked by cream air. No frame, no shadow, no mockup chrome. */
+  .phone-column {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 22px;
+    padding-right: 22px;
+    min-height: 100dvh;
+  }
+
+  /* Raised specimen card, cream on cream, hairline tan border. Never
+     a drop shadow. Slight difference in tone + the 1px tan stroke does
+     all the lifting. */
+  .specimen {
+    background: var(--card);
+    box-shadow: var(--hairline);
+    border-radius: 2px;
+    padding: 14px 16px;
+    position: relative;
+  }
+
+  .specimen--impostor {
+    box-shadow: 0 0 0 1.5px var(--ink-red);
+  }
+
+  /* Hairline tan divider, always 1px. */
+  .rule {
+    height: 1px;
+    background: var(--border);
+    border: 0;
+    width: 100%;
+  }
+
+  /* Mono caps marginalia, small pencil-gray labels at unusual margins. */
+  .marg {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--pencil);
+    text-transform: uppercase;
+  }
+
+  /* Body editorial, serif italic, what linking questions and examples
+     are set in. Size is set per-usage. */
+  .editorial {
+    font-family: var(--font-serif), Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  .editorial--medium {
+    font-weight: 500;
+  }
+
+  /* Dotted contents-page leader used on home screen mode rows.
+     A real dotted leader, not a border. */
+  .leader {
+    flex: 1 1 auto;
+    border-bottom: 1px dotted var(--border);
+    margin: 0 8px 6px;
+    height: 0;
+  }
+}
+
+/* Flash overlay for Lens Sort judgments, brief page tint, no bounce. */
+.flash-green {
+  animation: flash-green-kf 150ms ease-out forwards;
+}
+.flash-red {
+  animation: flash-red-kf 150ms ease-out forwards;
+}
+@keyframes flash-green-kf {
+  0% {
+    background-color: rgba(47, 82, 52, 0.18);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+@keyframes flash-red-kf {
+  0% {
+    background-color: rgba(156, 58, 44, 0.18);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* Tap highlight disabled, flashes handle feedback. */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Focus styles in ink, no blue Chrome rings. */
+:focus-visible {
+  outline: 1.5px dashed var(--ink);
+  outline-offset: 3px;
+}
