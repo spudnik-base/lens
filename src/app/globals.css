@@ -27,57 +27,35 @@
      for card borders since CSS borders can render as 2px on hi-dpi. */
   --hairline: 0 0 0 1px var(--border);
 
-  /* Typography scale. Mobile baseline below, desktop bumps in the
-     media queries further down. Every component references these by
-     name so there is one place to tune readability. */
-  --fs-xs: 15px;   /* mono marginalia, mode-row descriptions, credits */
-  --fs-sm: 18px;   /* captions, whys, secondary serif body */
-  --fs-md: 22px;   /* editorial body, Study specimens, linking questions */
-  --fs-lg: 28px;   /* Lens Sort specimens, home subtitle */
-  --fs-xl: 42px;   /* page titles, score stamp */
-  --fs-xxl: 72px;  /* home wordmark */
+  /* Fluid typography scale. Each size uses clamp(min, preferred, max)
+     where the preferred value is a linear function of viewport width,
+     so the whole app scales smoothly from small phones to large
+     desktops and caps at a sensible ceiling instead of ballooning on
+     wide monitors. No media queries needed; the clamp does the work.
+     Every component reads these by name so there is one place to
+     tune readability. */
+  --fs-xs: clamp(11.5px, 0.25vw + 10px, 13.5px);
+  --fs-sm: clamp(13px, 0.45vw + 11px, 16px);
+  --fs-md: clamp(15px, 0.65vw + 12.5px, 19.5px);
+  --fs-lg: clamp(19px, 0.9vw + 15px, 25.5px);
+  --fs-xl: clamp(27px, 1.5vw + 21px, 40px);
+  --fs-xxl: clamp(46px, 2.4vw + 37px, 72px);
 
-  /* Column layout. Wider on desktop so the page has more breathing
-     room than the strict mobile mockup width; the phone-column class
-     reads these directly. */
-  --col-max: 520px;
-  --col-pad: 26px;
+  /* Column layout. Width grows with viewport via clamp and tops out
+     at ~660px so lines stay readable (around 70 characters at body
+     size). Padding scales the same way. */
+  --col-max: clamp(360px, calc(280px + 26vw), 660px);
+  --col-pad: clamp(20px, calc(16px + 1vw), 44px);
 
-  /* Loupe dimensions, sized to scale with the typography next to them. */
-  --loupe-full-w: 58px;
-  --loupe-full-h: 86px;
-  --loupe-compact-w: 40px;
-  --loupe-compact-h: 60px;
-  --loupe-mini-w: 18px;
-  --loupe-mini-h: 26px;
-}
-
-@media (min-width: 768px) {
-  :root {
-    --fs-xs: 16px;
-    --fs-sm: 20px;
-    --fs-md: 26px;
-    --fs-lg: 34px;
-    --fs-xl: 52px;
-    --fs-xxl: 96px;
-
-    --col-max: 640px;
-    --col-pad: 40px;
-
-    --loupe-full-w: 72px;
-    --loupe-full-h: 106px;
-    --loupe-compact-w: 50px;
-    --loupe-compact-h: 74px;
-    --loupe-mini-w: 22px;
-    --loupe-mini-h: 32px;
-  }
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --col-max: 720px;
-    --col-pad: 52px;
-  }
+  /* Loupe dimensions, derived from a single fluid master width so the
+     aspect ratio (68/46 in the SVG viewBox) stays correct at any
+     viewport and all three variants scale together. */
+  --loupe-full-w: clamp(42px, 1.3vw + 32px, 56px);
+  --loupe-full-h: calc(var(--loupe-full-w) * 1.478);
+  --loupe-compact-w: calc(var(--loupe-full-w) * 0.72);
+  --loupe-compact-h: calc(var(--loupe-compact-w) * 1.478);
+  --loupe-mini-w: calc(var(--loupe-full-w) * 0.33);
+  --loupe-mini-h: calc(var(--loupe-mini-w) * 1.478);
 }
 
 html,
