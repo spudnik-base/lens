@@ -2,30 +2,34 @@ import { PageFrame } from '@/components/layout/PageFrame';
 import { Loupe } from '@/components/field/Loupe';
 import { Ornament } from '@/components/field/Ornament';
 
-// Offline fallback. Shown when the user navigates while offline and the
-// requested page is not precached. The app is designed to work fully
-// offline once installed, so in practice this screen is a defense in
-// depth rather than a common sight.
+// Offline fallback. Shown when the user navigates while offline and
+// the requested page is not precached. The app is designed to work
+// fully offline once installed, so in practice this screen is a
+// defense in depth rather than a common sight.
 
 export const dynamic = 'force-static';
 
 export default function OfflinePage() {
   return (
     <PageFrame>
-      <div className="pt-20 text-center">
-        <div className="flex justify-center mb-6">
+      <div className="pt-24 text-center">
+        <div className="flex justify-center mb-7">
           <Loupe size="full" />
         </div>
-        <div className="marg mb-3">OFFLINE</div>
-        <h1 className="editorial" style={{ fontSize: 28, lineHeight: 1.1 }}>
+        <div className="marg mb-4">OFFLINE</div>
+        <h1 className="editorial" style={{ fontSize: 'var(--fs-xl)', lineHeight: 1.1 }}>
           The field is quiet.
         </h1>
-        <div className="mt-4 flex justify-center">
+        <div className="mt-5 flex justify-center">
           <Ornament />
         </div>
         <p
-          className="editorial mt-6 px-6"
-          style={{ fontSize: 14, lineHeight: 1.5, color: 'var(--body-subtle)' }}
+          className="editorial mt-7 px-4"
+          style={{
+            fontSize: 'var(--fs-md)',
+            lineHeight: 1.5,
+            color: 'var(--body-subtle)',
+          }}
         >
           This page isn&rsquo;t cached yet. Rejoin a network and try again,
           or head back to a lens you&rsquo;ve already opened.

@@ -13,6 +13,7 @@
    -------------------------------------------------------------------- */
 
 :root {
+  /* Palette */
   --paper: #f2e9d0;
   --card: #fbf6e5;
   --border: #c8bd9e;
@@ -25,6 +26,58 @@
   /* Hairline = always 1px, even on 2x screens. We use box-shadow insets
      for card borders since CSS borders can render as 2px on hi-dpi. */
   --hairline: 0 0 0 1px var(--border);
+
+  /* Typography scale. Mobile baseline below, desktop bumps in the
+     media queries further down. Every component references these by
+     name so there is one place to tune readability. */
+  --fs-xs: 15px;   /* mono marginalia, mode-row descriptions, credits */
+  --fs-sm: 18px;   /* captions, whys, secondary serif body */
+  --fs-md: 22px;   /* editorial body, Study specimens, linking questions */
+  --fs-lg: 28px;   /* Lens Sort specimens, home subtitle */
+  --fs-xl: 42px;   /* page titles, score stamp */
+  --fs-xxl: 72px;  /* home wordmark */
+
+  /* Column layout. Wider on desktop so the page has more breathing
+     room than the strict mobile mockup width; the phone-column class
+     reads these directly. */
+  --col-max: 520px;
+  --col-pad: 26px;
+
+  /* Loupe dimensions, sized to scale with the typography next to them. */
+  --loupe-full-w: 58px;
+  --loupe-full-h: 86px;
+  --loupe-compact-w: 40px;
+  --loupe-compact-h: 60px;
+  --loupe-mini-w: 18px;
+  --loupe-mini-h: 26px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --fs-xs: 16px;
+    --fs-sm: 20px;
+    --fs-md: 26px;
+    --fs-lg: 34px;
+    --fs-xl: 52px;
+    --fs-xxl: 96px;
+
+    --col-max: 640px;
+    --col-pad: 40px;
+
+    --loupe-full-w: 72px;
+    --loupe-full-h: 106px;
+    --loupe-compact-w: 50px;
+    --loupe-compact-h: 74px;
+    --loupe-mini-w: 22px;
+    --loupe-mini-h: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --col-max: 720px;
+    --col-pad: 52px;
+  }
 }
 
 html,
@@ -43,9 +96,6 @@ body {
 
 body {
   min-height: 100dvh;
-  /* Desktop framing: on large viewports the cream background fills the
-     entire screen and the phone column sits centered with air. No phone
-     chrome, no bezel, no shadow, the spec is explicit about this. */
 }
 
 /* Disable italic for mono, marginalia is always upright. */
@@ -54,38 +104,62 @@ body {
   font-style: normal;
 }
 
-/* Field-notebook utility classes that are reused across screens
-   enough to justify component classes rather than long utility chains. */
 @layer components {
   .paper {
     background: var(--paper);
   }
 
   /* The mobile column. On wide viewports the column stays centered at
-     ~400px, flanked by cream air. No frame, no shadow, no mockup chrome. */
+     a modest max-width, flanked by cream air. No frame, no shadow, no
+     mockup chrome. Desktop bumps width and padding via the :root
+     media queries above, so this rule reads both automatically. */
   .phone-column {
     width: 100%;
-    max-width: 400px;
+    max-width: var(--col-max);
     margin-left: auto;
     margin-right: auto;
-    padding-left: 22px;
-    padding-right: 22px;
+    padding-left: var(--col-pad);
+    padding-right: var(--col-pad);
     min-height: 100dvh;
   }
 
   /* Raised specimen card, cream on cream, hairline tan border. Never
      a drop shadow. Slight difference in tone + the 1px tan stroke does
-     all the lifting. */
+     all the lifting. Transitions cover the hover lift on interactive
+     cards and the brief verdict border in Lens Sort feedback. */
   .specimen {
     background: var(--card);
     box-shadow: var(--hairline);
     border-radius: 2px;
-    padding: 14px 16px;
+    padding: 18px 22px;
     position: relative;
+    transition: transform 120ms ease, box-shadow 160ms ease;
   }
 
   .specimen--impostor {
     box-shadow: 0 0 0 1.5px var(--ink-red);
+  }
+
+  /* Brief verdict borders used for Lens Sort feedback. Same shape as
+     the impostor border so it reuses the mental model. */
+  .specimen--correct {
+    box-shadow: 0 0 0 1.5px var(--ink-green);
+  }
+  .specimen--wrong {
+    box-shadow: 0 0 0 1.5px var(--ink-red);
+  }
+
+  /* Pointer-only hover lift on interactive specimens (Study). Touch
+     devices do not get this because they have no hover state; a
+     press-in translate below applies everywhere. */
+  @media (hover: hover) and (pointer: fine) {
+    button.specimen:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 0 0 1px var(--ink);
+    }
+  }
+  button.specimen:active:not(:disabled) {
+    transform: translateY(1px);
   }
 
   /* Hairline tan divider, always 1px. */
@@ -101,8 +175,8 @@ body {
     font-family: var(--font-mono), ui-monospace, monospace;
     font-style: normal;
     font-weight: 400;
-    font-size: 10px;
-    letter-spacing: 0.12em;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
     color: var(--pencil);
     text-transform: uppercase;
   }
@@ -125,36 +199,52 @@ body {
   .leader {
     flex: 1 1 auto;
     border-bottom: 1px dotted var(--border);
-    margin: 0 8px 6px;
+    margin: 0 12px 10px;
     height: 0;
   }
+
+  /* -----------------------------------------------------------------
+     Rubber stamp buttons (Lens Sort verdicts, results actions).
+
+     Raised-face trick: a faint trailing circle sits offset down-right
+     as a depth shadow. The main face translates on hover (lift) and
+     active/data-pressed (drop to the shadow's position). No CSS drop
+     shadows, which keeps the field-notebook rules intact. The
+     .stamp__fill visual on data-pressed provides hit feedback without
+     the whole-page flash the spec originally called for.
+     ----------------------------------------------------------------- */
+  .stamp {
+    position: relative;
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+  .stamp__shadow {
+    position: absolute;
+    inset: 0;
+    transform: translate(2.5px, 3px);
+    pointer-events: none;
+  }
+  .stamp__face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 90ms ease-out;
+    transform: translate(0, 0);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .stamp:hover:not(:disabled) .stamp__face {
+      transform: translate(-1px, -1.5px);
+    }
+  }
+  .stamp:active:not(:disabled) .stamp__face,
+  .stamp[data-pressed='true'] .stamp__face {
+    transform: translate(2.5px, 3px);
+  }
 }
 
-/* Flash overlay for Lens Sort judgments, brief page tint, no bounce. */
-.flash-green {
-  animation: flash-green-kf 150ms ease-out forwards;
-}
-.flash-red {
-  animation: flash-red-kf 150ms ease-out forwards;
-}
-@keyframes flash-green-kf {
-  0% {
-    background-color: rgba(47, 82, 52, 0.18);
-  }
-  100% {
-    background-color: transparent;
-  }
-}
-@keyframes flash-red-kf {
-  0% {
-    background-color: rgba(156, 58, 44, 0.18);
-  }
-  100% {
-    background-color: transparent;
-  }
-}
-
-/* Tap highlight disabled, flashes handle feedback. */
 button,
 a {
   -webkit-tap-highlight-color: transparent;

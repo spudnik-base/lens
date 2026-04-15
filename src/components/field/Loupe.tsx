@@ -1,5 +1,6 @@
 // The loupe, signature motif. Hand-drawn ink. See Section 6.3.
-// Full size is ~46×68. Compact is ~32×46 for the Study header.
+// Three size variants. Dimensions are read from CSS variables defined
+// in globals.css so they scale with the typography at each breakpoint.
 // The `why` lives outside: this component is pure SVG, no label.
 
 type LoupeProps = {
@@ -8,11 +9,22 @@ type LoupeProps = {
 };
 
 export function Loupe({ size = 'full', className }: LoupeProps) {
-  const dims = size === 'full' ? { w: 46, h: 68 } : size === 'compact' ? { w: 32, h: 46 } : { w: 14, h: 20 };
+  const widthVar =
+    size === 'full'
+      ? 'var(--loupe-full-w)'
+      : size === 'compact'
+        ? 'var(--loupe-compact-w)'
+        : 'var(--loupe-mini-w)';
+  const heightVar =
+    size === 'full'
+      ? 'var(--loupe-full-h)'
+      : size === 'compact'
+        ? 'var(--loupe-compact-h)'
+        : 'var(--loupe-mini-h)';
+
   return (
     <svg
-      width={dims.w}
-      height={dims.h}
+      style={{ width: widthVar, height: heightVar, flexShrink: 0 }}
       viewBox="0 0 46 68"
       className={className}
       aria-hidden="true"
