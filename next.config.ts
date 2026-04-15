@@ -26,6 +26,26 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   trailingSlash: false,
   poweredByHeader: false,
+  // Root redirect: when the Lens project is hit directly at its raw
+  // Vercel URL (during initial deployment testing, before cramly.study
+  // is wired up), a visit to '/' would otherwise 404 because basePath
+  // claims everything under '/lens'. Redirect '/' to '/lens' so the
+  // preview URL is usable. basePath: false keeps the source literal
+  // at the server root instead of being auto-prefixed with '/lens'.
+  //
+  // This has no effect in production through the cramly.study rewrite:
+  // that rewrite only forwards '/lens/*' paths, so nothing on the Lens
+  // project ever receives a bare '/' request from the public origin.
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: BASE_PATH,
+        basePath: false,
+        permanent: false,
+      },
+    ];
+  },
   experimental: {
     // nothing yet
   },
