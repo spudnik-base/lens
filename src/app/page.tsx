@@ -1,47 +1,33 @@
 import Link from 'next/link';
 import { PageFrame } from '@/components/layout/PageFrame';
 import { Ornament } from '@/components/field/Ornament';
-import { getSubject, DEFAULT_SUBJECT_ID } from '@/lib/content';
-import { HomeProgress } from './_home/HomeProgress';
+import { Loupe } from '@/components/field/Loupe';
+import { SUBJECTS } from '@/lib/content';
+import { SubjectProgress } from './_picker/SubjectProgress';
 
-// Home, "inside cover" of the journal. Section 7.1.
-//
-// Intentionally static on the server. HomeProgress is the one client
-// island on this screen: it reads localStorage to show
-// how many lenses have been examined, so students see at a glance
-// where they are in the deck and can pick Study to continue from the
-// first unstudied card.
-
-export default function HomePage() {
-  const subject = getSubject(DEFAULT_SUBJECT_ID);
-  if (!subject) {
-    // Build-time guarantee, the content registry always has biology.
-    throw new Error('Missing biology subject');
-  }
-  const totalCards = subject.cards.length;
-
+export default function PickerPage() {
   return (
     <PageFrame>
-      {/* Title plate --------------------------------------------------- */}
       <header className="pt-6 pb-3 text-center">
-        <div className="marg mb-3">IB BIOLOGY</div>
-
-        <h1
-          className="editorial"
-          style={{ fontSize: 'var(--fs-xxl)', lineHeight: 1, letterSpacing: '0.005em' }}
-        >
-          Lens
-        </h1>
+        <div className="flex items-center justify-center gap-3">
+          <Loupe size="full" />
+          <h1
+            className="editorial"
+            style={{ fontSize: 'var(--fs-xxl)', lineHeight: 1, letterSpacing: '0.005em' }}
+          >
+            Lens
+          </h1>
+        </div>
 
         <p
           className="editorial mt-3 px-4"
           style={{
-            fontSize: 'var(--fs-md)',
+            fontSize: 'var(--fs-sm)',
             lineHeight: 1.45,
             color: 'var(--body-subtle)',
           }}
         >
-          A Cramly study guide to the 32&nbsp;linking&nbsp;questions
+          Cramly by Free.Period
         </p>
 
         <div className="mt-3 flex justify-center">
@@ -51,35 +37,34 @@ export default function HomePage() {
 
       <div className="rule my-5" />
 
-      {/* Contents page ------------------------------------------------- */}
-      <nav aria-label="modes" className="px-1">
-        <div className="marg mb-4">CONTENTS</div>
+      <div className="marg mb-4">CHOOSE A SUBJECT</div>
 
-        <ul className="flex flex-col gap-5">
-          <ModeRow
-            href="/study"
-            name="Study"
-            description="examine five specimens, find the impostor"
-          />
-          <ModeRow
-            href="/sort"
-            name="Lens Sort"
-            description="60-second sorting against a single lens"
-          />
-          <ModeRow
-            href="/browse"
-            name="Overview"
-            description="the full field guide"
-          />
-        </ul>
-      </nav>
+      <ul className="flex flex-col gap-4">
+        {SUBJECTS.map((subject) => (
+          <li key={subject.id}>
+            <Link
+              href={`/${subject.id}`}
+              className="specimen block no-underline"
+              style={{ color: 'var(--ink)' }}
+            >
+              <div className="marg mb-2">{subject.name.toUpperCase()}</div>
+              <div
+                className="editorial editorial--medium"
+                style={{ fontSize: 'var(--fs-lg)', lineHeight: 1.2 }}
+              >
+                {subject.questions.length} linking questions
+              </div>
+              <div className="mt-3">
+                <SubjectProgress
+                  subjectId={subject.id}
+                  totalCards={subject.cards.length}
+                />
+              </div>
+            </Link>
+          </li>
+        ))}
+      </ul>
 
-      {/* Progress bar, the hydrated client island --------------------- */}
-      <div className="mt-8">
-        <HomeProgress totalCards={totalCards} />
-      </div>
-
-      {/* Credit line --------------------------------------------------- */}
       <footer className="mt-12 mb-5 text-center">
         <div
           className="font-mono"
@@ -93,44 +78,5 @@ export default function HomePage() {
         </div>
       </footer>
     </PageFrame>
-  );
-}
-
-function ModeRow({
-  href,
-  name,
-  description,
-}: {
-  href: string;
-  name: string;
-  description: string;
-}) {
-  return (
-    <li>
-      <Link
-        href={href}
-        className="flex items-baseline no-underline group"
-        style={{ color: 'var(--ink)' }}
-      >
-        <span
-          className="editorial editorial--medium shrink-0"
-          style={{ fontSize: 'var(--fs-lg)' }}
-        >
-          {name}
-        </span>
-        <span className="leader" aria-hidden="true" />
-        <span
-          className="font-mono shrink-0 text-right"
-          style={{
-            fontSize: 'var(--fs-xs)',
-            color: 'var(--pencil)',
-            maxWidth: 240,
-            lineHeight: 1.45,
-          }}
-        >
-          {description}
-        </span>
-      </Link>
-    </li>
   );
 }

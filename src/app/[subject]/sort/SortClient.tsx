@@ -21,6 +21,7 @@ import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import type { Subject, Card } from '@/types/subject';
 import { shuffle } from '@/lib/shuffle';
 import { useClickSound } from '@/lib/click-sound';
+import { loadScores, recordScore, type SortScore } from '@/lib/sort-scores';
 import { Loupe } from '@/components/field/Loupe';
 import { Stamp } from '@/components/field/Stamp';
 import { SpecimenCard } from '@/components/field/SpecimenCard';
@@ -161,6 +162,7 @@ export function SortClient({ subject }: { subject: Subject }) {
   if (state.phase === 'idle') {
     return (
       <IdleScreen
+        subjectId={subject.id}
         onBegin={() => dispatch({ type: 'start', deck: buildDeck(subject) })}
       />
     );
@@ -169,6 +171,7 @@ export function SortClient({ subject }: { subject: Subject }) {
   if (state.phase === 'results') {
     return (
       <ResultsScreen
+        subjectId={subject.id}
         judgments={state.judgments}
         onAgain={() => dispatch({ type: 'again', deck: buildDeck(subject) })}
       />
@@ -181,33 +184,69 @@ export function SortClient({ subject }: { subject: Subject }) {
 // ---------------------------------------------------------------------
 // Idle
 // ---------------------------------------------------------------------
-function IdleScreen({ onBegin }: { onBegin: () => void }) {
+function IdleScreen({ subjectId, onBegin }: { subjectId: string; onBegin: () => void }) {
   const playClick = useClickSound();
+  const [scores, setScores] = useState<SortScore[]>([]);
+  useEffect(() => {
+    setScores(loadScores(subjectId));
+  }, [subjectId]);
+
   return (
     <div>
       <div className="flex items-center justify-between pb-4">
-        <Link href="/" className="marg" style={{ color: 'var(--pencil)' }}>
+        <Link href={`/${subjectId}`} className="marg" style={{ color: 'var(--pencil)' }}>
           &larr; HOME
         </Link>
         <div className="marg">LENS SORT</div>
         <div className="marg">60 SEC</div>
       </div>
 
-      <div className="pt-16 text-center">
-        <div className="flex justify-center mb-8">
+      <div className="pt-12 text-center">
+        <div className="flex justify-center mb-6">
           <Loupe size="full" />
         </div>
         <h1 className="editorial" style={{ fontSize: 'var(--fs-xl)', lineHeight: 1.1 }}>
           Lens Sort
         </h1>
         <p
-          className="editorial mt-5 px-6"
+          className="editorial mt-4 px-6"
           style={{ fontSize: 'var(--fs-md)', lineHeight: 1.5, color: 'var(--body-subtle)' }}
         >
           Sixty seconds. One lens at a time. For each specimen, decide
           whether it fits the lens or is an impostor.
         </p>
-        <div className="mt-12 flex justify-center">
+
+        {scores.length > 0 && (
+          <div className="mt-8">
+            <div className="marg mb-3">TOP SCORES</div>
+            <ol className="inline-flex flex-col gap-1.5">
+              {scores.map((s, i) => (
+                <li key={i} className="flex items-baseline gap-3">
+                  <span
+                    className="font-mono shrink-0"
+                    style={{ fontSize: 'var(--fs-xs)', color: 'var(--pencil)', width: 16 }}
+                  >
+                    {i + 1}.
+                  </span>
+                  <span
+                    className="editorial editorial--medium"
+                    style={{ fontSize: 'var(--fs-md)' }}
+                  >
+                    {s.correct}/{s.total}
+                  </span>
+                  <span
+                    className="font-mono"
+                    style={{ fontSize: 'var(--fs-xs)', color: 'var(--pencil)' }}
+                  >
+                    {formatDate(s.date)}
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+
+        <div className="mt-10 flex justify-center">
           <Stamp
             variant="ink"
             size={132}
@@ -386,9 +425,11 @@ function PlayingScreen({
 // Results
 // ---------------------------------------------------------------------
 function ResultsScreen({
+  subjectId,
   judgments,
   onAgain,
 }: {
+  subjectId: string;
   judgments: Judgment[];
   onAgain: () => void;
 }) {
@@ -399,10 +440,24 @@ function ResultsScreen({
   const wrong = judgments.filter((j) => !j.correct);
   const cleanSweep = total > 0 && wrong.length === 0;
 
+  // Record the score on first render (once per results screen).
+  const [topThree, setTopThree] = useState(false);
+  const didRecord = useRef(false);
+  useEffect(() => {
+    if (didRecord.current || total === 0) return;
+    didRecord.current = true;
+    const { isTopThree } = recordScore(subjectId, {
+      correct,
+      total,
+      date: new Date().toISOString().slice(0, 10),
+    });
+    setTopThree(isTopThree);
+  }, [subjectId, correct, total]);
+
   return (
     <div>
       <div className="flex items-center justify-between pb-4">
-        <Link href="/" className="marg" style={{ color: 'var(--pencil)' }}>
+        <Link href={`/${subjectId}`} className="marg" style={{ color: 'var(--pencil)' }}>
           &larr; HOME
         </Link>
         <div className="marg">ROUND COMPLETE</div>
@@ -434,6 +489,11 @@ function ResultsScreen({
             {correct}/{total}
           </div>
         </div>
+        {topThree && (
+          <div className="marg mt-3" style={{ color: 'var(--ink-green)' }}>
+            NEW TOP 3
+          </div>
+        )}
       </div>
 
       {/* Review list -------------------------------------------------- */}
@@ -495,7 +555,7 @@ function ResultsScreen({
           rotate={3}
           onClick={() => {
             playClick();
-            router.push('/');
+            router.push(`/${subjectId}`);
           }}
         >
           Home
@@ -508,4 +568,11 @@ function ResultsScreen({
 function truncate(s: string, max: number) {
   if (s.length <= max) return s;
   return s.slice(0, max - 1).trimEnd() + '\u2026';
+}
+
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+function formatDate(iso: string): string {
+  const d = new Date(iso + 'T00:00:00');
+  if (isNaN(d.getTime())) return iso;
+  return `${d.getDate()} ${MONTHS[d.getMonth()]}`;
 }

@@ -1,0 +1,1840 @@
+{
+  "id": "physics",
+  "name": "IB Physics",
+  "themes": [
+    {
+      "letter": "A",
+      "name": "Space, time & motion",
+      "questionIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "letter": "B",
+      "name": "Particulate nature of matter",
+      "questionIndices": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "letter": "C",
+      "name": "Wave behaviour",
+      "questionIndices": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    },
+    {
+      "letter": "D",
+      "name": "Fields",
+      "questionIndices": [
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "letter": "E",
+      "name": "Nuclear & quantum physics",
+      "questionIndices": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ]
+    }
+  ],
+  "questions": [
+    "Where does motion happen without any work being done?",
+    "Where does a force act perpendicular to motion, bending it into a curve?",
+    "Where does conservation of momentum shape what happens next?",
+    "Where do equations of motion predict what comes next from what's happening now?",
+    "Where does a rotating object behave like a translating one?",
+    "Where does the equilibrium of a system emerge from balanced opposites?",
+    "Where does a restoring force set the pace of a system?",
+    "Where do reference frames change the answer to 'what's happening'?",
+    "Where does air resistance change the story that idealized physics would tell?",
+    "Where does conservation of energy let you skip the kinematics?",
+    "Where does the behaviour of many particles give a system its macroscopic feel?",
+    "Where does a phase change absorb energy without a temperature change?",
+    "Where does the inverse-square law govern how something spreads out?",
+    "Where does the second law of thermodynamics set the direction of a process?",
+    "Where does the ideal gas model break down?",
+    "Where does thermal equilibrium determine the final state?",
+    "Where does a simplified model capture the essentials of a complex system?",
+    "Where does resistance turn ordered energy into disordered energy?",
+    "Where does superposition produce a pattern neither wave could make alone?",
+    "Where does a wave transfer energy without net movement of the medium?",
+    "Where does resonance amplify what a small driving force started?",
+    "Where does damping pull energy out of an oscillating system?",
+    "Where does a boundary change the wave that meets it?",
+    "Where does the Doppler effect reveal motion you couldn't otherwise see?",
+    "Where does wave behaviour make matter act unlike a particle?",
+    "Where does the wavelength of a wave decide what it can and cannot do?",
+    "Where does a standing wave pick out specific frequencies and reject others?",
+    "Where does a field let one object affect another across empty space?",
+    "Where does a potential tell you how much work it takes to move something?",
+    "Where do field lines reveal the geometry of a force?",
+    "Where does a charged particle's path bend because a field deflects it?",
+    "Where does induction turn motion into electricity?",
+    "Where does symmetry make a field easy to calculate?",
+    "Where does an equipotential surface cost no work to move along?",
+    "Where does the escape condition set a threshold on kinetic energy?",
+    "Where does a uniform field produce parabolic motion?",
+    "Where does an emission spectrum betray what something is made of?",
+    "Where does quantization force a system into discrete states?",
+    "Where does binding energy explain why a system holds together?",
+    "Where does mass itself become a source of energy?",
+    "Where does exponential decay describe how a population dwindles?",
+    "Where does a classical picture fail and a quantum one take over?",
+    "Where does wave-particle duality show light or matter acting as the other?",
+    "Where does equilibrium between gravity and pressure set a body's fate?",
+    "Where does a random process at the microscopic scale give a predictable rate?"
+  ],
+  "cards": [
+    {
+      "qIndex": 1,
+      "subId": "1a",
+      "options": [
+        {
+          "text": "Satellite in a circular orbit around Earth",
+          "why": "Gravity is always perpendicular to velocity. No work done, orbit persists."
+        },
+        {
+          "text": "Puck sliding on frictionless ice at constant velocity",
+          "why": "No force acts along the motion, so no work is done on the puck."
+        },
+        {
+          "text": "Box being pushed up a ramp",
+          "why": "The push acts along the displacement. Work is very much being done.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 1,
+      "subId": "1b",
+      "options": [
+        {
+          "text": "Mass on a string swinging in a horizontal circle",
+          "why": "Tension is radial, velocity is tangential. They're perpendicular, no work."
+        },
+        {
+          "text": "Charged particle circling in a uniform magnetic field",
+          "why": "Magnetic force is always perpendicular to velocity. Kinetic energy stays constant."
+        },
+        {
+          "text": "A falling apple accelerating toward the ground",
+          "why": "Gravity acts along the motion. Work is done, kinetic energy grows.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 2,
+      "subId": "2a",
+      "options": [
+        {
+          "text": "Moon held in orbit by Earth's gravity",
+          "why": "Gravity pulls inward perpendicular to the Moon's tangential velocity."
+        },
+        {
+          "text": "Electron in a cyclotron curving in a magnetic field",
+          "why": "Magnetic force acts perpendicular to velocity, forcing a circular path."
+        },
+        {
+          "text": "Skydiver falling at terminal velocity",
+          "why": "Forces are vertical and balanced. No curving, just straight-line motion.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 2,
+      "subId": "2b",
+      "options": [
+        {
+          "text": "Car rounding a banked curve at the design speed",
+          "why": "The normal force's horizontal component supplies the perpendicular centripetal force."
+        },
+        {
+          "text": "Conical pendulum sweeping a horizontal circle",
+          "why": "Tension's horizontal component pulls the bob toward the centre, perpendicular to motion."
+        },
+        {
+          "text": "Block on a spring oscillating back and forth",
+          "why": "The spring force is along the motion, not perpendicular. It's SHM, not circular.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 3,
+      "subId": "3a",
+      "options": [
+        {
+          "text": "Rocket expelling exhaust gases",
+          "why": "Momentum carried away by the exhaust equals momentum gained by the rocket."
+        },
+        {
+          "text": "Two billiard balls colliding on a table",
+          "why": "With no external horizontal force, total momentum before equals after."
+        },
+        {
+          "text": "A ball being lifted slowly by a hand",
+          "why": "An external force (the hand) acts on the system. Momentum isn't conserved.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 3,
+      "subId": "3b",
+      "options": [
+        {
+          "text": "Neutron-induced fission splitting a nucleus",
+          "why": "The fragments' momenta must sum to the incoming neutron's momentum."
+        },
+        {
+          "text": "A gun recoiling as a bullet leaves the barrel",
+          "why": "Equal and opposite momenta. The total starts at zero and stays there."
+        },
+        {
+          "text": "A pendulum swinging under gravity",
+          "why": "Gravity acts externally on the bob. Momentum changes throughout the swing.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 4,
+      "subId": "4a",
+      "options": [
+        {
+          "text": "Projectile launched at a known angle and speed",
+          "why": "Kinematic equations give position and velocity at any later time."
+        },
+        {
+          "text": "Car decelerating uniformly from a known initial speed",
+          "why": "Constant acceleration means v = u + at predicts motion exactly."
+        },
+        {
+          "text": "A dice roll",
+          "why": "Outcomes are random. No deterministic equation predicts the next value.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 4,
+      "subId": "4b",
+      "options": [
+        {
+          "text": "Ball dropped from a tower in vacuum",
+          "why": "g is constant, so equations of motion give landing time and speed."
+        },
+        {
+          "text": "Object on a frictionless incline of known angle",
+          "why": "Constant acceleration down the slope. Kinematics solves it completely."
+        },
+        {
+          "text": "Nuclear decay of a single unstable atom",
+          "why": "The moment of decay is fundamentally random. No equation predicts it.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 5,
+      "subId": "5a",
+      "options": [
+        {
+          "text": "Angular momentum Iω behaving like linear momentum mv",
+          "why": "Same conservation structure, one variable replaced by its rotational counterpart."
+        },
+        {
+          "text": "Rotational KE ½Iω² mirroring translational ½mv²",
+          "why": "Moment of inertia plays the role of mass; angular speed plays the role of velocity."
+        },
+        {
+          "text": "Magnetic flux through a coil",
+          "why": "A field-and-area quantity, not a rotational version of anything translational.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 5,
+      "subId": "5b",
+      "options": [
+        {
+          "text": "Torque τ = Iα as the rotational form of F = ma",
+          "why": "Rotational inertia times angular acceleration, structurally identical."
+        },
+        {
+          "text": "Angular impulse τΔt producing ΔL, like FΔt producing Δp",
+          "why": "Same impulse-momentum logic, rotational version."
+        },
+        {
+          "text": "Electric potential energy between two charges",
+          "why": "A field interaction, not an analogue of any rotational equation.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 6,
+      "subId": "6a",
+      "options": [
+        {
+          "text": "Star balancing gravity against radiation pressure",
+          "why": "Inward pull balanced by outward push keeps the star stable."
+        },
+        {
+          "text": "Object at terminal velocity in a fluid",
+          "why": "Weight balances drag. Net force zero, velocity constant."
+        },
+        {
+          "text": "A ball rolling down a frictionless slope",
+          "why": "Net force is nonzero. It's accelerating, not in equilibrium.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 6,
+      "subId": "6b",
+      "options": [
+        {
+          "text": "Book resting on a table",
+          "why": "Normal force balances gravity. Static equilibrium."
+        },
+        {
+          "text": "Charged particle suspended between plates where electric force equals gravity",
+          "why": "Two forces in opposition, perfectly cancelling."
+        },
+        {
+          "text": "An electron absorbing a photon and jumping to a higher level",
+          "why": "A quantum transition, not an equilibrium of opposing forces.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 7,
+      "subId": "7a",
+      "options": [
+        {
+          "text": "Mass on a spring oscillating horizontally",
+          "why": "Hooke's law gives F = -kx. The very definition of SHM."
+        },
+        {
+          "text": "Pendulum swinging at small angles",
+          "why": "Gravity's restoring component is approximately proportional to displacement."
+        },
+        {
+          "text": "Steady current through a resistor",
+          "why": "No oscillation, no restoring force. Just a constant flow.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 7,
+      "subId": "7b",
+      "options": [
+        {
+          "text": "Molecule vibrating in a diatomic bond",
+          "why": "The bond acts like a spring. Restoring force sets the vibration frequency."
+        },
+        {
+          "text": "LC circuit exchanging energy between capacitor and inductor",
+          "why": "A voltage-current analogue of mass-spring oscillation."
+        },
+        {
+          "text": "A satellite in geostationary orbit",
+          "why": "Circular motion under gravity. Not an oscillation about equilibrium.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 8,
+      "subId": "8a",
+      "options": [
+        {
+          "text": "Time dilation between a fast-moving clock and a stationary one",
+          "why": "Observers in different frames measure different elapsed times."
+        },
+        {
+          "text": "A ball appearing to curve for someone on a spinning merry-go-round",
+          "why": "Non-inertial frame introduces apparent forces the ground observer doesn't see."
+        },
+        {
+          "text": "Charge of an electron measured in any lab",
+          "why": "Invariant. The same value in every frame.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 8,
+      "subId": "8b",
+      "options": [
+        {
+          "text": "Simultaneity of two events depending on observer motion",
+          "why": "Two events simultaneous in one frame aren't in another moving one."
+        },
+        {
+          "text": "Length contraction of a rod moving at relativistic speed",
+          "why": "The rod's length depends on who's measuring it."
+        },
+        {
+          "text": "Mass of a proton at rest",
+          "why": "A rest-frame invariant. Doesn't change with viewpoint.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 9,
+      "subId": "9a",
+      "options": [
+        {
+          "text": "Feather and coin falling in air reaching different speeds",
+          "why": "Drag dominates the feather; in vacuum they'd fall identically."
+        },
+        {
+          "text": "Skydiver reaching terminal velocity rather than accelerating forever",
+          "why": "Drag grows with speed until it cancels gravity."
+        },
+        {
+          "text": "Projectile launched on the Moon",
+          "why": "Almost no atmosphere. Idealized physics applies with no drag correction.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 9,
+      "subId": "9b",
+      "options": [
+        {
+          "text": "Parachute slowing a descent",
+          "why": "The whole point of the parachute is to maximize drag."
+        },
+        {
+          "text": "Low-orbit satellite gradually losing altitude",
+          "why": "Residual atmosphere drags energy out, orbit decays."
+        },
+        {
+          "text": "Billiard ball collision on a polished table",
+          "why": "Drag is negligible on the timescale of the collision. Idealized physics works.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 10,
+      "subId": "10a",
+      "options": [
+        {
+          "text": "Finding the landing speed of a dropped object from its height",
+          "why": "½mv² = mgh skips the need to track time at all."
+        },
+        {
+          "text": "Pendulum's max speed from its release height",
+          "why": "All PE at the top becomes KE at the bottom. One equation, no kinematics."
+        },
+        {
+          "text": "Finding the time for a ball to fall a given distance",
+          "why": "Energy conservation gives speed but not time. You need kinematics for time.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 10,
+      "subId": "10b",
+      "options": [
+        {
+          "text": "Roller coaster speed at the bottom of a hill",
+          "why": "Just compare gravitational PE lost to KE gained. Fast and painless."
+        },
+        {
+          "text": "Maximum compression of a spring stopping a moving block",
+          "why": "Set ½mv² equal to ½kx² and solve. No need to trace the block's path."
+        },
+        {
+          "text": "The distance a projectile travels horizontally before landing",
+          "why": "Range needs the time of flight, which energy methods alone don't give.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 11,
+      "subId": "11a",
+      "options": [
+        {
+          "text": "Pressure of a gas from countless molecular collisions",
+          "why": "Each collision is tiny; averaged over ~10²³, they produce steady pressure."
+        },
+        {
+          "text": "Temperature as the average kinetic energy of particles",
+          "why": "A macroscopic quantity emerging from microscopic motion."
+        },
+        {
+          "text": "The charge on a single electron",
+          "why": "A property of one particle, not an emergent ensemble behaviour.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 11,
+      "subId": "11b",
+      "options": [
+        {
+          "text": "Diffusion of a dye through water",
+          "why": "Random walks of individual molecules sum to smooth spreading."
+        },
+        {
+          "text": "Electrical resistance from electrons scattering off the lattice",
+          "why": "Microscopic scattering events averaged into a macroscopic resistance."
+        },
+        {
+          "text": "Planck's constant",
+          "why": "A fundamental constant, not an emergent property of many particles.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 12,
+      "subId": "12a",
+      "options": [
+        {
+          "text": "Ice melting to water at 0 °C",
+          "why": "Latent heat of fusion goes into breaking the lattice, not raising temperature."
+        },
+        {
+          "text": "Water boiling at 100 °C",
+          "why": "Latent heat of vaporization separates molecules; temperature stays put."
+        },
+        {
+          "text": "Heating a block of iron from 20 °C to 50 °C",
+          "why": "No phase change here. All heat goes into raising the temperature.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 12,
+      "subId": "12b",
+      "options": [
+        {
+          "text": "Dew forming on grass overnight",
+          "why": "Vapour releases latent heat as it condenses, but its temperature doesn't drop during the change."
+        },
+        {
+          "text": "Dry ice subliming into gas",
+          "why": "Solid CO₂ becomes gas at -78 °C. Heat absorbed, temperature constant through the change."
+        },
+        {
+          "text": "Warming soup on a stove",
+          "why": "Liquid staying liquid. No phase change, so temperature rises steadily.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 13,
+      "subId": "13a",
+      "options": [
+        {
+          "text": "Gravitational force between two point masses",
+          "why": "F ∝ 1/r². Newton's universal law."
+        },
+        {
+          "text": "Coulomb force between two point charges",
+          "why": "F ∝ 1/r². Coulomb's law shares the geometry."
+        },
+        {
+          "text": "Force on a stretched spring",
+          "why": "F ∝ x, a linear relationship. Nothing to do with inverse square.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 13,
+      "subId": "13b",
+      "options": [
+        {
+          "text": "Intensity of a point source of light",
+          "why": "Energy spreads over a sphere of area 4πr², so intensity ∝ 1/r²."
+        },
+        {
+          "text": "Sound intensity from a small loudspeaker in open space",
+          "why": "Same geometry as light. Energy distributed over expanding spheres."
+        },
+        {
+          "text": "Magnetic force between two long parallel current-carrying wires",
+          "why": "Force per unit length scales as 1/r, not 1/r². Different geometry.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 14,
+      "subId": "14a",
+      "options": [
+        {
+          "text": "Heat flowing from hot coffee to cool air, never the reverse",
+          "why": "Entropy of the universe increases when heat flows down a gradient."
+        },
+        {
+          "text": "A gas rushing to fill an evacuated chamber when a valve opens",
+          "why": "Free expansion raises entropy irreversibly."
+        },
+        {
+          "text": "A satellite in a circular orbit returning to the same point",
+          "why": "A reversible cyclic process. Entropy doesn't pick a direction here.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 14,
+      "subId": "14b",
+      "options": [
+        {
+          "text": "An ice cube melting in a warm drink",
+          "why": "Heat flows into the ice, raising total entropy. The process only runs one way."
+        },
+        {
+          "text": "A drop of ink spreading through water",
+          "why": "Mixing is overwhelmingly more probable than unmixing."
+        },
+        {
+          "text": "A pendulum swinging in perfect vacuum with no friction",
+          "why": "Idealized reversible motion. No preferred time direction.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 15,
+      "subId": "15a",
+      "options": [
+        {
+          "text": "Gas at very low temperature near liquefaction",
+          "why": "Intermolecular forces matter now; ideal-gas assumption fails."
+        },
+        {
+          "text": "Gas under very high pressure where molecular volume matters",
+          "why": "Finite molecular size breaks the point-particle assumption."
+        },
+        {
+          "text": "Dilute helium near room temperature and pressure",
+          "why": "Precisely where the ideal gas law works best. No breakdown.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 15,
+      "subId": "15b",
+      "options": [
+        {
+          "text": "Water vapour on the verge of condensing",
+          "why": "Attractive forces between polar molecules become significant."
+        },
+        {
+          "text": "A gas compressed to liquid-like densities",
+          "why": "Molecules can no longer be treated as non-interacting points."
+        },
+        {
+          "text": "Air at sea level at 20 °C",
+          "why": "Standard conditions. Ideal gas law predicts PV = nRT beautifully.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 16,
+      "subId": "16a",
+      "options": [
+        {
+          "text": "Hot metal block placed in cool water reaches a common temperature",
+          "why": "Heat flows until both have the same temperature."
+        },
+        {
+          "text": "A cup of coffee on the counter cooling to room temperature",
+          "why": "Equilibrium with surroundings sets the final value."
+        },
+        {
+          "text": "A battery driving current through a resistor",
+          "why": "A steady-state process with continuous energy input. Not thermal equilibrium.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 16,
+      "subId": "16b",
+      "options": [
+        {
+          "text": "Planet's surface temperature set by incoming and outgoing radiation balance",
+          "why": "Energy in equals energy out at equilibrium."
+        },
+        {
+          "text": "Two objects in contact eventually sharing one temperature",
+          "why": "The zeroth law in action. Thermal equilibrium defines temperature."
+        },
+        {
+          "text": "A falling object accelerating under gravity",
+          "why": "A dynamical process, not a thermal one.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 17,
+      "subId": "17a",
+      "options": [
+        {
+          "text": "Treating Earth as a point mass for orbital calculations",
+          "why": "Distance dwarfs Earth's size. The simplification barely loses anything."
+        },
+        {
+          "text": "Ideal gas law for air at standard conditions",
+          "why": "Ignoring intermolecular forces works brilliantly here."
+        },
+        {
+          "text": "Using quantum field theory to describe a falling apple",
+          "why": "Wildly over-complicated. Simplification is the opposite direction.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 17,
+      "subId": "17b",
+      "options": [
+        {
+          "text": "Modelling a star as a black body",
+          "why": "Real spectra have lines, but black-body captures total power and peak wavelength."
+        },
+        {
+          "text": "Massless, frictionless pulley in a textbook problem",
+          "why": "Strips away inessentials so the principle shines through."
+        },
+        {
+          "text": "A detailed atmospheric model with every chemical species tracked",
+          "why": "A complexification. The opposite of a simplification.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 18,
+      "subId": "18a",
+      "options": [
+        {
+          "text": "Current through a resistor heating a room heater",
+          "why": "Electrical energy becomes random thermal motion. Ordered to disordered."
+        },
+        {
+          "text": "Friction heating a sliding brake pad",
+          "why": "Kinetic energy of directed motion becomes heat in the pad."
+        },
+        {
+          "text": "A pendulum swinging in vacuum with no friction",
+          "why": "No dissipation, no disordering. Energy stays ordered as KE-PE exchange.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 18,
+      "subId": "18b",
+      "options": [
+        {
+          "text": "Air resistance slowing a falling parachutist",
+          "why": "Organized KE becomes heated air. Disordered thermal motion."
+        },
+        {
+          "text": "Viscous drag on a sphere falling through oil",
+          "why": "Ordered fall energy dissipated as heat in the fluid."
+        },
+        {
+          "text": "A photon travelling through vacuum",
+          "why": "No resistance, no dissipation. It just propagates.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 19,
+      "subId": "19a",
+      "options": [
+        {
+          "text": "Interference pattern from Young's double slits",
+          "why": "Two coherent waves overlap producing bright and dark fringes."
+        },
+        {
+          "text": "Beats heard between two close musical tones",
+          "why": "Sum and difference frequencies emerge from superposition."
+        },
+        {
+          "text": "Shadow cast by an opaque object",
+          "why": "Geometric optics. No superposition of waves, just blocked light.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 19,
+      "subId": "19b",
+      "options": [
+        {
+          "text": "Standing wave on a guitar string",
+          "why": "Two travelling waves going opposite ways superpose into nodes and antinodes."
+        },
+        {
+          "text": "Noise-cancelling headphones silencing engine hum",
+          "why": "Inverted sound wave adds destructively to the incoming noise."
+        },
+        {
+          "text": "Refraction of light entering water",
+          "why": "A single wave bending at a boundary. No superposition involved.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 20,
+      "subId": "20a",
+      "options": [
+        {
+          "text": "Sound wave carrying music across a room",
+          "why": "Air molecules oscillate in place; energy travels through."
+        },
+        {
+          "text": "Ocean wave energy reaching a distant shore",
+          "why": "Water circles in place while the waveform propagates."
+        },
+        {
+          "text": "A river flowing downhill",
+          "why": "The medium (water) itself moves. This is bulk transport, not a wave.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 20,
+      "subId": "20b",
+      "options": [
+        {
+          "text": "Seismic S-wave travelling through Earth's crust",
+          "why": "Rock oscillates transversely; energy moves outward from the quake."
+        },
+        {
+          "text": "Light from the Sun reaching Earth",
+          "why": "No medium even required. The EM wave carries energy across the void."
+        },
+        {
+          "text": "A conveyor belt carrying packages",
+          "why": "Material translation, not a wave. The belt itself goes somewhere.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 21,
+      "subId": "21a",
+      "options": [
+        {
+          "text": "Wine glass shattering at a singer's specific pitch",
+          "why": "Driving frequency matches the glass's natural frequency. Amplitude grows."
+        },
+        {
+          "text": "Tacoma Narrows bridge oscillating wildly in moderate wind",
+          "why": "Wind's shedding frequency hit a structural resonance."
+        },
+        {
+          "text": "Glass warming slowly in sunlight",
+          "why": "Steady heating, no oscillating driver. Nothing resonant about it.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 21,
+      "subId": "21b",
+      "options": [
+        {
+          "text": "Tuning a radio to pick out one station among many",
+          "why": "LC circuit resonates at one frequency; others pass unamplified."
+        },
+        {
+          "text": "A child on a swing going higher with timed pushes",
+          "why": "Pushes at the natural frequency build amplitude each cycle."
+        },
+        {
+          "text": "A satellite in a stable orbit",
+          "why": "Orbital dynamics, not resonance. No driving force at a natural frequency.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 22,
+      "subId": "22a",
+      "options": [
+        {
+          "text": "Car suspension using shock absorbers",
+          "why": "Viscous fluid damps wheel oscillations so the ride doesn't bounce."
+        },
+        {
+          "text": "Pendulum in air slowly losing amplitude",
+          "why": "Air drag dissipates KE each swing."
+        },
+        {
+          "text": "Standing wave on an ideal lossless string",
+          "why": "No dissipation. Amplitude could persist indefinitely.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 22,
+      "subId": "22b",
+      "options": [
+        {
+          "text": "Ripples on a pond dying away",
+          "why": "Viscosity and internal friction drain the wave energy."
+        },
+        {
+          "text": "Electrical resistance in an RLC circuit reducing oscillation amplitude",
+          "why": "Joule heating dissipates electromagnetic oscillations."
+        },
+        {
+          "text": "An idealized frictionless mass-on-spring oscillating forever",
+          "why": "No dissipation by assumption. Amplitude never decays.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 23,
+      "subId": "23a",
+      "options": [
+        {
+          "text": "Light refracting as it enters glass",
+          "why": "Changed speed at the boundary bends the ray."
+        },
+        {
+          "text": "Wave partially reflected at a rope tied to a denser rope",
+          "why": "Impedance mismatch sends some energy back."
+        },
+        {
+          "text": "Wave propagating through uniform air",
+          "why": "No boundary, no change. It just travels.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 23,
+      "subId": "23b",
+      "options": [
+        {
+          "text": "Total internal reflection inside an optical fibre",
+          "why": "Beyond the critical angle, the boundary turns the wave back entirely."
+        },
+        {
+          "text": "Sound echoing off a cliff wall",
+          "why": "The boundary reflects the wave with little energy lost."
+        },
+        {
+          "text": "A steady laser beam in vacuum",
+          "why": "Nothing for the wave to encounter. No boundary effect at all.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 24,
+      "subId": "24a",
+      "options": [
+        {
+          "text": "Redshifted light from a receding galaxy",
+          "why": "Wavelength stretches. And astronomers read off the recession speed."
+        },
+        {
+          "text": "Ambulance siren pitch dropping as it passes",
+          "why": "Frequency shift tells you the source was moving relative to you."
+        },
+        {
+          "text": "A stationary tuning fork at concert A",
+          "why": "No relative motion. The Doppler effect has nothing to reveal.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 24,
+      "subId": "24b",
+      "options": [
+        {
+          "text": "Radar gun measuring car speed",
+          "why": "Reflected microwave frequency shift gives the speed directly."
+        },
+        {
+          "text": "Doppler ultrasound imaging blood flow",
+          "why": "Scattered ultrasound frequency shift maps blood velocity in vessels."
+        },
+        {
+          "text": "A hot object emitting thermal radiation",
+          "why": "Black-body spectrum depends on temperature, not motion.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 25,
+      "subId": "25a",
+      "options": [
+        {
+          "text": "Electron diffraction through a crystal lattice",
+          "why": "Electrons produce diffraction patterns. Pure particle pictures can't explain that."
+        },
+        {
+          "text": "De Broglie wavelength of a neutron used in scattering experiments",
+          "why": "Matter has an associated wavelength that governs its scattering."
+        },
+        {
+          "text": "Billiard balls colliding on a table",
+          "why": "Classical mechanics. No wave phenomena show up at this scale.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 25,
+      "subId": "25b",
+      "options": [
+        {
+          "text": "Interference pattern from a double-slit experiment with electrons",
+          "why": "Each electron interferes with itself. Unambiguous wave behaviour."
+        },
+        {
+          "text": "Quantum tunnelling of alpha particles out of a nucleus",
+          "why": "Particles leak through classically forbidden barriers because they're also waves."
+        },
+        {
+          "text": "A falling apple's trajectory",
+          "why": "Classical, deterministic motion. No need for wave behaviour.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 26,
+      "subId": "26a",
+      "options": [
+        {
+          "text": "Using X-rays to image crystal atomic structure",
+          "why": "X-ray wavelengths match atomic spacings. Diffraction reveals positions."
+        },
+        {
+          "text": "Ultrasound imaging of a fetus",
+          "why": "Wavelength sets the minimum resolvable feature size."
+        },
+        {
+          "text": "A copper wire conducting DC current",
+          "why": "No wave resolution limit involved. Just electron drift.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 26,
+      "subId": "26b",
+      "options": [
+        {
+          "text": "Radio waves passing through walls that block light",
+          "why": "Long wavelengths diffract around obstacles where visible light doesn't."
+        },
+        {
+          "text": "Electron microscopes resolving features optical microscopes cannot",
+          "why": "Electron de Broglie wavelengths are far shorter than visible light."
+        },
+        {
+          "text": "Friction slowing a sliding block",
+          "why": "Mechanical dissipation. Nothing to do with wavelength.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 27,
+      "subId": "27a",
+      "options": [
+        {
+          "text": "Guitar string vibrating only at its harmonics",
+          "why": "Boundary conditions allow only wavelengths that fit the string length."
+        },
+        {
+          "text": "Organ pipe resonating at particular notes",
+          "why": "Air column's length selects a discrete set of allowed frequencies."
+        },
+        {
+          "text": "Ripples spreading from a stone dropped in a pond",
+          "why": "A travelling wave, not a standing one. No frequency selection.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 27,
+      "subId": "27b",
+      "options": [
+        {
+          "text": "Microwave oven hot spots at fixed positions",
+          "why": "Standing wave between the walls creates fixed nodes and antinodes."
+        },
+        {
+          "text": "Electron in a hydrogen atom restricted to discrete energy levels",
+          "why": "Quantum standing-wave condition picks out the allowed orbitals."
+        },
+        {
+          "text": "Sunlight spreading through a prism into a continuous spectrum",
+          "why": "Continuous range of frequencies. No selection, no standing wave.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 28,
+      "subId": "28a",
+      "options": [
+        {
+          "text": "Earth pulling the Moon across empty space",
+          "why": "Gravitational field carries the influence without contact."
+        },
+        {
+          "text": "Static charge attracting nearby bits of paper",
+          "why": "Electric field extends into the surrounding space."
+        },
+        {
+          "text": "Two gears meshed together transmitting torque",
+          "why": "Direct physical contact. No field involved.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 28,
+      "subId": "28b",
+      "options": [
+        {
+          "text": "Compass needle aligning with Earth's magnetic field",
+          "why": "The needle feels the field from thousands of kilometres away."
+        },
+        {
+          "text": "Sun's radiation warming a planet across tens of millions of km",
+          "why": "EM field (waves) carries energy across the vacuum."
+        },
+        {
+          "text": "A hammer striking a nail",
+          "why": "Contact force, right at the interface. Not a field-mediated interaction.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 29,
+      "subId": "29a",
+      "options": [
+        {
+          "text": "Voltage as work done per unit charge",
+          "why": "Electric potential tells you the energy cost to move a charge."
+        },
+        {
+          "text": "Gravitational potential as work per unit mass at a point",
+          "why": "Mirrors the electric case exactly. Work per unit."
+        },
+        {
+          "text": "Temperature of a gas",
+          "why": "A measure of average kinetic energy, not work per unit of anything moved.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 29,
+      "subId": "29b",
+      "options": [
+        {
+          "text": "Height above ground as a proxy for gravitational potential",
+          "why": "Near Earth's surface, gh = PE per unit mass."
+        },
+        {
+          "text": "Electric potential difference between capacitor plates",
+          "why": "Work per unit charge to cross from one plate to the other."
+        },
+        {
+          "text": "Frequency of a photon",
+          "why": "Relates to energy per photon, not work done on something to move it.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 30,
+      "subId": "30a",
+      "options": [
+        {
+          "text": "Iron filings aligning around a bar magnet",
+          "why": "Filings trace out the field direction at each point visually."
+        },
+        {
+          "text": "Radial field lines around a single point charge",
+          "why": "Outward arrows capture the inverse-square symmetric field."
+        },
+        {
+          "text": "A spectrum of light from a hot filament",
+          "why": "Shows wavelength distribution, not field direction in space.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 30,
+      "subId": "30b",
+      "options": [
+        {
+          "text": "Parallel field lines between capacitor plates",
+          "why": "Uniform field drawn as uniformly spaced parallel lines."
+        },
+        {
+          "text": "Curved field lines around a bent current-carrying wire",
+          "why": "Loops follow the right-hand rule around the wire."
+        },
+        {
+          "text": "A wavefront diagram of a sound pulse",
+          "why": "Shows crests in space, not the direction of a force.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 31,
+      "subId": "31a",
+      "options": [
+        {
+          "text": "Electron curving in a cathode-ray tube deflection coil",
+          "why": "Magnetic force perpendicular to velocity bends the beam."
+        },
+        {
+          "text": "Cosmic ray spiralling along Earth's magnetic field lines",
+          "why": "Lorentz force locks motion onto helical paths."
+        },
+        {
+          "text": "A cricket ball curving through air",
+          "why": "The deflection is aerodynamic, not due to any electromagnetic field.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 31,
+      "subId": "31b",
+      "options": [
+        {
+          "text": "Positrons curving oppositely to electrons in a bubble chamber",
+          "why": "Opposite charges bend opposite ways in the same magnetic field."
+        },
+        {
+          "text": "Electrons focused by an electrostatic lens in a microscope",
+          "why": "Shaped electric fields redirect the beam."
+        },
+        {
+          "text": "A pendulum bob swinging under gravity",
+          "why": "A neutral object in a gravitational field. No electromagnetic deflection.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 32,
+      "subId": "32a",
+      "options": [
+        {
+          "text": "Hydroelectric generator producing current from a spinning turbine",
+          "why": "Rotating coil in a magnetic field induces an EMF."
+        },
+        {
+          "text": "Bicycle dynamo lighting a lamp",
+          "why": "Wheel rotation drives a magnet past a coil, inducing current."
+        },
+        {
+          "text": "A solar panel powering a calculator",
+          "why": "Photoelectric effect, not induction. No moving parts required.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 32,
+      "subId": "32b",
+      "options": [
+        {
+          "text": "Moving a magnet through a coil lighting an LED",
+          "why": "Changing flux through the loop induces EMF directly."
+        },
+        {
+          "text": "Electromagnetic brakes slowing a train without contact",
+          "why": "Conductor moving in a field induces currents that oppose motion."
+        },
+        {
+          "text": "A battery driving current through a circuit",
+          "why": "Chemistry, not motion, is the energy source.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 33,
+      "subId": "33a",
+      "options": [
+        {
+          "text": "Field around a uniform sphere treated as from a point mass at the centre",
+          "why": "Spherical symmetry collapses the calculation."
+        },
+        {
+          "text": "Uniform field between large parallel plates ignoring edges",
+          "why": "Planar symmetry gives a constant E everywhere between."
+        },
+        {
+          "text": "Field around an irregularly-shaped lump of charge",
+          "why": "No symmetry to exploit. The calculation is messy.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 33,
+      "subId": "33b",
+      "options": [
+        {
+          "text": "Magnetic field inside a long solenoid assumed uniform",
+          "why": "Cylindrical symmetry plus length gives a clean result."
+        },
+        {
+          "text": "Field of an infinite line charge depending only on distance",
+          "why": "Axial symmetry reduces the problem to one variable."
+        },
+        {
+          "text": "Field in a crumpled piece of conducting foil with random charge spots",
+          "why": "Deliberately asymmetric. No simplification available.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 34,
+      "subId": "34a",
+      "options": [
+        {
+          "text": "Moving a charge along a conductor's surface",
+          "why": "A conductor in equilibrium is all at one potential. No work needed."
+        },
+        {
+          "text": "Walking horizontally around a hillside at constant altitude",
+          "why": "Gravitational equipotential. Height (and PE) doesn't change."
+        },
+        {
+          "text": "Lifting a book from the floor to a shelf",
+          "why": "Height changes. You're crossing equipotentials, doing work.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 34,
+      "subId": "34b",
+      "options": [
+        {
+          "text": "Orbiting at fixed altitude around a spherical planet",
+          "why": "A circle at constant r is a gravitational equipotential."
+        },
+        {
+          "text": "Moving a test charge around a field line perpendicular to itself",
+          "why": "By definition, perpendicular to the force means no work."
+        },
+        {
+          "text": "Pushing a box along a rough horizontal floor",
+          "why": "Friction does work even though gravity doesn't. Not work-free motion.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 35,
+      "subId": "35a",
+      "options": [
+        {
+          "text": "Spacecraft reaching Earth escape velocity of ~11.2 km/s",
+          "why": "Below this, it falls back; above, it can leave Earth's well."
+        },
+        {
+          "text": "Gas molecules moving fast enough to leave a planet's atmosphere",
+          "why": "Molecules with speeds above escape velocity don't come back."
+        },
+        {
+          "text": "A satellite in low-Earth orbit",
+          "why": "Bound. It's orbiting, not escaping.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 35,
+      "subId": "35b",
+      "options": [
+        {
+          "text": "Black hole's event horizon marking the escape threshold for light",
+          "why": "Even light needs escape velocity. And at the horizon, it exactly fails."
+        },
+        {
+          "text": "Alpha particle needing to tunnel out of the nuclear potential well",
+          "why": "Insufficient classical energy. Only quantum tunnelling gets it out."
+        },
+        {
+          "text": "A pendulum oscillating within its well",
+          "why": "Bound motion by definition. Escape is not in play.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 36,
+      "subId": "36a",
+      "options": [
+        {
+          "text": "Projectile launched at an angle across Earth's surface",
+          "why": "Uniform g bends the path into a parabola."
+        },
+        {
+          "text": "Electron deflected as it crosses the gap between parallel plates",
+          "why": "Uniform E produces parabolic motion, like gravity."
+        },
+        {
+          "text": "Satellite in a circular orbit far from Earth",
+          "why": "Non-uniform (radial) field. Path is elliptical/circular, not parabolic.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 36,
+      "subId": "36b",
+      "options": [
+        {
+          "text": "Water arc from a garden hose in no wind",
+          "why": "Uniform gravity plus initial velocity = parabolic stream."
+        },
+        {
+          "text": "Cannonball fired over a flat field",
+          "why": "Near-surface uniform gravity produces the classic parabola."
+        },
+        {
+          "text": "Charged particle spiralling along a magnetic field line",
+          "why": "Helical path from a magnetic field. Not a parabola at all.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 37,
+      "subId": "37a",
+      "options": [
+        {
+          "text": "Sodium street lamps emitting a characteristic yellow",
+          "why": "Sodium's specific atomic transitions produce the 589 nm line."
+        },
+        {
+          "text": "Helium discovered in the Sun before being found on Earth",
+          "why": "Solar spectrum lines identified an element nobody had isolated yet."
+        },
+        {
+          "text": "A hot glowing iron poker appearing red",
+          "why": "Continuous black-body spectrum. Tells you temperature, not composition.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 37,
+      "subId": "37b",
+      "options": [
+        {
+          "text": "Hydrogen's Balmer series fingerprinting it in stellar atmospheres",
+          "why": "A specific line pattern unique to atomic hydrogen."
+        },
+        {
+          "text": "Mercury vapour lamp's distinct blue-green line spectrum",
+          "why": "Mercury atoms produce a signature set of wavelengths."
+        },
+        {
+          "text": "Light from an incandescent bulb",
+          "why": "Thermal continuum. No discrete lines identifying any particular element.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 38,
+      "subId": "38a",
+      "options": [
+        {
+          "text": "Electron in a hydrogen atom sitting at discrete energy levels",
+          "why": "Angular momentum quantization forbids in-between states."
+        },
+        {
+          "text": "Photons carrying energy only in multiples of hf",
+          "why": "Light's energy comes in packets, not continuous amounts."
+        },
+        {
+          "text": "A ball rolling continuously down a slope",
+          "why": "Classical motion. The ball takes every intermediate position.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 38,
+      "subId": "38b",
+      "options": [
+        {
+          "text": "Nuclear energy levels revealed by discrete gamma-ray lines",
+          "why": "Nuclei have quantized states just like atoms do."
+        },
+        {
+          "text": "Vibrational modes of a diatomic molecule taking discrete values",
+          "why": "Molecular oscillation energies come in steps of ℏω."
+        },
+        {
+          "text": "Rain filling a bucket smoothly over time",
+          "why": "Continuous macroscopic process. No quantization visible.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 39,
+      "subId": "39a",
+      "options": [
+        {
+          "text": "Iron-56 sitting near the top of the binding energy per nucleon curve",
+          "why": "Highest binding per nucleon means most stable against decay."
+        },
+        {
+          "text": "A deuteron held together by 2.2 MeV of binding energy",
+          "why": "The system's mass is less than the parts' sum. Energy keeps them bound."
+        },
+        {
+          "text": "A baseball held in a catcher's glove",
+          "why": "Mechanical grip, not a mass-energy binding.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 39,
+      "subId": "39b",
+      "options": [
+        {
+          "text": "Electron bound to a proton in the hydrogen atom by 13.6 eV",
+          "why": "Ionization requires putting that energy back in."
+        },
+        {
+          "text": "Molecular bond energy in a water molecule",
+          "why": "Breaking the bond takes the same energy that formed it."
+        },
+        {
+          "text": "Static friction preventing a book from sliding",
+          "why": "A contact force threshold, not a binding energy in the nuclear/atomic sense.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 40,
+      "subId": "40a",
+      "options": [
+        {
+          "text": "Nuclear fission releasing energy as fragments' masses sum to less than parent's",
+          "why": "Mass defect × c² appears as kinetic energy of products."
+        },
+        {
+          "text": "Sun converting hydrogen to helium, losing mass as radiation",
+          "why": "4 × ¹H mass exceeds ⁴He mass. Difference is E = mc² released."
+        },
+        {
+          "text": "Kinetic energy of a fast-moving car",
+          "why": "Mechanical energy from work done, not from mass conversion.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 40,
+      "subId": "40b",
+      "options": [
+        {
+          "text": "Electron-positron annihilation producing two gamma photons",
+          "why": "Total rest mass vanishes entirely into 2 × 511 keV of photons."
+        },
+        {
+          "text": "Pair production from a high-energy photon near a nucleus",
+          "why": "Photon energy becomes the rest mass of a new electron-positron pair."
+        },
+        {
+          "text": "Gas pressure on a piston doing work",
+          "why": "Thermodynamic work. No mass conversion involved.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 41,
+      "subId": "41a",
+      "options": [
+        {
+          "text": "Carbon-14 atoms in an old bone decaying by known half-life",
+          "why": "N = N₀e^(-λt) describes the dwindling count over millennia."
+        },
+        {
+          "text": "Charge on a capacitor discharging through a resistor",
+          "why": "Q(t) = Q₀e^(-t/RC). Same exponential shape."
+        },
+        {
+          "text": "Water level rising linearly in a bathtub with the tap on",
+          "why": "Linear growth, not exponential decay.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 41,
+      "subId": "41b",
+      "options": [
+        {
+          "text": "Activity of a radioactive sample falling by half each T₁/₂",
+          "why": "Classic exponential decay, with λ = ln2 / T₁/₂."
+        },
+        {
+          "text": "Light intensity in an absorbing medium decreasing with depth",
+          "why": "I = I₀e^(-μx). Beer-Lambert law, same exponential form."
+        },
+        {
+          "text": "Population of bacteria doubling every 20 minutes",
+          "why": "Exponential growth, not decay. Opposite sign in the exponent.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 42,
+      "subId": "42a",
+      "options": [
+        {
+          "text": "Photoelectric effect requiring a threshold frequency",
+          "why": "Classical waves predict any frequency works given enough intensity. It doesn't."
+        },
+        {
+          "text": "Stability of atoms defying classical orbital collapse",
+          "why": "Classical accelerating charges should radiate and spiral in; they don't."
+        },
+        {
+          "text": "A satellite's orbit computed with Newtonian gravity",
+          "why": "Classical mechanics works to many decimal places. No quantum needed.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 42,
+      "subId": "42b",
+      "options": [
+        {
+          "text": "Black-body spectrum avoiding the ultraviolet catastrophe",
+          "why": "Classical theory predicted infinite emission at short wavelengths. Quantization fixed it."
+        },
+        {
+          "text": "Tunnelling through barriers that classical particles couldn't cross",
+          "why": "Classically forbidden, quantumly routine."
+        },
+        {
+          "text": "A billiard-ball collision at ordinary speeds",
+          "why": "Classical momentum conservation handles it exactly.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 43,
+      "subId": "43a",
+      "options": [
+        {
+          "text": "Photons carrying momentum in Compton scattering",
+          "why": "Light interacts particle-like with electrons. Wavelength shifts measurably."
+        },
+        {
+          "text": "Electrons producing a diffraction pattern through a crystal",
+          "why": "Matter behaves as a wave to produce interference."
+        },
+        {
+          "text": "A rubber ball bouncing off a wall",
+          "why": "Both classical and only mechanical. Duality doesn't feature.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 43,
+      "subId": "43b",
+      "options": [
+        {
+          "text": "Photoelectrons released one at a time by individual photons",
+          "why": "Quantized particle-like energy delivery, not a continuous wave."
+        },
+        {
+          "text": "Neutrons used in diffraction experiments to probe crystal structure",
+          "why": "Neutrons have a de Broglie wavelength suitable for atomic spacings."
+        },
+        {
+          "text": "A sound wave travelling through air",
+          "why": "A pure wave phenomenon. No particle-like quantization observable here.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 44,
+      "subId": "44a",
+      "options": [
+        {
+          "text": "Main-sequence star balancing gravity with fusion-driven pressure",
+          "why": "Steady state for billions of years while hydrogen burns."
+        },
+        {
+          "text": "Earth's atmosphere settling into a pressure gradient",
+          "why": "Weight of air balanced by pressure below at every height."
+        },
+        {
+          "text": "A comet on a long elliptical orbit",
+          "why": "Not an equilibrium. Constantly changing distance and speed.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 44,
+      "subId": "44b",
+      "options": [
+        {
+          "text": "White dwarf held up by electron degeneracy pressure against gravity",
+          "why": "Quantum pressure, but the balance principle is the same."
+        },
+        {
+          "text": "Neutron star supported by neutron degeneracy pressure",
+          "why": "Extreme case. Nuclear-scale density holds up the gravitational crush."
+        },
+        {
+          "text": "An electron in a hydrogen atom",
+          "why": "Coulomb force, not gravity, is what matters; pressure isn't the counter.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 45,
+      "subId": "45a",
+      "options": [
+        {
+          "text": "Half-life of a radioactive isotope being highly reliable",
+          "why": "Individual decays are random, but the rate over many atoms is fixed."
+        },
+        {
+          "text": "Gas pressure being steady despite chaotic molecular collisions",
+          "why": "Huge numbers average out the randomness into a smooth value."
+        },
+        {
+          "text": "The outcome of a single coin flip",
+          "why": "A single random event. No averaging, no predictable rate emerges.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 45,
+      "subId": "45b",
+      "options": [
+        {
+          "text": "Diffusion producing reproducible concentration profiles",
+          "why": "Individual molecular random walks sum to a smooth, predictable spread."
+        },
+        {
+          "text": "Electric current flowing steadily through a wire",
+          "why": "Individual electron paths are random; the average drift is reliable."
+        },
+        {
+          "text": "A ball's trajectory in projectile motion",
+          "why": "Deterministic from the start. No randomness to average over.",
+          "impostor": true
+        }
+      ]
+    }
+  ]
+}

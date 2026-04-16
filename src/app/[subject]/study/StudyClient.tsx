@@ -151,7 +151,7 @@ export function StudyClient({
     >
       {/* Status bar */}
       <div className="flex items-center justify-between pb-4">
-        <Link href="/" className="marg" style={{ color: 'var(--pencil)' }}>
+        <Link href={`/${subject.id}`} className="marg" style={{ color: 'var(--pencil)' }}>
           &larr; HOME
         </Link>
         <div className="marg">STUDY MODE</div>
