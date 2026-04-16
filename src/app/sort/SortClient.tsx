@@ -307,7 +307,7 @@ function PlayingScreen({
         <Loupe size="full" />
         <p
           className="editorial"
-          style={{ fontSize: 'var(--fs-md)', lineHeight: 1.3, paddingTop: 6 }}
+          style={{ fontSize: 'var(--fs-lg)', lineHeight: 1.3, paddingTop: 6 }}
         >
           {question}
         </p>
