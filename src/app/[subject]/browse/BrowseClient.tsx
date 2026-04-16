@@ -40,7 +40,7 @@ export function BrowseClient({ subject }: { subject: Subject }) {
     <div>
       {/* Status bar */}
       <div className="flex items-center justify-between pb-4">
-        <Link href="/" className="marg" style={{ color: 'var(--pencil)' }}>
+        <Link href={`/${subject.id}`} className="marg" style={{ color: 'var(--pencil)' }}>
           &larr; HOME
         </Link>
         <div className="marg">OVERVIEW</div>
@@ -103,7 +103,7 @@ export function BrowseClient({ subject }: { subject: Subject }) {
                 return (
                   <Link
                     key={card.subId}
-                    href={`/study?q=${card.qIndex}`}
+                    href={`/${subject.id}/study?q=${card.qIndex}`}
                     className="flex items-center gap-3 py-1.5"
                     style={{ color: 'var(--ink)' }}
                   >

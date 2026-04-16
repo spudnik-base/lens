@@ -161,6 +161,7 @@ export function SortClient({ subject }: { subject: Subject }) {
   if (state.phase === 'idle') {
     return (
       <IdleScreen
+        subjectId={subject.id}
         onBegin={() => dispatch({ type: 'start', deck: buildDeck(subject) })}
       />
     );
@@ -169,6 +170,7 @@ export function SortClient({ subject }: { subject: Subject }) {
   if (state.phase === 'results') {
     return (
       <ResultsScreen
+        subjectId={subject.id}
         judgments={state.judgments}
         onAgain={() => dispatch({ type: 'again', deck: buildDeck(subject) })}
       />
@@ -181,12 +183,12 @@ export function SortClient({ subject }: { subject: Subject }) {
 // ---------------------------------------------------------------------
 // Idle
 // ---------------------------------------------------------------------
-function IdleScreen({ onBegin }: { onBegin: () => void }) {
+function IdleScreen({ subjectId, onBegin }: { subjectId: string; onBegin: () => void }) {
   const playClick = useClickSound();
   return (
     <div>
       <div className="flex items-center justify-between pb-4">
-        <Link href="/" className="marg" style={{ color: 'var(--pencil)' }}>
+        <Link href={`/${subjectId}`} className="marg" style={{ color: 'var(--pencil)' }}>
           &larr; HOME
         </Link>
         <div className="marg">LENS SORT</div>
@@ -386,9 +388,11 @@ function PlayingScreen({
 // Results
 // ---------------------------------------------------------------------
 function ResultsScreen({
+  subjectId,
   judgments,
   onAgain,
 }: {
+  subjectId: string;
   judgments: Judgment[];
   onAgain: () => void;
 }) {
@@ -402,7 +406,7 @@ function ResultsScreen({
   return (
     <div>
       <div className="flex items-center justify-between pb-4">
-        <Link href="/" className="marg" style={{ color: 'var(--pencil)' }}>
+        <Link href={`/${subjectId}`} className="marg" style={{ color: 'var(--pencil)' }}>
           &larr; HOME
         </Link>
         <div className="marg">ROUND COMPLETE</div>
@@ -495,7 +499,7 @@ function ResultsScreen({
           rotate={3}
           onClick={() => {
             playClick();
-            router.push('/');
+            router.push(`/${subjectId}`);
           }}
         >
           Home
