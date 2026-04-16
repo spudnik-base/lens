@@ -23,8 +23,8 @@ export default function HomePage() {
   return (
     <PageFrame>
       {/* Title plate --------------------------------------------------- */}
-      <header className="pt-10 pb-6 text-center">
-        <div className="marg mb-7">IB BIOLOGY</div>
+      <header className="pt-6 pb-3 text-center">
+        <div className="marg mb-3">IB BIOLOGY</div>
 
         <h1
           className="editorial"
@@ -34,7 +34,7 @@ export default function HomePage() {
         </h1>
 
         <p
-          className="editorial mt-6 px-4"
+          className="editorial mt-3 px-4"
           style={{
             fontSize: 'var(--fs-md)',
             lineHeight: 1.45,
@@ -44,22 +44,22 @@ export default function HomePage() {
           A Cramly study guide to the 32&nbsp;linking&nbsp;questions
         </p>
 
-        <div className="mt-5 flex justify-center">
+        <div className="mt-3 flex justify-center">
           <Ornament />
         </div>
       </header>
 
-      <div className="rule my-9" />
+      <div className="rule my-5" />
 
       {/* Contents page ------------------------------------------------- */}
       <nav aria-label="modes" className="px-1">
-        <div className="marg mb-6">CONTENTS</div>
+        <div className="marg mb-4">CONTENTS</div>
 
-        <ul className="flex flex-col gap-7">
+        <ul className="flex flex-col gap-5">
           <ModeRow
             href="/study"
             name="Study"
-            description="examine three specimens, find the impostor"
+            description="examine five specimens, find the impostor"
           />
           <ModeRow
             href="/sort"
@@ -75,12 +75,12 @@ export default function HomePage() {
       </nav>
 
       {/* Progress bar, the hydrated client island --------------------- */}
-      <div className="mt-12">
+      <div className="mt-8">
         <PencilProgressBar total={totalQuestions} label="LENSES EXAMINED" />
       </div>
 
       {/* Credit line --------------------------------------------------- */}
-      <footer className="mt-20 mb-5 text-center">
+      <footer className="mt-12 mb-5 text-center">
         <div
           className="font-mono"
           style={{
