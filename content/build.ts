@@ -50,6 +50,24 @@ function normalize(v: unknown): string {
   return s;
 }
 
+/**
+ * Convert chemical formula numbers to Unicode subscripts so "H2O"
+ * renders as "H₂O", "CO2" as "CO₂", etc. Matches an element symbol
+ * (uppercase letter, optional lowercase) immediately followed by
+ * digits. Applied to example text, whys, and linking questions.
+ */
+const SUB: Record<string, string> = {
+  '0': '\u2080', '1': '\u2081', '2': '\u2082', '3': '\u2083',
+  '4': '\u2084', '5': '\u2085', '6': '\u2086', '7': '\u2087',
+  '8': '\u2088', '9': '\u2089',
+};
+
+function subscriptFormulas(s: string): string {
+  return s.replace(/([A-Z][a-z]?)(\d+)/g, (_m, letters: string, digits: string) => {
+    return letters + digits.split('').map((d) => SUB[d] || d).join('');
+  });
+}
+
 function readCell(row: ExcelJS.Row, col: number): string {
   const cell = row.getCell(col);
   const v = cell.value as unknown;
@@ -96,7 +114,7 @@ async function buildSubject(subjectFile: string): Promise<void> {
     if (!text) die(subjectFile, `Questions row ${rowNum}: empty linking question text`);
     if (seenQ.has(q)) die(subjectFile, `Questions sheet: duplicate Q# ${q}`);
     seenQ.add(q);
-    questionsMap.set(q, text);
+    questionsMap.set(q, subscriptFormulas(text));
   });
   if (questionsMap.size === 0) die(subjectFile, 'Questions sheet is empty');
 
@@ -118,8 +136,8 @@ async function buildSubject(subjectFile: string): Promise<void> {
     if (rowNum === 1) return;
     const subId = readCell(row, 1);
     const q = readInt(row, 2);
-    const example = readCell(row, 4);
-    const why = readCell(row, 5);
+    const example = subscriptFormulas(readCell(row, 4));
+    const why = subscriptFormulas(readCell(row, 5));
     const roleRaw = readCell(row, 6);
 
     if (!subId) die(subjectFile, `Cards row ${rowNum}: missing Q ID`);
