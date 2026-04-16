@@ -27,6 +27,17 @@ export default function PickerPage() {
         >
           Cramly by Free.Period
         </p>
+        <p
+          className="editorial mt-3 px-2"
+          style={{
+            fontSize: 'var(--fs-sm)',
+            lineHeight: 1.5,
+            color: 'var(--body-subtle)',
+          }}
+        >
+          Each IB linking question is a lens. Look through it, examine the
+          specimens, and spot the one that doesn&rsquo;t belong.
+        </p>
       </header>
 
       <div className="rule my-3" />
