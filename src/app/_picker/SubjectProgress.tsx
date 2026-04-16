@@ -19,9 +19,9 @@ export function SubjectProgress({
       <div className="flex items-baseline justify-between mb-1">
         <span
           className="font-mono"
-          style={{ fontSize: 'var(--fs-xs)', color: 'var(--pencil)', letterSpacing: '0.1em' }}
+          style={{ fontSize: 'var(--fs-xs)', color: 'var(--pencil)', letterSpacing: '0.08em' }}
         >
-          {hydrated ? `${done} / ${totalCards} CARDS` : `0 / ${totalCards} CARDS`}
+          {hydrated ? `${done} / ${totalCards}` : `0 / ${totalCards}`}
         </span>
       </div>
       <div

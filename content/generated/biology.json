@@ -662,7 +662,8 @@
           "why": "Amplifies the signal rather than inhibiting anything.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 16,
@@ -1232,7 +1233,8 @@
           "why": "One observation, not a framework for understanding.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 31,

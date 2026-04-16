@@ -9,20 +9,29 @@ import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import type { Subject } from '@/types/subject';
 import { useProgress } from '@/lib/progress';
+import { useLevel } from '@/lib/level';
 import { Ornament } from '@/components/field/Ornament';
 import { Checkmark } from '@/components/field/Checkmark';
 import { PencilProgressBar } from '@/components/field/PencilProgressBar';
 
 export function BrowseClient({ subject }: { subject: Subject }) {
   const { studied, hydrated, reset } = useProgress(subject.id);
-  const totalCards = subject.cards.length;
-  const done = hydrated ? studied.size : 0;
+  const { level } = useLevel(subject.id);
+  const isSL = level === 'sl';
+  const visibleCards = useMemo(
+    () => (isSL ? subject.cards.filter((c) => !c.hl) : subject.cards),
+    [subject.cards, isSL]
+  );
+  const totalCards = visibleCards.length;
+  const done = hydrated
+    ? [...studied].filter((id) => visibleCards.some((c) => c.subId === id)).length
+    : 0;
   const [confirmReset, setConfirmReset] = useState(false);
 
   // Group cards by qIndex so we can render question headers.
   const groups = useMemo(() => {
     const map = new Map<number, typeof subject.cards>();
-    for (const card of subject.cards) {
+    for (const card of visibleCards) {
       const arr = map.get(card.qIndex) ?? [];
       arr.push(card);
       map.set(card.qIndex, arr);

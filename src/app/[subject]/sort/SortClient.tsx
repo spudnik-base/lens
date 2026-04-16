@@ -22,6 +22,7 @@ import type { Subject, Card } from '@/types/subject';
 import { shuffle } from '@/lib/shuffle';
 import { useClickSound } from '@/lib/click-sound';
 import { loadScores, recordScore, type SortScore } from '@/lib/sort-scores';
+import { useLevel } from '@/lib/level';
 import { Loupe } from '@/components/field/Loupe';
 import { Stamp } from '@/components/field/Stamp';
 import { SpecimenCard } from '@/components/field/SpecimenCard';
@@ -141,6 +142,11 @@ function buildDeck(subject: Subject): DeckItem[] {
 // ---------------------------------------------------------------------
 
 export function SortClient({ subject }: { subject: Subject }) {
+  const { level } = useLevel(subject.id);
+  const filteredSubject = useMemo(() => {
+    if (level === 'all') return subject;
+    return { ...subject, cards: subject.cards.filter((c) => !c.hl) };
+  }, [subject, level]);
   const [state, dispatch] = useReducer(reducer, undefined, initialState);
 
   // One interval tick per second while playing.
@@ -155,7 +161,7 @@ export function SortClient({ subject }: { subject: Subject }) {
   useEffect(() => {
     if (state.phase !== 'playing') return;
     if (state.cursor < state.deck.length) return;
-    const fresh = buildDeck(subject);
+    const fresh = buildDeck(filteredSubject);
     dispatch({ type: 'again', deck: fresh });
   }, [state, subject]);
 
@@ -163,7 +169,7 @@ export function SortClient({ subject }: { subject: Subject }) {
     return (
       <IdleScreen
         subjectId={subject.id}
-        onBegin={() => dispatch({ type: 'start', deck: buildDeck(subject) })}
+        onBegin={() => dispatch({ type: 'start', deck: buildDeck(filteredSubject) })}
       />
     );
   }
@@ -173,7 +179,7 @@ export function SortClient({ subject }: { subject: Subject }) {
       <ResultsScreen
         subjectId={subject.id}
         judgments={state.judgments}
-        onAgain={() => dispatch({ type: 'again', deck: buildDeck(subject) })}
+        onAgain={() => dispatch({ type: 'again', deck: buildDeck(filteredSubject) })}
       />
     );
   }

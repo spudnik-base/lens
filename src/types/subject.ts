@@ -23,6 +23,11 @@ export type Card = {
   subId: string;
   /** Exactly 3 options: 2 fits + 1 impostor. */
   options: Option[];
+  /** Present and set to 'hl' when this card covers Higher Level only
+      content. Absent (or undefined) means the card is SL-accessible.
+      SL students see all cards without this flag; HL students see
+      everything. */
+  hl?: true;
 };
 
 export type Theme = {

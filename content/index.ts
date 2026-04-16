@@ -7,11 +7,13 @@
  * required to register a new subject.
  */
 import biologyJson from './generated/biology.json';
+import chemistryJson from './generated/chemistry.json';
 import physicsJson from './generated/physics.json';
 import type { Subject } from '../src/types/subject.js';
 
 export const SUBJECTS: readonly Subject[] = [
   biologyJson as Subject,
+  chemistryJson as Subject,
   physicsJson as Subject,
 ];
 

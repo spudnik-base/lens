@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: '%s · Lens',
   },
   description:
-    'A Cramly study guide to the 32 linking questions in IB Biology. Examine specimens through each lens and find the impostor.',
+    'A Cramly study guide to the IB linking questions in Biology, Chemistry, and Physics. Examine specimens through each lens and find the impostor.',
   applicationName: 'Lens',
   appleWebApp: {
     capable: true,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: 'Cramly',
     title: 'Lens: a Cramly study guide',
     description:
-      'A field guide to the 32 linking questions in IB Biology. Part of Cramly.',
+      'Study guide to the IB linking questions in Biology, Chemistry, and Physics. Cramly by Free.Period.',
     url: '/lens',
     images: [
       {
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Lens: a Cramly study guide',
     description:
-      'A field guide to the 32 linking questions in IB Biology. Part of Cramly.',
+      'Study guide to the IB linking questions in Biology, Chemistry, and Physics. Cramly by Free.Period.',
     images: ['/lens/og-image.png'],
   },
   manifest: '/lens/manifest.webmanifest',

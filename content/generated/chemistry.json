@@ -1,0 +1,1430 @@
+{
+  "id": "chemistry",
+  "name": "IB Chemistry",
+  "themes": [
+    {
+      "letter": "S",
+      "name": "Structure",
+      "questionIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "letter": "R",
+      "name": "Reactivity",
+      "questionIndices": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ]
+    }
+  ],
+  "questions": [
+    "Where does the type of bonding in a substance directly explain one of its physical properties?",
+    "Where does a periodic trend down a group predict a change in chemical behavior of the elements?",
+    "Where do delocalized electrons give a chemical species unusual or distinctive properties?",
+    "Where does hydrogen bonding cause a substance to have a higher boiling point or unusual solubility than expected?",
+    "Which molecules are non-polar despite containing polar covalent bonds?",
+    "Where does the same element form allotropes with very different physical and chemical properties?",
+    "Where does the charge density of an ion directly determine the strength of an ionic bond or lattice?",
+    "Which spectroscopic technique gives direct evidence for a specific structural feature of a molecule?",
+    "Where does an atom's electron configuration directly predict its most common oxidation state?",
+    "Where does resonance lower the energy of a species compared with what a single Lewis structure predicts?",
+    "Where does a pi bond change both the geometry and the chemical reactivity of a molecule?",
+    "Which substances can conduct electricity in the solid state, and what structural feature makes this possible?",
+    "Where does increasing chain length in a homologous series produce a predictable trend in a physical property?",
+    "Which properties of transition elements arise specifically from their incomplete d-sublevels?",
+    "Where does a chiral carbon give rise to two molecules with the same formula but different properties?",
+    "Which structural isomers share a molecular formula but belong to different functional group classes?",
+    "Where does the degree of unsaturation in an organic molecule affect both its reactivity and its spectroscopic fingerprint?",
+    "Where does a change in temperature simultaneously shift both the rate and the equilibrium position of a reaction?",
+    "Which reactions release energy because the product bonds are collectively stronger than the reactant bonds?",
+    "Where does Le Chatelier's principle predict the direction a system at equilibrium will shift in response to a change?",
+    "Which chemical species can act as both a proton donor and a proton acceptor depending on context?",
+    "Where does the structure of an acid or base explain its relative strength?",
+    "Where does a catalyst increase the rate of a reaction without being consumed in the overall reaction?",
+    "Where does the strength of a bond directly influence the rate of a reaction that breaks that bond?",
+    "Which electrochemical systems convert chemical energy to electrical energy spontaneously?",
+    "Where does the mechanism of a multi-step reaction determine the form of the rate equation?",
+    "Which species act as nucleophiles in both inorganic and organic chemistry?",
+    "Which reactions produce a mixture of products because a reactive intermediate lacks selectivity?",
+    "Where does an increase in entropy drive a process that is not exothermic?",
+    "Which acid-base reactions are also well described using Lewis acid-base theory?",
+    "Where do standard electrode potential data predict whether a redox reaction will be spontaneous?",
+    "Which functional group transformations in organic chemistry involve a change in the oxidation state of carbon?",
+    "Where does the identity of the leaving group affect the rate of a substitution reaction?",
+    "Where does limiting the supply of one reactant change both the products formed and the health or environmental consequences?",
+    "Which reactions can be classified as both an acid-base reaction and a redox reaction simultaneously?"
+  ],
+  "cards": [
+    {
+      "qIndex": 1,
+      "subId": "1a",
+      "options": [
+        {
+          "text": "NaCl high melting point",
+          "why": "Ionic bonding requires large energy to separate the strongly attracted opposing ions."
+        },
+        {
+          "text": "Copper electrical conductivity",
+          "why": "Metallic bonding provides delocalized electrons that carry charge freely through the solid."
+        },
+        {
+          "text": "Iodine low melting point",
+          "why": "Iodine melts easily because of weak dispersion forces between I₂ molecules, not the covalent bond inside them.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 1,
+      "subId": "1b",
+      "options": [
+        {
+          "text": "Silicon dioxide very high melting point",
+          "why": "Covalent network bonding in SiO₂ requires breaking many strong Si-O bonds throughout the entire lattice."
+        },
+        {
+          "text": "Magnesium malleability",
+          "why": "Metallic bonding lets cation layers slide without breaking the non-directional electron sea."
+        },
+        {
+          "text": "Ethanol dissolving freely in water",
+          "why": "Ethanol mixes with water due to hydrogen bonding between molecules, not the covalent bonds within each molecule.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 2,
+      "subId": "2a",
+      "options": [
+        {
+          "text": "Alkali metal reactivity increasing down group 1",
+          "why": "Falling ionization energy and greater shielding make each successive alkali metal react more vigorously with water."
+        },
+        {
+          "text": "Halogen oxidizing power decreasing down group 17",
+          "why": "Each halogen is a weaker oxidizing agent than the one above it as electron affinity decreases down the group."
+        },
+        {
+          "text": "Atomic radius increasing down group 2",
+          "why": "Atomic radius increases as electron shells are added, but this structural measurement does not by itself predict chemical behavior.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 2,
+      "subId": "2b",
+      "options": [
+        {
+          "text": "HX acid strength increasing from HF to HI",
+          "why": "H-X bond strength decreases down group 17, making proton donation progressively easier from HF to HI."
+        },
+        {
+          "text": "Halide reducing power increasing from Cl- to I-",
+          "why": "Outer electrons of iodide sit further from the nucleus and are more easily removed, making I- a stronger reducing agent than Cl-."
+        },
+        {
+          "text": "Electronegativity increasing from Li to F across period 2",
+          "why": "Electronegativity rises across period 2, but this is a horizontal trend, not a change in behavior going down a group.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 3,
+      "subId": "3a",
+      "options": [
+        {
+          "text": "Iron metallic bonding and electrical conductivity",
+          "why": "Delocalized electrons throughout the iron lattice move freely in any direction under an applied voltage."
+        },
+        {
+          "text": "Benzene resistance to electrophilic addition",
+          "why": "Delocalization of pi electrons over the ring lowers the system energy and makes addition unfavorable relative to substitution."
+        },
+        {
+          "text": "Polar C-F bond in fluoromethane",
+          "why": "Fluoromethane has a polar C-F bond from electronegativity difference, but bond polarity arises from localized electrons, not delocalization.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 3,
+      "subId": "3b",
+      "options": [
+        {
+          "text": "Carbonate ion equal C-O bond lengths",
+          "why": "Delocalized pi electrons spread equally over all three C-O bonds, making them identical in length and strength."
+        },
+        {
+          "text": "Graphite conducting electricity unlike other solid non-metals",
+          "why": "One delocalized pi electron per carbon extends through each layer, giving graphite exceptional non-metallic conductivity."
+        },
+        {
+          "text": "NaCl ions carrying charge in aqueous solution",
+          "why": "Dissolved NaCl conducts because Na+ and Cl- ions are mobile, not because any electrons are delocalized.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 4,
+      "subId": "4a",
+      "options": [
+        {
+          "text": "Water anomalously high boiling point vs H₂S",
+          "why": "Water boils at 100 C rather than the negative 80 C predicted by group 16 trends, because of strong hydrogen bonds between molecules."
+        },
+        {
+          "text": "Ammonia boiling above the group 15 trend",
+          "why": "NH₃ boils at -33 C while PH₃ boils at -87 C; hydrogen bonding in ammonia elevates the boiling point significantly above the trend."
+        },
+        {
+          "text": "HCl slightly elevated boiling point vs HBr",
+          "why": "HCl boils a little above the group 17 trend due to permanent dipole-dipole interactions, not hydrogen bonding.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 4,
+      "subId": "4b",
+      "options": [
+        {
+          "text": "DNA double helix held together without covalent bonds",
+          "why": "Hydrogen bonds between complementary base pairs hold the two strands together, stabilizing the double helix."
+        },
+        {
+          "text": "Water high specific heat capacity",
+          "why": "Hydrogen bonds must continuously break and re-form as water is heated, requiring more energy per degree than most liquids."
+        },
+        {
+          "text": "Noble gas boiling points rising down group 18",
+          "why": "Noble gas boiling points increase with growing London dispersion forces as electron clouds enlarge, not because of hydrogen bonding.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 5,
+      "subId": "5a",
+      "options": [
+        {
+          "text": "Carbon dioxide CO₂ linear molecule",
+          "why": "Two C=O dipoles point in exactly opposite directions and cancel, giving a zero net dipole moment."
+        },
+        {
+          "text": "Tetrachloromethane CCl₄ tetrahedral molecule",
+          "why": "Four identical C-Cl dipoles are symmetrically arranged and cancel completely, giving zero net dipole moment."
+        },
+        {
+          "text": "Water H₂O bent geometry",
+          "why": "Water has two polar O-H bonds, but the bent geometry means the dipoles do not cancel, so water is polar.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 5,
+      "subId": "5b",
+      "options": [
+        {
+          "text": "Boron trifluoride BF₃ trigonal planar",
+          "why": "Three B-F dipoles arranged symmetrically in a plane cancel completely, giving zero net dipole moment."
+        },
+        {
+          "text": "Sulfur hexafluoride SF₆ octahedral",
+          "why": "Six identical S-F dipoles arranged octahedrally cancel in opposing pairs, producing a non-polar molecule."
+        },
+        {
+          "text": "Sodium chloride NaCl ionic compound",
+          "why": "NaCl forms an ionic lattice rather than discrete molecules, so the concept of a molecular dipole moment does not apply.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 6,
+      "subId": "6a",
+      "options": [
+        {
+          "text": "Diamond vs graphite as carbon allotropes",
+          "why": "Diamond is an insulating giant covalent lattice; graphite is a soft conductor with delocalized pi electrons. Both are pure carbon."
+        },
+        {
+          "text": "Dioxygen O₂ vs ozone O₃",
+          "why": "O₂ is stable and essential for respiration while O₃ is reactive and toxic, reflecting different bonding and molecular geometry."
+        },
+        {
+          "text": "Ice vs liquid water",
+          "why": "Ice and liquid water have different densities and properties, but both are H₂O in different states, not allotropes of an element.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 6,
+      "subId": "6b",
+      "options": [
+        {
+          "text": "White phosphorus vs red phosphorus",
+          "why": "White P₄ is waxy, highly reactive and toxic; red phosphorus is a stable covalent network. Both are pure phosphorus."
+        },
+        {
+          "text": "Buckminsterfullerene C₆₀ vs graphene",
+          "why": "C₆₀ is a molecular cage and graphene a planar single-atom layer; both are pure carbon with completely different properties."
+        },
+        {
+          "text": "Iron(II) oxide vs iron(III) oxide",
+          "why": "FeO and Fe₂O₃ have different properties, but they are different compounds of iron at different oxidation states, not allotropes.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 7,
+      "subId": "7a",
+      "options": [
+        {
+          "text": "MgO much higher melting point than NaCl",
+          "why": "Mg₂+ and O₂- have higher charge and smaller radius than Na+ and Cl-, giving MgO a far stronger lattice and higher melting point."
+        },
+        {
+          "text": "Li salts having larger lattice enthalpies than Cs salts",
+          "why": "Li+ is smaller with greater charge density than Cs+, attracting anions more strongly and increasing lattice enthalpy."
+        },
+        {
+          "text": "Transition metal ions forming colored complexes",
+          "why": "Colors in transition metal complexes arise from d-orbital splitting by ligand field, not from charge density differences in a lattice.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 7,
+      "subId": "7b",
+      "options": [
+        {
+          "text": "Al₃+ releasing more enthalpy on hydration than Na+",
+          "why": "Al₃+ has very high charge density and pulls water dipoles in strongly, releasing a large negative hydration enthalpy."
+        },
+        {
+          "text": "Fe₃+ forming stronger lattice than Fe₂+ in iron oxides",
+          "why": "Fe₃+ has higher charge and smaller radius than Fe₂+, giving iron(III) compounds stronger ionic lattices."
+        },
+        {
+          "text": "Group 1 fluoride vs iodide solubility trends",
+          "why": "Solubility patterns in group 1 halides reflect a balance of lattice and hydration enthalpies, not charge density alone.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 8,
+      "subId": "8a",
+      "options": [
+        {
+          "text": "1H NMR signal at 9-10 ppm chemical shift",
+          "why": "Only an aldehyde CHO proton resonates this far downfield, providing direct evidence for an aldehyde group."
+        },
+        {
+          "text": "IR broad absorption at 2500-3300 cm-1",
+          "why": "Broad O-H stretching in this region directly identifies a carboxylic acid, distinguishing it from other OH-containing groups."
+        },
+        {
+          "text": "Molecular ion peak m/z in mass spectrum",
+          "why": "A molecular ion peak gives the relative molecular mass but alone provides no direct evidence for connectivity or functional groups.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 8,
+      "subId": "8b",
+      "options": [
+        {
+          "text": "IR carbonyl absorption at 1700-1750 cm-1",
+          "why": "Strong absorption in this region is a direct fingerprint of C=O stretching, indicating a carbonyl functional group."
+        },
+        {
+          "text": "1H NMR quartet adjacent to a triplet",
+          "why": "A quartet next to a triplet is the coupling signature of a CH₃-CH₂ unit, directly revealing an ethyl group in the molecule."
+        },
+        {
+          "text": "Flame test orange-yellow color for sodium",
+          "why": "Orange-yellow flame color identifies sodium by atomic emission, not a molecular technique for identifying structural features.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 9,
+      "subId": "9a",
+      "options": [
+        {
+          "text": "Sodium forming Na+ in all its compounds",
+          "why": "Na has one 3s electron beyond the neon core; losing it achieves a noble gas configuration, directly predicting +1."
+        },
+        {
+          "text": "Chlorine forming Cl- in ionic compounds",
+          "why": "Seven valence electrons means gaining one achieves an octet, directly predicting the -1 state from the configuration."
+        },
+        {
+          "text": "Iron forming both Fe₂+ and Fe₃+",
+          "why": "Iron's two common states arise from similar successive ionization energies for 4s and 3d electrons, not from a single configuration prediction.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 9,
+      "subId": "9b",
+      "options": [
+        {
+          "text": "Zinc forming only Zn₂+ in its compounds",
+          "why": "Zinc's 3d10 4s2 configuration gives a stable full d-shell; only the two 4s electrons are removed, predicting +2 exclusively."
+        },
+        {
+          "text": "Fluorine forming only F- in its compounds",
+          "why": "Fluorine's 2p5 configuration invariably accepts one electron to reach the neon configuration, giving only -1."
+        },
+        {
+          "text": "Carbon forming CO rather than CO₂ in limited oxygen",
+          "why": "Whether carbon produces CO or CO₂ depends on oxygen availability and thermodynamics, not on carbon's electron configuration.",
+          "impostor": true
+        }
+      ],
+      "hl": true
+    },
+    {
+      "qIndex": 10,
+      "subId": "10a",
+      "options": [
+        {
+          "text": "Benzene lower heat of hydrogenation than three isolated double bonds",
+          "why": "Benzene releases about 150 kJ/mol less on hydrogenation than three isolated double bonds would predict, quantifying resonance stabilization."
+        },
+        {
+          "text": "Carbonate ion CO₃ 2- more stable than any one Lewis structure",
+          "why": "Delocalization spreads double-bond character equally over all three C-O bonds, giving lower energy than any fixed localized structure."
+        },
+        {
+          "text": "SO₂ bent molecular geometry",
+          "why": "Sulfur dioxide is bent because a lone pair on sulfur creates electron repulsion as VSEPR predicts; the shape is not a result of resonance energy lowering.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 10,
+      "subId": "10b",
+      "options": [
+        {
+          "text": "Nitrate ion NO₃- equal bond lengths and symmetry",
+          "why": "Resonance distributes pi electrons equally over all three N-O bonds, stabilizing NO₃- below the energy of any localized structure."
+        },
+        {
+          "text": "Carboxylate RCOO- more stable than alkoxide RO-",
+          "why": "Resonance delocalizes the negative charge over both oxygens in RCOO-, lowering its energy compared with a localized charge on one oxygen in RO-."
+        },
+        {
+          "text": "Expanded octet in PCl₅ with ten bonding electrons",
+          "why": "PCl₅ uses d-orbitals for five bonds, exceeding the octet, but this is orbital expansion, not resonance stabilization through delocalization.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 11,
+      "subId": "11a",
+      "options": [
+        {
+          "text": "Ethene C=C restricted rotation and electrophilic addition",
+          "why": "Pi bond prevents rotation around C=C, enforces planar geometry at each carbon, and enables electrophilic addition reactions."
+        },
+        {
+          "text": "Carbonyl group C=O as nucleophilic addition site",
+          "why": "Pi bond in C=O makes the carbonyl carbon planar and creates an electrophilic center that invites nucleophilic attack."
+        },
+        {
+          "text": "Lone pair on nitrogen in methylamine",
+          "why": "Nitrogen's lone pair makes methylamine nucleophilic and basic, but it is not a pi bond and does not constrain molecular geometry.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 11,
+      "subId": "11b",
+      "options": [
+        {
+          "text": "Benzene ring planar with electrophilic substitution",
+          "why": "Cyclic pi delocalization makes benzene planar and, through resonance stabilization, favors substitution over addition."
+        },
+        {
+          "text": "Nitrile C-N triple bond linear geometry and electrophilicity",
+          "why": "Two pi bonds in C-triple bond-N give linear geometry and make the nitrile carbon an electrophilic site for nucleophilic addition."
+        },
+        {
+          "text": "Coordinate bond in hexaamminecobalt(III) ion",
+          "why": "Ammonia lone pairs form coordinate sigma bonds to cobalt; no pi bonds are involved and geometry is set by d-orbital effects.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 12,
+      "subId": "12a",
+      "options": [
+        {
+          "text": "Iron rod conducting electricity as a solid",
+          "why": "Delocalized electrons in the metallic lattice move freely in any direction under an applied potential difference."
+        },
+        {
+          "text": "Graphite pencil lead conducting electricity",
+          "why": "One delocalized pi electron per carbon extends through each graphite layer, giving conductivity unlike most solid non-metals."
+        },
+        {
+          "text": "Solid sodium chloride non-conducting",
+          "why": "NaCl contains charged ions, but they are held rigidly in the lattice and cannot move to carry charge in the solid state.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 12,
+      "subId": "12b",
+      "options": [
+        {
+          "text": "Copper wire conducting current throughout its length",
+          "why": "Copper's metallic bonding provides a continuous sea of mobile delocalized electrons through the entire solid."
+        },
+        {
+          "text": "Tungsten filament conducting in a light bulb",
+          "why": "Tungsten conducts as a solid metal because of delocalized 6s and 5d electrons in its metallic lattice."
+        },
+        {
+          "text": "Molten lead conducting electricity",
+          "why": "Molten lead conducts because ions become mobile when the solid lattice breaks down; this is liquid-state conductivity, not solid-state.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 13,
+      "subId": "13a",
+      "options": [
+        {
+          "text": "Boiling points of straight-chain alkanes C₁ to C₁₀",
+          "why": "Each additional CH₂ unit adds roughly 25 C to the boiling point due to stronger London dispersion forces along longer chains."
+        },
+        {
+          "text": "Melting points of saturated straight-chain fatty acids",
+          "why": "Longer saturated fatty acids have higher melting points because of increased van der Waals contact area between the aligned chains."
+        },
+        {
+          "text": "Reactivity of alkanes toward electrophilic reagents",
+          "why": "Alkanes are essentially unreactive toward electrophiles regardless of chain length; no predictable trend exists for this type of reactivity.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 13,
+      "subId": "13b",
+      "options": [
+        {
+          "text": "Viscosity of liquid alkanes from pentane to decane",
+          "why": "Longer chains entangle more and interact more strongly via London forces, giving a predictable viscosity increase with chain length."
+        },
+        {
+          "text": "Solubility of primary alcohols in water from C₁ to C₅",
+          "why": "Short-chain alcohols are miscible with water, but solubility falls predictably as the non-polar chain grows beyond the -OH group's influence."
+        },
+        {
+          "text": "Acid strength of straight-chain carboxylic acids C₂ to C₆",
+          "why": "Adding CH₂ units barely changes pKa; the -COOH group is too distant from the chain extension to be influenced by its length.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 14,
+      "subId": "14a",
+      "options": [
+        {
+          "text": "Manganese showing oxidation states from +2 to +7",
+          "why": "Mn's 3d5 4s2 configuration allows successive removal of d-electrons at similar energies, giving many accessible oxidation states."
+        },
+        {
+          "text": "Blue color of aqueous copper(II) sulfate",
+          "why": "Cu₂+'s incomplete 3d sublevel is split by water ligands; d-d transitions absorb visible light and produce the characteristic blue color."
+        },
+        {
+          "text": "High density of iron compared with calcium",
+          "why": "Iron is denser than calcium because of a smaller atomic radius and greater nuclear charge, not specifically because the d-sublevel is incomplete.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 14,
+      "subId": "14b",
+      "options": [
+        {
+          "text": "Iron catalyzing ammonia synthesis in the Haber process",
+          "why": "Variable oxidation states from the incomplete d-sublevel allow iron to adsorb and release reactants during heterogeneous catalysis."
+        },
+        {
+          "text": "Nickel attracted to an external magnetic field",
+          "why": "Unpaired electrons in nickel's incomplete 3d sublevel align with an external field, giving rise to paramagnetism."
+        },
+        {
+          "text": "High melting points of first-row transition metals",
+          "why": "High melting points arise from strong metallic bonding involving both s and d electrons, not specifically from the d-sublevel being incomplete.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 15,
+      "subId": "15a",
+      "options": [
+        {
+          "text": "L- and D-lactic acid in muscle vs bacterial fermentation",
+          "why": "Both share formula CH₃CH(OH)COOH but L-lactic acid forms in muscle during exercise and D-lactic acid in bacterial fermentation."
+        },
+        {
+          "text": "Thalidomide enantiomers with opposite physiological effects",
+          "why": "One enantiomer was a sedative; the other caused birth defects. Same formula, entirely different biological activity at the chiral center."
+        },
+        {
+          "text": "Cis- and trans-but-2-ene having different boiling points",
+          "why": "Cis and trans isomers differ in properties, but they arise from restricted rotation around C=C, not from a chiral carbon atom.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 15,
+      "subId": "15b",
+      "options": [
+        {
+          "text": "L- and D-amino acids recognized differently by enzymes",
+          "why": "Only L-amino acids are incorporated into proteins; D-amino acids have identical formulas but are not recognized by the same biosynthetic enzymes."
+        },
+        {
+          "text": "R- and S-carvone having different characteristic odors",
+          "why": "R-carvone smells of spearmint and S-carvone of caraway; same formula C₁₀H₁₄O but entirely different properties in chiral receptor environments."
+        },
+        {
+          "text": "Butan-1-ol and diethyl ether both with formula C₄H₁₀O",
+          "why": "These two C₄H₁₀O compounds differ in connectivity rather than in the arrangement around a chiral center; they are structural isomers, not enantiomers.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 16,
+      "subId": "16a",
+      "options": [
+        {
+          "text": "Ethanol C₂H₆O vs dimethyl ether C₂H₆O",
+          "why": "Ethanol has a hydroxy group and dimethyl ether has an alkoxy linkage; same formula but completely different functional class and reactivity."
+        },
+        {
+          "text": "Propanal C₃H₆O vs propanone C₃H₆O",
+          "why": "Propanal is an aldehyde with a terminal carbonyl while propanone is a ketone; same formula C₃H₆O but different functional groups."
+        },
+        {
+          "text": "But-1-ene and but-2-ene both formula C₄H₈",
+          "why": "Both are alkenes differing only in double bond position; they share the same functional class and are positional isomers, not functional group isomers.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 16,
+      "subId": "16b",
+      "options": [
+        {
+          "text": "Glucose C₆H₁₂O₆ aldose vs fructose C₆H₁₂O₆ ketose",
+          "why": "Glucose has an aldehyde group and fructose a ketone group; same molecular formula but different functional group classes."
+        },
+        {
+          "text": "Ethanoic acid C₂H₄O₂ vs methyl methanoate C₂H₄O₂",
+          "why": "Ethanoic acid is a carboxylic acid and methyl methanoate is an ester; same formula C₂H₄O₂ but entirely different functional groups."
+        },
+        {
+          "text": "Hexane C₆H₁₄ and 2-methylpentane C₆H₁₄",
+          "why": "Both are alkanes sharing formula C₆H₁₄, differing only in branching; they are chain isomers within the same functional class.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 17,
+      "subId": "17a",
+      "options": [
+        {
+          "text": "C=C double bond in hex-1-ene IR and reactivity",
+          "why": "Pi bond in hex-1-ene enables electrophilic addition and gives a C=C stretch in the IR spectrum, both absent in the saturated analogue."
+        },
+        {
+          "text": "Benzene ring UV absorption and electrophilic substitution",
+          "why": "Aromatic pi electrons absorb UV and undergo electrophilic substitution, both properties arising directly from the ring's unsaturation."
+        },
+        {
+          "text": "Hydroxy group -OH in propan-1-ol reactivity and IR",
+          "why": "The OH group gives reactivity toward oxidizing agents and a broad IR absorption, but this arises from a polar functional group, not from unsaturation.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 17,
+      "subId": "17b",
+      "options": [
+        {
+          "text": "C=O in pentan-3-one IR fingerprint and nucleophilic addition",
+          "why": "Pi bond in the ketone C=O produces a strong IR absorption near 1715 cm-1 and makes the carbonyl carbon electrophilic toward nucleophiles."
+        },
+        {
+          "text": "Triple bond in but-1-yne IR and enhanced reactivity",
+          "why": "Two pi bonds in the alkyne triple bond make but-1-yne more reactive than an alkene and give a characteristic weak C-C stretch in the IR."
+        },
+        {
+          "text": "Chain length difference between pentane and octane in mass spectra",
+          "why": "Octane has a higher molecular ion m/z than pentane, but this reflects greater molecular size, not any difference in unsaturation.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 18,
+      "subId": "18a",
+      "options": [
+        {
+          "text": "Haber process temperature compromise for rate and yield",
+          "why": "Raising temperature speeds both reactions but shifts the exothermic equilibrium toward reactants, forcing a compromise between rate and yield."
+        },
+        {
+          "text": "Contact process SO₂ + O₂ equilibrium run at 450 C",
+          "why": "Higher temperature increases rate but disfavors the exothermic forward step; 450 C balances an acceptable rate with a useful yield."
+        },
+        {
+          "text": "Sugar dissolving faster in hot water",
+          "why": "Warming speeds dissolution, but dissolving a solid is a physical process, not a reversible chemical equilibrium with a temperature-dependent K.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 18,
+      "subId": "18b",
+      "options": [
+        {
+          "text": "N₂O₄ and NO₂ equilibrium in a sealed tube",
+          "why": "Increasing temperature speeds both forward and reverse reactions and shifts the endothermic direction toward the brown NO₂ gas."
+        },
+        {
+          "text": "Esterification equilibrium heated under reflux",
+          "why": "Heating speeds the reaction and shifts the slightly endothermic esterification equilibrium toward the ester product."
+        },
+        {
+          "text": "SN₂ substitution of 1-bromobutane with NaOH at higher temperature",
+          "why": "Higher temperature speeds this substitution via the Arrhenius equation, but an irreversible SN₂ reaction has no equilibrium position to shift.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 19,
+      "subId": "19a",
+      "options": [
+        {
+          "text": "Combustion of methane to CO₂ and H₂O",
+          "why": "C-H and O=O bonds in the reactants are collectively weaker than the C=O and O-H bonds formed in the products, releasing energy."
+        },
+        {
+          "text": "Formation of HF from H₂ and F₂",
+          "why": "H-F is among the strongest bonds in chemistry; forming it from weaker H-H and F-F bonds releases substantial energy."
+        },
+        {
+          "text": "Dissolving NaCl in water at room temperature",
+          "why": "Dissolving NaCl balances lattice enthalpy against hydration enthalpy; the energy change depends on competing ionic terms, not on molecular bond strengths.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 19,
+      "subId": "19b",
+      "options": [
+        {
+          "text": "Reduction of iron oxide by carbon monoxide",
+          "why": "CO₂ product bonds are collectively stronger than those in Fe₂O₃ and CO reactants, providing the thermodynamic driving force for iron extraction."
+        },
+        {
+          "text": "Formation of water from hydrogen and oxygen",
+          "why": "Two strong O-H bonds formed per water molecule replace one H-H and half an O=O; products are more strongly bonded overall."
+        },
+        {
+          "text": "Thermal decomposition of calcium carbonate",
+          "why": "CaCO₃ decomposition is endothermic because bonds in the CaO and CO₂ products are collectively weaker than in the reactant carbonate.",
+          "impostor": true
+        }
+      ],
+      "hl": true
+    },
+    {
+      "qIndex": 20,
+      "subId": "20a",
+      "options": [
+        {
+          "text": "Adding more N₂ to the Haber equilibrium mixture",
+          "why": "Increasing [N₂] disturbs equilibrium; the system shifts right to consume the extra N₂ and restore balance."
+        },
+        {
+          "text": "Decreasing pressure on NO₂ and N₂O₄ equilibrium",
+          "why": "Lower pressure favors the side with more moles of gas, shifting the equilibrium toward 2NO₂ when pressure drops."
+        },
+        {
+          "text": "Adding a catalyst to the Haber process equilibrium",
+          "why": "A catalyst speeds both forward and reverse reactions by equal factors and does not shift the equilibrium position or change K.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 20,
+      "subId": "20b",
+      "options": [
+        {
+          "text": "Cooling an exothermic equilibrium reaction",
+          "why": "Lowering temperature shifts equilibrium in the exothermic direction, partly replacing the heat removed."
+        },
+        {
+          "text": "Adding acid to a chromate-dichromate equilibrium",
+          "why": "Increased [H+] shifts the 2CrO₄₂- equilibrium toward dichromate Cr₂O₇₂-, as Le Chatelier's principle predicts."
+        },
+        {
+          "text": "Changing pressure on H₂ + I₂ equilibrium with equal moles of gas",
+          "why": "For H₂ + I₂ equilibrium 2HI, equal moles of gas on both sides means pressure changes cause no equilibrium shift; Le Chatelier predicts no movement.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 21,
+      "subId": "21a",
+      "options": [
+        {
+          "text": "Water as acid with ammonia and as base with HCl",
+          "why": "Water donates a proton to ammonia and accepts one from HCl, making it genuinely amphoteric in Bronsted-Lowry terms."
+        },
+        {
+          "text": "Hydrogencarbonate ion HCO₃-",
+          "why": "HCO₃- donates a proton to form CO₃₂- in strong base or accepts one to form H₂CO₃ in strong acid, acting as both acid and base."
+        },
+        {
+          "text": "Hydrochloric acid HCl in aqueous solution",
+          "why": "HCl is a strong proton donor but has essentially no tendency to accept a proton in water, so it is acid-only, not amphoteric.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 21,
+      "subId": "21b",
+      "options": [
+        {
+          "text": "Amino acids in aqueous solution",
+          "why": "NH₃+ can donate a proton and COO- can accept one in the same molecule, making amino acids genuinely amphoteric zwitterions."
+        },
+        {
+          "text": "Dihydrogen phosphate ion H₂PO₄-",
+          "why": "H₂PO₄- can lose a proton to form HPO₄₂- or gain one to form H₃PO₄, acting as both a Bronsted-Lowry acid and base."
+        },
+        {
+          "text": "Ethanoate ion CH₃COO- in water",
+          "why": "Ethanoate can accept a proton to form ethanoic acid but has no tendency to donate one to water, making it base-only, not amphoteric.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 22,
+      "subId": "22a",
+      "options": [
+        {
+          "text": "HI stronger acid than HF despite lower electronegativity",
+          "why": "H-I is much weaker and longer than H-F; easier bond breaking makes HI a stronger acid despite iodine's lower electronegativity."
+        },
+        {
+          "text": "Trichloroacetic acid stronger than ethanoic acid",
+          "why": "Three electronegative Cl atoms withdraw electron density from -COOH, stabilizing the carboxylate anion and increasing acid strength."
+        },
+        {
+          "text": "Concentrated HCl having lower pH than dilute HCl",
+          "why": "More concentrated HCl gives a lower pH, but pH differences reflect concentration, not the intrinsic structural strength of the acid.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 22,
+      "subId": "22b",
+      "options": [
+        {
+          "text": "Phenol weaker acid than ethanoic acid",
+          "why": "Phenoxide has less resonance stabilization than carboxylate, where charge is shared equally over two oxygens, making phenol weaker."
+        },
+        {
+          "text": "Methylamine slightly stronger base than ammonia",
+          "why": "An electron-donating methyl group increases electron density on nitrogen, making the lone pair more available for proton acceptance."
+        },
+        {
+          "text": "Ethanoic acid reacting instantly with NaOH in solution",
+          "why": "Rapid neutralization reflects the fast rate of proton transfer between ions in solution, not a structural measure of acid strength.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 23,
+      "subId": "23a",
+      "options": [
+        {
+          "text": "Iron in the Haber process regenerated unchanged",
+          "why": "Iron provides a surface for N₂ and H₂ to adsorb and react, then is regenerated unchanged at the end of each catalytic cycle."
+        },
+        {
+          "text": "Enzymes releasing unchanged after each reaction",
+          "why": "Enzymes form temporary enzyme-substrate complexes, lower activation energy, and are released intact to catalyze many further cycles."
+        },
+        {
+          "text": "NaOH speeding up ester hydrolysis",
+          "why": "Sodium hydroxide is consumed in saponification to form a carboxylate salt; it is a reactant, not a catalyst that is regenerated.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 23,
+      "subId": "23b",
+      "options": [
+        {
+          "text": "Platinum in a catalytic converter",
+          "why": "Platinum adsorbs CO and NOx, facilitates their reaction, and is regenerated intact, functioning as a heterogeneous catalyst."
+        },
+        {
+          "text": "Nickel catalyst in hydrogenation of vegetable oils",
+          "why": "Nickel enables addition of H₂ across double bonds at accessible conditions, is filtered out, and can be reused without consumption."
+        },
+        {
+          "text": "Bromine in free radical chain reactions of alkanes",
+          "why": "Bromine initiates the chain and Br• regenerates in propagation, but termination steps permanently consume Br•, so it is not truly regenerated overall.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 24,
+      "subId": "24a",
+      "options": [
+        {
+          "text": "Iodoalkanes reacting faster than chloroalkanes in SN₂",
+          "why": "C-I bond is weaker and longer than C-Cl; it breaks more readily in the SN₂ transition state, giving iodoalkanes a faster substitution rate."
+        },
+        {
+          "text": "F₂ reacting more vigorously with alkanes than Cl₂",
+          "why": "F-F bond enthalpy (158 kJ/mol) is much lower than Cl-Cl; easier homolytic fission allows radical initiation far more readily."
+        },
+        {
+          "text": "Higher temperature increasing the rate of a bromination",
+          "why": "Warming increases rate by providing more molecules with energy above Ea; the C-H bond strength itself is unchanged by temperature.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 24,
+      "subId": "24b",
+      "options": [
+        {
+          "text": "H-F bond strength making HF weaker acid than HCl",
+          "why": "Strong, short H-F bond requires more energy to break than H-Cl, making proton donation from HF more difficult and reducing its acid strength."
+        },
+        {
+          "text": "Weak O-O single bond in ozone giving higher reactivity than O₂",
+          "why": "Ozone's weaker O-O bond releases an oxygen atom far more readily than O₂'s strong double bond, giving O₃ much higher reactivity."
+        },
+        {
+          "text": "Larger molecules having fewer collisions per second at the same temperature",
+          "why": "Larger molecules move slower at a given temperature, reducing collision frequency through a physical effect unrelated to bond strength.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 25,
+      "subId": "25a",
+      "options": [
+        {
+          "text": "Zinc-copper Daniell cell generating a current",
+          "why": "Spontaneous zinc oxidation and copper ion reduction drives electron flow through the external circuit, converting chemical to electrical energy."
+        },
+        {
+          "text": "Hydrogen-oxygen fuel cell producing electricity",
+          "why": "Hydrogen and oxygen react spontaneously at the electrodes, releasing energy as electrical current with water as the only product."
+        },
+        {
+          "text": "Electrolysis of dilute sulfuric acid",
+          "why": "Electrolysis requires an external DC supply to drive non-spontaneous water decomposition; it converts electrical energy to chemical energy.",
+          "impostor": true
+        }
+      ],
+      "hl": true
+    },
+    {
+      "qIndex": 25,
+      "subId": "25b",
+      "options": [
+        {
+          "text": "Lithium-ion battery discharging in a device",
+          "why": "Spontaneous lithium oxidation and cathode reduction during discharge drive current through the external circuit."
+        },
+        {
+          "text": "Copper half-cell coupled with standard hydrogen electrode",
+          "why": "Copper ions spontaneously oxidize hydrogen gas, giving a positive cell potential and a usable current in the external circuit."
+        },
+        {
+          "text": "Charging a nickel-metal hydride rechargeable battery",
+          "why": "Recharging uses external electrical energy to reverse the spontaneous discharge reactions; charging converts electrical to chemical energy.",
+          "impostor": true
+        }
+      ],
+      "hl": true
+    },
+    {
+      "qIndex": 26,
+      "subId": "26a",
+      "options": [
+        {
+          "text": "SN₁ hydrolysis of a tertiary halogenoalkane",
+          "why": "Rate depends only on [halogenoalkane] because the slow unimolecular ionization step does not involve the nucleophile."
+        },
+        {
+          "text": "Iodination of propanone zero order in iodine",
+          "why": "Rate is independent of [I₂] because iodine reacts only after the slow enolization step, which does not involve iodine at all."
+        },
+        {
+          "text": "Overall stoichiometry of a reaction predicting its rate orders",
+          "why": "Rate laws cannot be deduced from overall equations; only the rate-determining elementary step sets the rate orders.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 26,
+      "subId": "26b",
+      "options": [
+        {
+          "text": "SN₂ reaction of 1-bromobutane with NaOH",
+          "why": "Rate depends on both [halogenoalkane] and [NaOH] because the single concerted step involves both molecules in the transition state."
+        },
+        {
+          "text": "Elementary step molecularity in multi-step ozone decomposition",
+          "why": "Each elementary step contributes its participants to the rate expression; the overall rate law reflects the identity of the rate-determining step."
+        },
+        {
+          "text": "Activation energy determining the form of the rate equation",
+          "why": "Lower Ea increases k but does not set the algebraic form of the rate equation; only the mechanism determines the rate orders.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 27,
+      "subId": "27a",
+      "options": [
+        {
+          "text": "Ammonia NH₃ attacking halogenoalkanes and forming complex ions",
+          "why": "NH₃ attacks halogenoalkanes via its lone pair in organic substitution and donates the same lone pair to metal cations in inorganic complex formation."
+        },
+        {
+          "text": "Water attacking acyl chlorides and coordinating to metal ions",
+          "why": "Water hydrolyzes acyl chlorides by lone-pair donation in organic chemistry and acts as a ligand toward metal cations in inorganic complexes."
+        },
+        {
+          "text": "Bromine Br₂ decolorized by alkene pi bonds",
+          "why": "Bromine accepts electron density from the alkene pi bond, acting as an electrophile, not a nucleophile.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 27,
+      "subId": "27b",
+      "options": [
+        {
+          "text": "Cyanide ion CN- in SN₂ reactions and as inorganic ligand",
+          "why": "CN- attacks primary halogenoalkanes by lone-pair donation and coordinates to metal cations to form complex ions in inorganic chemistry."
+        },
+        {
+          "text": "Chloride ion Cl- as nucleophile and as ligand to metals",
+          "why": "Cl- displaces leaving groups in organic SN₂ reactions and donates lone pairs to form coordinate bonds with transition metal cations."
+        },
+        {
+          "text": "Boron trifluoride BF₃ in Lewis acid-base reactions",
+          "why": "BF₃ accepts electron pairs from nucleophiles; it is a Lewis acid (electrophile), not a nucleophile.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 28,
+      "subId": "28a",
+      "options": [
+        {
+          "text": "Free radical chlorination of ethane",
+          "why": "Cl• radicals are highly reactive and abstract any C-H bond without preference, producing multiple mono- and poly-chlorinated products."
+        },
+        {
+          "text": "Radical polymerization of propene giving broad chain length distribution",
+          "why": "Propagating radicals react in various orientations and terminate randomly, giving a statistical distribution of chain lengths rather than one product."
+        },
+        {
+          "text": "Electrophilic addition of HBr to propene",
+          "why": "Markovnikov's rule directs HBr predominantly to one product by favoring the more stable carbocation; selectivity operates here.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 28,
+      "subId": "28b",
+      "options": [
+        {
+          "text": "Free radical bromination of butane giving two products",
+          "why": "Br• can abstract any of the ten C-H hydrogens in butane, giving 1-bromobutane and 2-bromobutane in a ratio set by statistics."
+        },
+        {
+          "text": "Random termination in radical chain polymerization",
+          "why": "Random coupling of propagating radical ends at termination produces a statistical spread of molecular weights, not a single defined product."
+        },
+        {
+          "text": "Acid-catalyzed esterification of ethanol with ethanoic acid",
+          "why": "Esterification gives one defined ester product; the equilibrium mixture contains reactants and products but not through a non-selective intermediate.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 29,
+      "subId": "29a",
+      "options": [
+        {
+          "text": "Ammonium nitrate dissolving endothermically in water",
+          "why": "NH₄NO₃ dissolves endothermically yet spontaneously because the large positional entropy of dispersed ions overcomes the unfavorable enthalpy."
+        },
+        {
+          "text": "Thermal decomposition of CaCO₃ above 840 C",
+          "why": "CaCO₃ decomposition is endothermic, but above the critical temperature the TdeltaS term from gaseous CO₂ produced makes deltaG negative."
+        },
+        {
+          "text": "Combustion of ethanol in excess air",
+          "why": "Combustion is overwhelmingly spontaneous because it is strongly exothermic; any entropy increase is a secondary factor, not the main driver here.",
+          "impostor": true
+        }
+      ],
+      "hl": true
+    },
+    {
+      "qIndex": 29,
+      "subId": "29b",
+      "options": [
+        {
+          "text": "Liquid bromine vaporizing above its boiling point",
+          "why": "Evaporation requires energy, but above the boiling point the large entropy increase of the gaseous state makes the process spontaneous."
+        },
+        {
+          "text": "Two ideal gases mixing spontaneously",
+          "why": "Mixing two ideal gases involves no enthalpy change at all; the process is driven entirely by the entropy increase of the mixed state."
+        },
+        {
+          "text": "Water freezing spontaneously at -10 C",
+          "why": "Freezing is spontaneous here because crystallization is exothermic; entropy decreases as the solid forms, so enthalpy drives the process.",
+          "impostor": true
+        }
+      ],
+      "hl": true
+    },
+    {
+      "qIndex": 30,
+      "subId": "30a",
+      "options": [
+        {
+          "text": "BF₃ accepting lone pair from NH₃ forming BF₃ dot NH₃",
+          "why": "BF₃ is a Lewis acid accepting the lone pair of the Lewis base NH₃; the adduct forms without any proton transfer."
+        },
+        {
+          "text": "Al₃+ coordinating water molecules in aqueous solution",
+          "why": "Al₃+ accepts lone pairs from water, acting as a Lewis acid; this explains the acidity of Al₃+ solutions without invoking proton transfer."
+        },
+        {
+          "text": "NaOH neutralizing HCl in aqueous solution",
+          "why": "Strong acid-base neutralization is completely described by proton transfer; Lewis acid-base framing adds no additional insight here.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 30,
+      "subId": "30b",
+      "options": [
+        {
+          "text": "Fe₃+ forming blood-red complex with thiocyanate SCN-",
+          "why": "Fe₃+ accepts the lone pair from SCN-, acting as a Lewis acid in a reaction better described as Lewis acid-base than proton transfer."
+        },
+        {
+          "text": "SO₃ reacting with water to give sulfuric acid",
+          "why": "SO₃ accepts a lone pair from the oxygen of water, acting as a Lewis acid; formation of H₂SO₄ is driven by this Lewis acid-base interaction."
+        },
+        {
+          "text": "AgCl precipitating when NaCl is added to AgNO₃ solution",
+          "why": "Ag+ attracting Cl- drives precipitation through lattice energy; describing it as Lewis acid-base adds nothing useful to understanding why AgCl precipitates.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 31,
+      "subId": "31a",
+      "options": [
+        {
+          "text": "Zinc displacing copper from copper sulfate solution",
+          "why": "Zn has more negative E° than Cu, giving a positive E°cell; a positive cell potential confirms thermodynamic spontaneity."
+        },
+        {
+          "text": "Chlorine oxidizing bromide ions in solution",
+          "why": "Cl₂ has more positive E° than Br₂; coupling Cl₂ reduction with Br- oxidation gives a positive E°cell, predicting spontaneous reaction."
+        },
+        {
+          "text": "Sodium reacting violently and rapidly with water",
+          "why": "Sodium reacts spontaneously with water, but E° data predicts thermodynamic spontaneity, not the vigor or rate of the reaction.",
+          "impostor": true
+        }
+      ],
+      "hl": true
+    },
+    {
+      "qIndex": 31,
+      "subId": "31b",
+      "options": [
+        {
+          "text": "Copper not dissolving in dilute sulfuric acid",
+          "why": "Copper has more positive E° than H+/H₂, giving a negative E°cell for the reaction with H₂SO₄; E° data correctly predicts no spontaneous reaction."
+        },
+        {
+          "text": "Iron rusting spontaneously in aerated water",
+          "why": "Iron has more negative E° than O₂/H₂O, giving a positive E°cell; standard electrode potentials confirm that rusting is thermodynamically spontaneous."
+        },
+        {
+          "text": "Aluminum resisting corrosion despite very negative E°",
+          "why": "Aluminum's negative E° predicts high reactivity, but a protective oxide film prevents reaction; kinetics override the thermodynamic prediction.",
+          "impostor": true
+        }
+      ],
+      "hl": true
+    },
+    {
+      "qIndex": 32,
+      "subId": "32a",
+      "options": [
+        {
+          "text": "Oxidation of ethanol to ethanal with acidified dichromate",
+          "why": "Carbon of CH₂OH increases in oxidation state as it loses H and gains bonds to O, converting primary alcohol to aldehyde."
+        },
+        {
+          "text": "Reduction of propanoic acid to propanal with LiAlH₄",
+          "why": "Each hydride delivered to the carbonyl carbon decreases its oxidation state, converting the carboxylic acid stepwise toward alcohol."
+        },
+        {
+          "text": "Hydrolysis of ethyl ethanoate to ethanoic acid and ethanol",
+          "why": "In ester hydrolysis the C-O bonds break and re-form, but the oxidation state of each carbon atom remains unchanged throughout.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 32,
+      "subId": "32b",
+      "options": [
+        {
+          "text": "Combustion of propane fully oxidizing carbon to CO₂",
+          "why": "Carbon in propane (approximately -2 per CH₂) is fully oxidized to +4 in CO₂; combustion represents an extreme increase in carbon oxidation state."
+        },
+        {
+          "text": "Hydrogenation of ethene to ethane",
+          "why": "Adding H₂ across the C=C double bond reduces each carbon from roughly -1 to -2 in ethane, lowering the carbon oxidation state."
+        },
+        {
+          "text": "Esterification of methanol with methanoic acid",
+          "why": "Esterification forms a C-O-C linkage by loss of water; the oxidation states of carbon atoms in the ester match those in the original reactants.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 33,
+      "subId": "33a",
+      "options": [
+        {
+          "text": "1-iodobutane reacting faster than 1-chlorobutane with NaOH",
+          "why": "Iodide is a better leaving group than chloride because C-I is weaker and longer, breaking more easily in the SN₂ transition state."
+        },
+        {
+          "text": "Tosylate esters hydrolyzing much faster than free alcohols",
+          "why": "Tosylate replaces the poor leaving group OH- with a stable, well-solvated anion, greatly accelerating substitution."
+        },
+        {
+          "text": "Tertiary halogenoalkane faster than primary in SN₁",
+          "why": "Faster rate for tertiary substrates reflects carbocation stabilization by alkyl groups, not any difference in the leaving group identity.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 33,
+      "subId": "33b",
+      "options": [
+        {
+          "text": "Fluoroalkanes almost unreactive under standard SN₂ conditions",
+          "why": "Fluoride is the weakest leaving group among halogens because C-F is the strongest bond, making departure nearly impossible."
+        },
+        {
+          "text": "Mesylate esters as highly reactive substrates in substitution",
+          "why": "Mesylate departs as a stable resonance-stabilized anion, making it one of the most effective leaving groups and greatly enhancing rate."
+        },
+        {
+          "text": "Halving nucleophile concentration reducing SN₂ rate by half",
+          "why": "Reducing [NaOH] cuts SN₂ rate because rate = k[substrate][nucleophile]; this is a nucleophile concentration effect, not a leaving group effect.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 34,
+      "subId": "34a",
+      "options": [
+        {
+          "text": "Insufficient oxygen in car engine producing CO not CO₂",
+          "why": "When oxygen is limited, carbon is oxidized only to toxic CO instead of CO₂, directly creating a health hazard from the changed product."
+        },
+        {
+          "text": "Limited air in coal combustion producing soot and CO",
+          "why": "Restricting air converts combustion products from CO₂ and water to particulate soot and CO, harming both air quality and human health."
+        },
+        {
+          "text": "Adding excess HCl beyond equivalence point in a titration",
+          "why": "Excess HCl leaves acid in solution but does not change the salt product formed, and there are no health or environmental consequences.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 34,
+      "subId": "34b",
+      "options": [
+        {
+          "text": "Controlled O₂ supply in Ostwald process giving NO not N₂",
+          "why": "Controlling the O₂ supply determines whether ammonia is oxidized to useful NO or wasted as N₂, directly affecting the industrial process."
+        },
+        {
+          "text": "Oxygen-limited soil producing N₂O greenhouse gas not N₂",
+          "why": "Under anaerobic conditions, bacteria produce potent greenhouse gas N₂O rather than harmless N₂, linking oxygen limitation to climate impact."
+        },
+        {
+          "text": "Finding the limiting reactant to calculate theoretical yield",
+          "why": "Identifying the limiting reactant enables a yield calculation but is a stoichiometric exercise with no change in products or environmental effect.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 35,
+      "subId": "35a",
+      "options": [
+        {
+          "text": "Sodium reacting with water to give NaOH and H₂",
+          "why": "Sodium is oxidized from 0 to +1 while H+ from water is reduced to H₂; water simultaneously donates protons as a Bronsted-Lowry acid."
+        },
+        {
+          "text": "Zinc dissolving in dilute hydrochloric acid",
+          "why": "Zinc is oxidized to Zn₂+ while H+ is reduced to H₂; the acid acts simultaneously as a proton donor and as an oxidizing agent."
+        },
+        {
+          "text": "Neutralization of NaOH with nitric acid HNO₃",
+          "why": "H+ transfers to OH- in a straightforward proton-transfer reaction; no oxidation state changes occur and there is no redox component.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 35,
+      "subId": "35b",
+      "options": [
+        {
+          "text": "Fluorine reacting with water to give HF and O₂",
+          "why": "Fluorine oxidizes water oxygen from -2 to 0 while being reduced from 0 to -1; HF is also formed as an acidic product simultaneously."
+        },
+        {
+          "text": "Chlorine disproportionating in cold sodium hydroxide",
+          "why": "Cl₂ simultaneously oxidizes one chlorine to +1 and reduces another to -1; the product NaOCl is the salt of a weak acid, adding acid-base character."
+        },
+        {
+          "text": "Barium sulfate precipitating from BaCl₂ and dilute H₂SO₄",
+          "why": "Ba₂+ and SO₄₂- form an insoluble precipitate; H₂SO₄ donates protons as an acid, but no oxidation state changes occur in this precipitation.",
+          "impostor": true
+        }
+      ]
+    }
+  ]
+}

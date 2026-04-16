@@ -295,7 +295,8 @@
           "why": "A field-and-area quantity, not a rotational version of anything translational.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 5,
@@ -352,7 +353,8 @@
           "why": "A quantum transition, not an equilibrium of opposing forces.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 7,
@@ -409,7 +411,8 @@
           "why": "Invariant. The same value in every frame.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 8,
@@ -428,7 +431,8 @@
           "why": "A rest-frame invariant. Doesn't change with viewpoint.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 9,
@@ -637,7 +641,8 @@
           "why": "A reversible cyclic process. Entropy doesn't pick a direction here.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 14,
@@ -656,7 +661,8 @@
           "why": "Idealized reversible motion. No preferred time direction.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 15,
@@ -751,7 +757,8 @@
           "why": "Wildly over-complicated. Simplification is the opposite direction.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 17,
@@ -1055,7 +1062,8 @@
           "why": "Classical mechanics. No wave phenomena show up at this scale.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 25,
@@ -1074,7 +1082,8 @@
           "why": "Classical, deterministic motion. No need for wave behaviour.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 26,
@@ -1112,7 +1121,8 @@
           "why": "Mechanical dissipation. Nothing to do with wavelength.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 27,
@@ -1150,7 +1160,8 @@
           "why": "Continuous range of frequencies. No selection, no standing wave.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 28,
@@ -1283,7 +1294,8 @@
           "why": "The deflection is aerodynamic, not due to any electromagnetic field.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 31,
@@ -1321,7 +1333,8 @@
           "why": "Photoelectric effect, not induction. No moving parts required.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 32,
@@ -1340,7 +1353,8 @@
           "why": "Chemistry, not motion, is the energy source.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 33,
@@ -1454,7 +1468,8 @@
           "why": "Bound motion by definition. Escape is not in play.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 36,
@@ -1549,7 +1564,8 @@
           "why": "Classical motion. The ball takes every intermediate position.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 38,
@@ -1644,7 +1660,8 @@
           "why": "Thermodynamic work. No mass conversion involved.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 41,
@@ -1701,7 +1718,8 @@
           "why": "Classical mechanics works to many decimal places. No quantum needed.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 42,
@@ -1720,7 +1738,8 @@
           "why": "Classical momentum conservation handles it exactly.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 43,
@@ -1739,7 +1758,8 @@
           "why": "Both classical and only mechanical. Duality doesn't feature.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 43,
@@ -1758,7 +1778,8 @@
           "why": "A pure wave phenomenon. No particle-like quantization observable here.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 44,
@@ -1796,7 +1817,8 @@
           "why": "Coulomb force, not gravity, is what matters; pressure isn't the counter.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 45,

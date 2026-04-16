@@ -50,6 +50,24 @@ function normalize(v: unknown): string {
   return s;
 }
 
+/**
+ * Convert chemical formula numbers to Unicode subscripts so "H2O"
+ * renders as "H₂O", "CO2" as "CO₂", etc. Matches an element symbol
+ * (uppercase letter, optional lowercase) immediately followed by
+ * digits. Applied to example text, whys, and linking questions.
+ */
+const SUB: Record<string, string> = {
+  '0': '\u2080', '1': '\u2081', '2': '\u2082', '3': '\u2083',
+  '4': '\u2084', '5': '\u2085', '6': '\u2086', '7': '\u2087',
+  '8': '\u2088', '9': '\u2089',
+};
+
+function subscriptFormulas(s: string): string {
+  return s.replace(/([A-Z][a-z]?)(\d+)/g, (_m, letters: string, digits: string) => {
+    return letters + digits.split('').map((d) => SUB[d] || d).join('');
+  });
+}
+
 function readCell(row: ExcelJS.Row, col: number): string {
   const cell = row.getCell(col);
   const v = cell.value as unknown;
@@ -96,7 +114,7 @@ async function buildSubject(subjectFile: string): Promise<void> {
     if (!text) die(subjectFile, `Questions row ${rowNum}: empty linking question text`);
     if (seenQ.has(q)) die(subjectFile, `Questions sheet: duplicate Q# ${q}`);
     seenQ.add(q);
-    questionsMap.set(q, text);
+    questionsMap.set(q, subscriptFormulas(text));
   });
   if (questionsMap.size === 0) die(subjectFile, 'Questions sheet is empty');
 
@@ -118,8 +136,8 @@ async function buildSubject(subjectFile: string): Promise<void> {
     if (rowNum === 1) return;
     const subId = readCell(row, 1);
     const q = readInt(row, 2);
-    const example = readCell(row, 4);
-    const why = readCell(row, 5);
+    const example = subscriptFormulas(readCell(row, 4));
+    const why = subscriptFormulas(readCell(row, 5));
     const roleRaw = readCell(row, 6);
 
     if (!subId) die(subjectFile, `Cards row ${rowNum}: missing Q ID`);
@@ -163,6 +181,49 @@ async function buildSubject(subjectFile: string): Promise<void> {
     }
   }
 
+  // --- HL classification ---------------------------------------------------
+  // If the Cards sheet has a 7th column "Level", read it. Otherwise fall
+  // back to keyword-based detection of HL-only content (references to
+  // topics like entropy, special relativity, cladistics, etc.).
+  const hasLevelCol = readCell(cardsSheet.getRow(1), 7).toLowerCase() === 'level';
+  const hlSubIds = new Set<string>();
+
+  if (hasLevelCol) {
+    cardsSheet.eachRow({ includeEmpty: false }, (row, rowNum) => {
+      if (rowNum === 1) return;
+      const sid = readCell(row, 1);
+      const lv = readCell(row, 7).toLowerCase();
+      if (lv === 'hl' && sid) hlSubIds.add(sid);
+    });
+  } else {
+    // Keyword fallback: scan question + example + why text for HL topics.
+    const HL_PATTERNS: RegExp[] = [
+      // Biology HL
+      /origin of cells/i, /endosymbi/i, /\bvirus\b/i, /\bviral\b/i, /bacteriophage/i,
+      /cladist/i, /cladogram/i, /phylogen/i, /binomial nomenclature/i,
+      /sarcomere/i, /sliding filament/i, /\bactin\b/i, /\bmyosin\b/i,
+      /neurotransmitter/i, /synap(?:se|tic)/i, /gene expression/i,
+      /epigenet/i, /transcription factor/i, /operon/i,
+      // Chemistry HL
+      /\bentropy\b/i, /spontane/i, /\bgibbs\b/i, /free energy/i,
+      // Physics HL
+      /rigid body/i, /moment of inertia/i, /angular momentum/i,
+      /special relativity/i, /lorentz/i, /time dilation/i, /length contraction/i,
+      /relativistic/i, /twin paradox/i,
+      /thermodynamic/i, /carnot/i, /heat engine/i,
+      /\binduction\b/i, /\bfaraday\b/i, /\blenz\b/i, /induced emf/i, /magnetic flux/i,
+      /quantum/i, /wave.particle/i, /de broglie/i, /photoelectric/i,
+      /uncertainty principle/i, /wave function/i, /bohr model/i,
+    ];
+    for (const [subId, entry] of cardsBySubId) {
+      const qText = questionsMap.get(entry.qIndex) ?? '';
+      const blob = qText + ' ' + entry.options.map((o) => o.text + ' ' + o.why).join(' ');
+      if (HL_PATTERNS.some((re) => re.test(blob))) {
+        hlSubIds.add(subId);
+      }
+    }
+  }
+
   // Build sorted cards array: ordered by Q# then sub-card letter.
   const allSubIds = [...cardsBySubId.keys()].sort((a, b) => {
     const qa = cardsBySubId.get(a)!.qIndex;
@@ -172,7 +233,9 @@ async function buildSubject(subjectFile: string): Promise<void> {
   });
   const cards: Card[] = allSubIds.map((subId) => {
     const entry = cardsBySubId.get(subId)!;
-    return { qIndex: entry.qIndex, subId, options: entry.options };
+    const card: Card = { qIndex: entry.qIndex, subId, options: entry.options };
+    if (hlSubIds.has(subId)) card.hl = true;
+    return card;
   });
 
   // --- Themes sheet (optional) -------------------------------------------
