@@ -121,22 +121,20 @@ function ModeRow({
     <li>
       <Link
         href={href}
-        className="flex items-baseline no-underline group"
+        className="block no-underline"
         style={{ color: 'var(--ink)' }}
       >
         <span
-          className="editorial editorial--medium shrink-0"
+          className="editorial editorial--medium block"
           style={{ fontSize: 'var(--fs-lg)' }}
         >
           {name}
         </span>
-        <span className="leader" aria-hidden="true" />
         <span
-          className="font-mono shrink-0 text-right"
+          className="font-mono block mt-1"
           style={{
             fontSize: 'var(--fs-xs)',
             color: 'var(--pencil)',
-            maxWidth: 240,
             lineHeight: 1.45,
           }}
         >
