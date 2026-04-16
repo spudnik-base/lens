@@ -16,12 +16,12 @@
   /* Palette */
   --paper: #f2e9d0;
   --card: #fbf6e5;
-  --border: #c8bd9e;
+  --border: #b8ad8e;
   --ink: #2a2520;
-  --pencil: #8a8170;
+  --pencil: #635a4e;
   --ink-red: #9c3a2c;
   --ink-green: #2f5234;
-  --body-subtle: #5a544a;
+  --body-subtle: #46403a;
 
   /* Hairline = always 1px, even on 2x screens. We use box-shadow insets
      for card borders since CSS borders can render as 2px on hi-dpi. */
@@ -34,12 +34,12 @@
      wide monitors. No media queries needed; the clamp does the work.
      Every component reads these by name so there is one place to
      tune readability. */
-  --fs-xs: clamp(11px, 0.2vw + 9.5px, 13px);
-  --fs-sm: clamp(13px, 0.3vw + 11px, 15px);
-  --fs-md: clamp(15px, 0.4vw + 13px, 18px);
-  --fs-lg: clamp(18px, 0.7vw + 14px, 23px);
-  --fs-xl: clamp(24px, 1.2vw + 18px, 34px);
-  --fs-xxl: clamp(40px, 2vw + 30px, 62px);
+  --fs-xs: clamp(13px, 0.24vw + 11.4px, 15.5px);
+  --fs-sm: clamp(15.5px, 0.36vw + 13.2px, 18px);
+  --fs-md: clamp(18px, 0.48vw + 15.6px, 21.5px);
+  --fs-lg: clamp(21.5px, 0.84vw + 16.8px, 27.5px);
+  --fs-xl: clamp(29px, 1.44vw + 21.6px, 41px);
+  --fs-xxl: clamp(48px, 2.4vw + 36px, 74px);
 
   /* Column layout. Width grows with viewport via clamp and tops out
      at ~640px so lines stay readable at body size. Padding scales
