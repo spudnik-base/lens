@@ -64,7 +64,6 @@ body {
   color: var(--ink);
   font-family: var(--font-serif), Georgia, serif;
   font-weight: 400;
-  font-style: italic;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   /* Prevent the pull-to-refresh overscroll that breaks the standalone
@@ -76,7 +75,8 @@ body {
   min-height: 100dvh;
 }
 
-/* Disable italic for mono, marginalia is always upright. */
+/* Mono is always upright (redundant now that italic is dropped
+   globally, but kept as a guard for future overrides). */
 .font-mono,
 .font-mono * {
   font-style: normal;
@@ -159,11 +159,10 @@ body {
     text-transform: uppercase;
   }
 
-  /* Body editorial, serif italic, what linking questions and examples
-     are set in. Size is set per-usage. */
+  /* Body editorial serif, what linking questions and examples are set
+     in. Size is set per-usage. */
   .editorial {
     font-family: var(--font-serif), Georgia, serif;
-    font-style: italic;
     font-weight: 400;
     color: var(--ink);
   }

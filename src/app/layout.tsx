@@ -1,13 +1,14 @@
 import type { Metadata, Viewport } from 'next';
-import { EB_Garamond, IBM_Plex_Mono } from 'next/font/google';
+import { Lora, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 
 // Editorial serif, linking questions, examples, whys, title plates.
-// 400 and 500 only (see Section 6.2, never 600+).
-const serif = EB_Garamond({
+// 400 and 500 only. Lora replaces EB Garamond for better screen
+// readability while keeping the warm scholarly feel.
+const serif = Lora({
   subsets: ['latin'],
   weight: ['400', '500'],
-  style: ['normal', 'italic'],
+  style: ['normal'],
   display: 'swap',
   variable: '--font-serif',
 });
