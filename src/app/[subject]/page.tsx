@@ -21,7 +21,6 @@ export default async function SubjectHomePage({ params }: Props) {
   if (!subject) notFound();
 
   const totalCards = subject.cards.length;
-  const totalQuestions = subject.questions.length;
 
   return (
     <PageFrame>
@@ -51,7 +50,7 @@ export default async function SubjectHomePage({ params }: Props) {
             color: 'var(--body-subtle)',
           }}
         >
-          {totalQuestions}&nbsp;linking&nbsp;questions
+          linking questions
         </p>
 
         <div className="mt-3 flex justify-center">
