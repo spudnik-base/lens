@@ -6,7 +6,7 @@
 export type SubjectId = 'biology' | 'chemistry' | 'physics';
 
 export type Option = {
-  /** The example, short noun phrase. Fits two lines at ~20px on 340px. */
+  /** The example, short noun phrase. */
   text: string;
   /** One sentence explaining why it fits or why it's the impostor. */
   why: string;
@@ -17,7 +17,11 @@ export type Option = {
 export type Card = {
   /** 1-based index into Subject.questions. */
   qIndex: number;
-  /** Exactly 5 options, exactly 1 with impostor: true. */
+  /** Sub-card identifier within a lens, e.g. "1a" or "1b". Each lens
+      has two sub-cards with distinct impostors so the student sees two
+      different failure modes per linking question. */
+  subId: string;
+  /** Exactly 3 options: 2 fits + 1 impostor. */
   options: Option[];
 };
 
@@ -34,15 +38,10 @@ export type Subject = {
   id: SubjectId;
   /** e.g. 'IB Biology' */
   name: string;
-  /**
-   * Optional theme groupings. Biology's MVP release ships without themes:
-   * the 32 questions live in a single flat list and Browse shows progress
-   * against them as one set. A subject that defines themes makes Browse
-   * render thumb tabs.
-   */
+  /** Optional theme groupings. */
   themes?: Theme[];
   /** Linking questions, indexed 1..N. */
   questions: string[];
-  /** One card per question. */
+  /** Two cards per question (sub-cards a and b). */
   cards: Card[];
 };
