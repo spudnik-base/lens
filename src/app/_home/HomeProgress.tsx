@@ -1,18 +1,18 @@
 'use client';
 
-import { useProgress, countExaminedLenses } from '@/lib/progress';
+import { useProgress } from '@/lib/progress';
 import { DEFAULT_SUBJECT_ID } from '@/lib/content';
 import { PencilProgressBar } from '@/components/field/PencilProgressBar';
 
-export function HomeProgress({ totalQuestions }: { totalQuestions: number }) {
+export function HomeProgress({ totalCards }: { totalCards: number }) {
   const { studied, hydrated } = useProgress(DEFAULT_SUBJECT_ID);
-  const examined = hydrated ? countExaminedLenses(studied, totalQuestions) : 0;
+  const done = hydrated ? studied.size : 0;
 
   return (
     <PencilProgressBar
-      value={examined}
-      total={totalQuestions}
-      label="LENSES EXAMINED"
+      value={done}
+      total={totalCards}
+      label="CARDS EXAMINED"
     />
   );
 }

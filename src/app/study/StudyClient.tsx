@@ -14,7 +14,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import type { Subject, Card } from '@/types/subject';
 import { shuffle } from '@/lib/shuffle';
-import { useProgress, countExaminedLenses } from '@/lib/progress';
+import { useProgress } from '@/lib/progress';
 import { useClickSound } from '@/lib/click-sound';
 import { Loupe } from '@/components/field/Loupe';
 import { Checkmark } from '@/components/field/Checkmark';
@@ -129,7 +129,7 @@ export function StudyClient({
   const shown = entry.shownIdxs;
   const question = subject.questions[card.qIndex - 1];
   const revealed = selected !== null;
-  const examined = hydrated ? countExaminedLenses(studied, totalQuestions) : 0;
+  const totalCards = subject.cards.length;
 
   const handleChoose = (optionIdx: number) => {
     if (revealed) return;
@@ -155,7 +155,9 @@ export function StudyClient({
           &larr; HOME
         </Link>
         <div className="marg">STUDY MODE</div>
-        <div className="marg">{examined} / {totalQuestions} LENSES</div>
+        <div className="marg">
+          {hydrated ? studied.size : 0} / {totalCards}
+        </div>
       </div>
 
       {/* Lens header */}

@@ -18,7 +18,7 @@ export default function HomePage() {
     // Build-time guarantee, the content registry always has biology.
     throw new Error('Missing biology subject');
   }
-  const totalQuestions = subject.questions.length;
+  const totalCards = subject.cards.length;
 
   return (
     <PageFrame>
@@ -76,7 +76,7 @@ export default function HomePage() {
 
       {/* Progress bar, the hydrated client island --------------------- */}
       <div className="mt-8">
-        <HomeProgress totalQuestions={totalQuestions} />
+        <HomeProgress totalCards={totalCards} />
       </div>
 
       {/* Credit line --------------------------------------------------- */}

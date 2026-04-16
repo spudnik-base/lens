@@ -1,34 +1,40 @@
 'use client';
 
-// Overview screen. Flat list of 32 linking questions. A lens gets a
-// checkmark when both its sub-cards (a + b) have been examined in
-// Study. Tapping a row jumps to Study on the first unseen sub-card
-// for that lens.
+// Overview screen. Shows all 64 sub-cards grouped under their 32
+// parent linking questions. Each sub-card (a, b) is tappable and
+// jumps to Study on that specific card. Progress tracks individual
+// sub-cards so both the a and b variant for each lens are visible.
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import type { Subject } from '@/types/subject';
-import { useProgress, countExaminedLenses } from '@/lib/progress';
+import { useProgress } from '@/lib/progress';
 import { Ornament } from '@/components/field/Ornament';
 import { Checkmark } from '@/components/field/Checkmark';
 import { PencilProgressBar } from '@/components/field/PencilProgressBar';
 
 export function BrowseClient({ subject }: { subject: Subject }) {
   const { studied, hydrated, reset } = useProgress(subject.id);
-  const total = subject.questions.length;
-  const examined = hydrated ? countExaminedLenses(studied, total) : 0;
+  const totalCards = subject.cards.length;
+  const done = hydrated ? studied.size : 0;
   const [confirmReset, setConfirmReset] = useState(false);
 
-  const rows = useMemo(
-    () =>
-      subject.questions.map((q, i) => {
-        const qIndex = i + 1;
-        const aDone = studied.has(`${qIndex}a`);
-        const bDone = studied.has(`${qIndex}b`);
-        return { qIndex, text: q, done: aDone && bDone, partial: aDone || bDone };
-      }),
-    [subject.questions, studied]
-  );
+  // Group cards by qIndex so we can render question headers.
+  const groups = useMemo(() => {
+    const map = new Map<number, typeof subject.cards>();
+    for (const card of subject.cards) {
+      const arr = map.get(card.qIndex) ?? [];
+      arr.push(card);
+      map.set(card.qIndex, arr);
+    }
+    return [...map.entries()]
+      .sort(([a], [b]) => a - b)
+      .map(([qIndex, cards]) => ({
+        qIndex,
+        question: subject.questions[qIndex - 1],
+        cards: cards.sort((a, b) => a.subId.localeCompare(b.subId)),
+      }));
+  }, [subject]);
 
   return (
     <div>
@@ -38,7 +44,7 @@ export function BrowseClient({ subject }: { subject: Subject }) {
           &larr; HOME
         </Link>
         <div className="marg">OVERVIEW</div>
-        <div className="marg">{total} LENSES</div>
+        <div className="marg">{totalCards} CARDS</div>
       </div>
 
       {/* Title plate */}
@@ -55,26 +61,20 @@ export function BrowseClient({ subject }: { subject: Subject }) {
       {/* Progress bar */}
       <div className="mt-2 mb-8">
         <PencilProgressBar
-          value={examined}
-          total={total}
-          label="LENSES EXAMINED"
+          value={done}
+          total={totalCards}
+          label="CARDS EXAMINED"
         />
       </div>
 
       <div className="rule my-5" />
 
-      {/* Lens list */}
+      {/* Lens list, grouped by question */}
       <ul className="flex flex-col">
-        {rows.map(({ qIndex, text, done, partial }) => (
-          <li key={qIndex}>
-            <Link
-              href={`/study?q=${qIndex}`}
-              className="flex items-start gap-4 py-4"
-              style={{
-                color: 'var(--ink)',
-                borderTop: '1px solid var(--border)',
-              }}
-            >
+        {groups.map(({ qIndex, question, cards }) => (
+          <li key={qIndex} style={{ borderTop: '1px solid var(--border)' }}>
+            {/* Question header */}
+            <div className="flex items-start gap-4 pt-4 pb-2">
               <span
                 className="font-mono shrink-0 text-right"
                 style={{
@@ -89,27 +89,50 @@ export function BrowseClient({ subject }: { subject: Subject }) {
               </span>
               <span
                 className="editorial flex-1"
-                style={{
-                  fontSize: 'var(--fs-md)',
-                  lineHeight: 1.35,
-                  opacity: done ? 0.55 : 1,
-                }}
+                style={{ fontSize: 'var(--fs-md)', lineHeight: 1.35 }}
               >
-                {text}
+                {question}
               </span>
-              <span className="shrink-0 w-6 mt-1 flex items-center gap-0.5" aria-hidden="true">
-                {done ? (
-                  <Checkmark size={18} />
-                ) : partial ? (
-                  <span
-                    className="font-mono"
-                    style={{ fontSize: 9, color: 'var(--ink-green)', letterSpacing: '0.05em' }}
+            </div>
+
+            {/* Sub-card rows */}
+            <div className="pl-12 pb-3 flex flex-col gap-1">
+              {cards.map((card) => {
+                const isDone = studied.has(card.subId);
+                const letter = card.subId.replace(/^\d+/, '');
+                return (
+                  <Link
+                    key={card.subId}
+                    href={`/study?q=${card.qIndex}`}
+                    className="flex items-center gap-3 py-1.5"
+                    style={{ color: 'var(--ink)' }}
                   >
-                    1/2
-                  </span>
-                ) : null}
-              </span>
-            </Link>
+                    <span
+                      className="font-mono shrink-0"
+                      style={{
+                        fontSize: 'var(--fs-xs)',
+                        color: 'var(--pencil)',
+                        width: 20,
+                      }}
+                    >
+                      {letter}
+                    </span>
+                    <span
+                      className="font-mono flex-1"
+                      style={{
+                        fontSize: 'var(--fs-xs)',
+                        color: isDone ? 'var(--ink-green)' : 'var(--pencil)',
+                      }}
+                    >
+                      {isDone ? 'EXAMINED' : 'NOT YET'}
+                    </span>
+                    <span className="shrink-0 w-5" aria-hidden="true">
+                      {isDone && <Checkmark size={16} />}
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
           </li>
         ))}
       </ul>
@@ -122,7 +145,7 @@ export function BrowseClient({ subject }: { subject: Subject }) {
             className="marg"
             style={{ color: 'var(--pencil)', background: 'transparent' }}
             onClick={() => setConfirmReset(true)}
-            disabled={examined === 0 && !studied.size}
+            disabled={done === 0}
           >
             ERASE ALL MARKS
           </button>
