@@ -5,35 +5,29 @@ import { Loupe } from '@/components/field/Loupe';
 import { SUBJECTS } from '@/lib/content';
 import { SubjectProgress } from './_picker/SubjectProgress';
 
-// Subject picker. When there are multiple subjects (biology, physics,
-// chemistry) the root landing page lets the student choose one. Each
-// card shows the subject name, question count, and a progress bar
-// reading from that subject's localStorage.
-
 export default function PickerPage() {
   return (
     <PageFrame>
       <header className="pt-6 pb-3 text-center">
-        <div className="flex justify-center mb-3">
-          <Loupe size="compact" />
+        <div className="flex items-center justify-center gap-3">
+          <Loupe size="full" />
+          <h1
+            className="editorial"
+            style={{ fontSize: 'var(--fs-xxl)', lineHeight: 1, letterSpacing: '0.005em' }}
+          >
+            Lens
+          </h1>
         </div>
-
-        <h1
-          className="editorial"
-          style={{ fontSize: 'var(--fs-xxl)', lineHeight: 1, letterSpacing: '0.005em' }}
-        >
-          Lens
-        </h1>
 
         <p
           className="editorial mt-3 px-4"
           style={{
-            fontSize: 'var(--fs-md)',
+            fontSize: 'var(--fs-sm)',
             lineHeight: 1.45,
             color: 'var(--body-subtle)',
           }}
         >
-          A Cramly study guide to the IB linking questions
+          Cramly by Free.Period
         </p>
 
         <div className="mt-3 flex justify-center">

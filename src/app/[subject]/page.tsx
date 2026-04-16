@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PageFrame } from '@/components/layout/PageFrame';
 import { Ornament } from '@/components/field/Ornament';
+import { Loupe } from '@/components/field/Loupe';
 import { SUBJECTS, getSubject } from '@/lib/content';
 import { HomeProgress } from './_home/HomeProgress';
 
@@ -28,24 +29,28 @@ export default async function SubjectHomePage({ params }: Props) {
         <Link href="/" className="marg mb-3 inline-block" style={{ color: 'var(--pencil)' }}>
           &larr; ALL SUBJECTS
         </Link>
-        <div className="marg mb-3">{subject.name.toUpperCase()}</div>
 
-        <h1
-          className="editorial"
-          style={{ fontSize: 'var(--fs-xxl)', lineHeight: 1, letterSpacing: '0.005em' }}
-        >
-          Lens
-        </h1>
+        <div className="flex items-center justify-center gap-3 mb-1">
+          <Loupe size="full" />
+          <h1
+            className="editorial"
+            style={{ fontSize: 'var(--fs-xxl)', lineHeight: 1, letterSpacing: '0.005em' }}
+          >
+            Lens
+          </h1>
+        </div>
+
+        <div className="marg mb-2">{subject.name.toUpperCase()}</div>
 
         <p
-          className="editorial mt-3 px-4"
+          className="editorial px-4"
           style={{
             fontSize: 'var(--fs-md)',
             lineHeight: 1.45,
             color: 'var(--body-subtle)',
           }}
         >
-          A Cramly study guide to the {totalQuestions}&nbsp;linking&nbsp;questions
+          {totalQuestions}&nbsp;linking&nbsp;questions
         </p>
 
         <div className="mt-3 flex justify-center">
