@@ -36,7 +36,13 @@ export default function PickerPage() {
           }}
         >
           Each IB linking question is a lens. Look through it, examine the
-          specimens, and spot the one that doesn&rsquo;t belong.
+          specimens, and spot the one that doesn&rsquo;t belong.{' '}
+          <Link
+            href="/about"
+            style={{ color: 'var(--pencil)', textDecoration: 'underline', textUnderlineOffset: '3px' }}
+          >
+            How it works
+          </Link>
         </p>
       </header>
 
