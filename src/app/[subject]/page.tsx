@@ -53,19 +53,22 @@ export default async function SubjectHomePage({ params }: Props) {
           <LevelToggle subjectId={subject.id} />
         </div>
 
-        <ul className="flex flex-col gap-5">
-          <ModeRow
+        <ul className="flex flex-col gap-3">
+          <ModeCard
             href={`/${subjectId}/study`}
+            num="01"
             name="Study"
             description="examine specimens, find the impostor"
           />
-          <ModeRow
+          <ModeCard
             href={`/${subjectId}/sort`}
+            num="02"
             name="Lens Sort"
             description="60-second sorting against a single lens"
           />
-          <ModeRow
+          <ModeCard
             href={`/${subjectId}/browse`}
+            num="03"
             name="Overview"
             description="the full field guide"
           />
@@ -95,12 +98,14 @@ export default async function SubjectHomePage({ params }: Props) {
   );
 }
 
-function ModeRow({
+function ModeCard({
   href,
+  num,
   name,
   description,
 }: {
   href: string;
+  num: string;
   name: string;
   description: string;
 }) {
@@ -108,9 +113,17 @@ function ModeRow({
     <li>
       <Link
         href={href}
-        className="block no-underline"
+        className="specimen block no-underline"
         style={{ color: 'var(--ink)' }}
       >
+        <div className="flex items-baseline justify-between mb-1">
+          <span className="marg">{num}</span>
+          <span
+            style={{ fontSize: 'var(--fs-sm)', color: 'var(--pencil)' }}
+          >
+            &rarr;
+          </span>
+        </div>
         <span
           className="editorial editorial--medium block"
           style={{ fontSize: 'var(--fs-lg)' }}
