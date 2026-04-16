@@ -32,7 +32,7 @@ import { Loupe } from '@/components/field/Loupe';
 import { Checkmark } from '@/components/field/Checkmark';
 import { ImpostorStamp } from '@/components/field/ImpostorStamp';
 import { SpecimenCard } from '@/components/field/SpecimenCard';
-import { PencilProgressBar } from '@/components/field/PencilProgressBar';
+
 
 type DeckEntry = {
   card: Card;
@@ -182,15 +182,6 @@ export function StudyClient({
         <div className="marg">
           {hydrated ? `${studied.size} / ${totalQuestions}` : `0 / ${totalQuestions}`}
         </div>
-      </div>
-
-      {/* Persistent progress bar -------------------------------------- */}
-      <div className="mb-6">
-        <PencilProgressBar
-          total={totalQuestions}
-          label="LENSES EXAMINED"
-          height={10}
-        />
       </div>
 
       {/* Lens header --------------------------------------------------- */}
