@@ -10,11 +10,12 @@
 // A lens (Q#) counts as "examined" once both its a and b sub-cards
 // have been revealed. The status counter shows lenses examined / 32.
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import type { Subject, Card } from '@/types/subject';
 import { shuffle } from '@/lib/shuffle';
 import { useProgress } from '@/lib/progress';
+import { useLevel } from '@/lib/level';
 import { useClickSound } from '@/lib/click-sound';
 import { Loupe } from '@/components/field/Loupe';
 import { Checkmark } from '@/components/field/Checkmark';
@@ -80,11 +81,20 @@ export function StudyClient({
   startQIndex: number | null;
 }) {
   const { studied, hydrated, mark } = useProgress(subject.id);
+  const { level } = useLevel(subject.id);
   const playClick = useClickSound();
-  const totalQuestions = subject.questions.length;
+
+  // Filter cards by SL/HL level. When level is 'sl', exclude HL cards.
+  const filteredSubject = useMemo(() => {
+    if (level === 'all') return subject;
+    const cards = subject.cards.filter((c) => !c.hl);
+    return { ...subject, cards };
+  }, [subject, level]);
+
+  const totalCards = filteredSubject.cards.length;
 
   const [deck, setDeck] = useState<DeckEntry[]>(() =>
-    buildDeck(subject, null, new Set())
+    buildDeck(filteredSubject, null, new Set())
   );
   const [cursor, setCursor] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
@@ -104,14 +114,14 @@ export function StudyClient({
       priority = loadLastSubId(subject.id);
     }
 
-    setDeck(buildDeck(subject, priority, studied));
+    setDeck(buildDeck(filteredSubject, priority, studied));
     setCursor(0);
     setSelected(null);
   }, [hydrated, studied, subject, startQIndex]);
 
   useEffect(() => {
     if (cursor >= deck.length) {
-      setDeck(buildDeck(subject, null, studied));
+      setDeck(buildDeck(filteredSubject, null, studied));
       setCursor(0);
       setSelected(null);
     }
@@ -129,7 +139,6 @@ export function StudyClient({
   const shown = entry.shownIdxs;
   const question = subject.questions[card.qIndex - 1];
   const revealed = selected !== null;
-  const totalCards = subject.cards.length;
 
   const handleChoose = (optionIdx: number) => {
     if (revealed) return;
@@ -156,7 +165,7 @@ export function StudyClient({
         </Link>
         <div className="marg">STUDY MODE</div>
         <div className="marg">
-          {hydrated ? studied.size : 0} / {totalCards}
+          {hydrated ? studied.size : 0} / {totalCards}{level === 'sl' ? ' SL' : ''}
         </div>
       </div>
 

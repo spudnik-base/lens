@@ -181,6 +181,49 @@ async function buildSubject(subjectFile: string): Promise<void> {
     }
   }
 
+  // --- HL classification ---------------------------------------------------
+  // If the Cards sheet has a 7th column "Level", read it. Otherwise fall
+  // back to keyword-based detection of HL-only content (references to
+  // topics like entropy, special relativity, cladistics, etc.).
+  const hasLevelCol = readCell(cardsSheet.getRow(1), 7).toLowerCase() === 'level';
+  const hlSubIds = new Set<string>();
+
+  if (hasLevelCol) {
+    cardsSheet.eachRow({ includeEmpty: false }, (row, rowNum) => {
+      if (rowNum === 1) return;
+      const sid = readCell(row, 1);
+      const lv = readCell(row, 7).toLowerCase();
+      if (lv === 'hl' && sid) hlSubIds.add(sid);
+    });
+  } else {
+    // Keyword fallback: scan question + example + why text for HL topics.
+    const HL_PATTERNS: RegExp[] = [
+      // Biology HL
+      /origin of cells/i, /endosymbi/i, /\bvirus\b/i, /\bviral\b/i, /bacteriophage/i,
+      /cladist/i, /cladogram/i, /phylogen/i, /binomial nomenclature/i,
+      /sarcomere/i, /sliding filament/i, /\bactin\b/i, /\bmyosin\b/i,
+      /neurotransmitter/i, /synap(?:se|tic)/i, /gene expression/i,
+      /epigenet/i, /transcription factor/i, /operon/i,
+      // Chemistry HL
+      /\bentropy\b/i, /spontane/i, /\bgibbs\b/i, /free energy/i,
+      // Physics HL
+      /rigid body/i, /moment of inertia/i, /angular momentum/i,
+      /special relativity/i, /lorentz/i, /time dilation/i, /length contraction/i,
+      /relativistic/i, /twin paradox/i,
+      /thermodynamic/i, /carnot/i, /heat engine/i,
+      /\binduction\b/i, /\bfaraday\b/i, /\blenz\b/i, /induced emf/i, /magnetic flux/i,
+      /quantum/i, /wave.particle/i, /de broglie/i, /photoelectric/i,
+      /uncertainty principle/i, /wave function/i, /bohr model/i,
+    ];
+    for (const [subId, entry] of cardsBySubId) {
+      const qText = questionsMap.get(entry.qIndex) ?? '';
+      const blob = qText + ' ' + entry.options.map((o) => o.text + ' ' + o.why).join(' ');
+      if (HL_PATTERNS.some((re) => re.test(blob))) {
+        hlSubIds.add(subId);
+      }
+    }
+  }
+
   // Build sorted cards array: ordered by Q# then sub-card letter.
   const allSubIds = [...cardsBySubId.keys()].sort((a, b) => {
     const qa = cardsBySubId.get(a)!.qIndex;
@@ -190,7 +233,9 @@ async function buildSubject(subjectFile: string): Promise<void> {
   });
   const cards: Card[] = allSubIds.map((subId) => {
     const entry = cardsBySubId.get(subId)!;
-    return { qIndex: entry.qIndex, subId, options: entry.options };
+    const card: Card = { qIndex: entry.qIndex, subId, options: entry.options };
+    if (hlSubIds.has(subId)) card.hl = true;
+    return card;
   });
 
   // --- Themes sheet (optional) -------------------------------------------

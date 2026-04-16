@@ -5,6 +5,7 @@ import { Ornament } from '@/components/field/Ornament';
 import { Loupe } from '@/components/field/Loupe';
 import { SUBJECTS, getSubject } from '@/lib/content';
 import { HomeProgress } from './_home/HomeProgress';
+import { LevelToggle } from './_home/LevelToggle';
 
 // Subject home, the "inside cover" for a specific subject.
 
@@ -56,6 +57,8 @@ export default async function SubjectHomePage({ params }: Props) {
         <div className="mt-3 flex justify-center">
           <Ornament />
         </div>
+
+        <LevelToggle subjectId={subject.id} />
       </header>
 
       <div className="rule my-5" />

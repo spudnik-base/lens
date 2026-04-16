@@ -428,7 +428,8 @@
           "why": "Whether carbon produces CO or CO₂ depends on oxygen availability and thermodynamics, not on carbon's electron configuration.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 10,
@@ -808,7 +809,8 @@
           "why": "CaCO₃ decomposition is endothermic because bonds in the CaO and CO₂ products are collectively weaker than in the reactant carbonate.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 20,
@@ -1017,7 +1019,8 @@
           "why": "Electrolysis requires an external DC supply to drive non-spontaneous water decomposition; it converts electrical energy to chemical energy.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 25,
@@ -1036,7 +1039,8 @@
           "why": "Recharging uses external electrical energy to reverse the spontaneous discharge reactions; charging converts electrical to chemical energy.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 26,
@@ -1169,7 +1173,8 @@
           "why": "Combustion is overwhelmingly spontaneous because it is strongly exothermic; any entropy increase is a secondary factor, not the main driver here.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 29,
@@ -1188,7 +1193,8 @@
           "why": "Freezing is spontaneous here because crystallization is exothermic; entropy decreases as the solid forms, so enthalpy drives the process.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 30,
@@ -1245,7 +1251,8 @@
           "why": "Sodium reacts spontaneously with water, but E° data predicts thermodynamic spontaneity, not the vigor or rate of the reaction.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 31,
@@ -1264,7 +1271,8 @@
           "why": "Aluminum's negative E° predicts high reactivity, but a protective oxide film prevents reaction; kinetics override the thermodynamic prediction.",
           "impostor": true
         }
-      ]
+      ],
+      "hl": true
     },
     {
       "qIndex": 32,
