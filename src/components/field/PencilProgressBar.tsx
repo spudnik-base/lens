@@ -1,32 +1,26 @@
 'use client';
 
 // Thin tan-outlined progress bar with a hatched pencil fill up to
-// `value / max`. No gradients, no rounded corners, no animated
+// value / total. No gradients, no rounded corners, no animated
 // celebrations; looks like ruled graph paper filled in by hand.
 //
-// Used on the home screen, Overview, and Study mode so students see
-// the same "lenses examined" indicator everywhere, all reading from
-// the same localStorage-backed progress set.
-
-import { useProgress } from '@/lib/progress';
-import { DEFAULT_SUBJECT_ID } from '@/lib/content';
+// This is a pure display component. The parent computes the value
+// (typically lenses examined via countExaminedLenses) and passes it in.
 
 type PencilProgressBarProps = {
+  value: number;
   total: number;
-  /** Optional label above the bar. Defaults to "PROGRESS". */
   label?: string;
-  /** Height in px. Slightly thicker on larger screens via CSS vars. */
   height?: number;
 };
 
 export function PencilProgressBar({
+  value,
   total,
   label = 'PROGRESS',
   height = 14,
 }: PencilProgressBarProps) {
-  const { studied, hydrated } = useProgress(DEFAULT_SUBJECT_ID);
-  const done = hydrated ? studied.size : 0;
-  const pct = total > 0 ? done / total : 0;
+  const pct = total > 0 ? value / total : 0;
   const widthPct = `${(Math.max(0, Math.min(1, pct)) * 100).toFixed(1)}%`;
 
   return (
@@ -41,7 +35,7 @@ export function PencilProgressBar({
             letterSpacing: '0.1em',
           }}
         >
-          {hydrated ? `${done} / ${total}` : `0 / ${total}`}
+          {value} / {total}
         </div>
       </div>
       <div

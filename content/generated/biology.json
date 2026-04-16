@@ -1,43 +1,102 @@
 {
   "id": "biology",
   "name": "IB Biology",
+  "themes": [
+    {
+      "letter": "A",
+      "name": "Unity & diversity",
+      "questionIndices": [
+        1,
+        2,
+        5,
+        6,
+        7,
+        8,
+        16,
+        21,
+        22,
+        29,
+        30,
+        32
+      ]
+    },
+    {
+      "letter": "B",
+      "name": "Form & function",
+      "questionIndices": [
+        11,
+        12,
+        13,
+        14,
+        20,
+        27
+      ]
+    },
+    {
+      "letter": "C",
+      "name": "Interaction & interdependence",
+      "questionIndices": [
+        3,
+        4,
+        9,
+        10,
+        15,
+        17,
+        25,
+        28
+      ]
+    },
+    {
+      "letter": "D",
+      "name": "Continuity & change",
+      "questionIndices": [
+        18,
+        19,
+        23,
+        24,
+        26,
+        31
+      ]
+    }
+  ],
   "questions": [
-    "How do the various intermolecular forces of attraction affect biological systems?",
-    "What biological processes only happen at or near surfaces?",
-    "What are the advantages and disadvantages of dispersal of offspring from their parents?",
-    "In what ways does locomotion contribute to evolution within living organisms?",
-    "What are the properties of the components of biological systems?",
-    "Is light essential for life?",
-    "What are the relative advantages of specificity and versatility?",
-    "For each form of nutrition, what are the unique inputs, processes, and outputs?",
-    "What are the benefits of models in studying biology?",
-    "What factors can limit capacity in biological systems?",
-    "What are the advantages of small size and large size in biological systems?",
-    "How do cells become differentiated?",
-    "How do multicellular organisms solve the problem of access to materials for all their cells?",
-    "What is the relationship between gas exchange and metabolic processes in cells?",
-    "What mechanisms are there for inhibition in biological systems?",
-    "In what ways does the environment stimulate diversification?",
-    "What are the direct and indirect consequences of rising carbon dioxide levels in the atmosphere?",
-    "How does the transformation of energy from one form to another make biological processes possible?",
-    "How is genetic continuity ensured between generations?",
-    "What biological mechanisms rely on directionality?",
-    "How do intraspecific interactions differ from interspecific interactions?",
-    "What mechanisms minimize competition?",
-    "What is the distinction between artificial and natural processes?",
-    "Over what timescales do things change in different biological systems?",
-    "What are the principles of effective sampling in biological research?",
-    "What biological processes involve doubling and halving?",
-    "For what reasons do organisms need to distribute materials and energy?",
-    "What biological systems are sensitive to temperature changes?",
-    "What explains the use of certain molecular building blocks in all living cells?",
-    "What are the features of a compelling theory?",
-    "What might cause a species to persist or go extinct?",
-    "How do species exemplify both continuous and discontinuous patterns of variation?"
+    "Where do intermolecular forces shape what biology can do?",
+    "Which biological processes depend on being at an interface?",
+    "What does dispersing offspring gain. And what does it cost?",
+    "How has the ability to move shaped what evolution selects for?",
+    "How do the properties of individual parts shape biological systems?",
+    "Where is light essential for life. And where is it not?",
+    "When does specificity beat versatility, and vice versa?",
+    "How do different nutrition modes differ in inputs, processes, and outputs?",
+    "Why do biologists rely on models even when they're simplifications?",
+    "What sets the upper limit on biological capacity?",
+    "What does being small enable that being large doesn't, and vice versa?",
+    "What turns identical cells into specialized ones?",
+    "How do large organisms get materials to cells far from any surface?",
+    "How are gas exchange and cellular metabolism coupled?",
+    "How do biological systems shut things down when needed?",
+    "How does the environment drive species to diverge?",
+    "How do rising CO₂ levels ripple through living systems?",
+    "How does energy conversion power what living things do?",
+    "What keeps genetic information stable across generations?",
+    "Where in biology does direction itself matter?",
+    "What's different about interactions within a species vs between species?",
+    "How do species avoid competing directly with each other?",
+    "Where does the natural end and the artificial begin?",
+    "How does timescale change what biology looks like?",
+    "What makes biological sampling actually representative?",
+    "Where in biology does doubling or halving happen?",
+    "Why do organisms need internal distribution systems at all?",
+    "Which biological systems are most vulnerable to temperature shifts?",
+    "Why do all living cells use the same handful of building blocks?",
+    "What makes a biological theory compelling?",
+    "What determines whether a species persists or vanishes?",
+    "How do species show both continuous and discontinuous variation?"
   ],
   "cards": [
     {
       "qIndex": 1,
+      "subId": "1a",
       "options": [
         {
           "text": "Hydrogen bonds pairing DNA bases",
@@ -48,6 +107,17 @@
           "why": "H-bonds between water molecules transmit tension to the roots."
         },
         {
+          "text": "Covalent peptide bonds linking amino acids",
+          "why": "Intramolecular covalent bonds, not intermolecular forces.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 1,
+      "subId": "1b",
+      "options": [
+        {
           "text": "Hydrophobic core folding proteins",
           "why": "Nonpolar residues cluster away from water, stabilizing the fold."
         },
@@ -56,14 +126,15 @@
           "why": "Hydrophobic tails hide from water; polar heads face it."
         },
         {
-          "text": "Covalent peptide bonds linking amino acids",
-          "why": "These are intramolecular covalent bonds, not intermolecular forces.",
+          "text": "Electrons shared in a C=C double bond",
+          "why": "A covalent bond within a molecule, not a force between molecules.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 2,
+      "subId": "2a",
       "options": [
         {
           "text": "Alveolar gas exchange in the lungs",
@@ -74,6 +145,17 @@
           "why": "Epidermal extensions exist purely to maximize absorbing surface."
         },
         {
+          "text": "Glycolysis in muscle cells",
+          "why": "Happens in cytoplasm. Solution-phase chemistry, no surface involved.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 2,
+      "subId": "2b",
+      "options": [
+        {
           "text": "Nutrient absorption by intestinal villi",
           "why": "Microvilli amplify the gut lining's surface area enormously."
         },
@@ -82,14 +164,15 @@
           "why": "Light reactions happen at membrane-embedded protein complexes."
         },
         {
-          "text": "Glycolysis in muscle cells",
-          "why": "Happens in cytoplasm. Solution-phase chemistry, no surface involved.",
+          "text": "Protein synthesis on ribosomes",
+          "why": "Sequential chemistry along an mRNA strand, not an interface process.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 3,
+      "subId": "3a",
       "options": [
         {
           "text": "Dandelion seeds carried on the wind",
@@ -100,6 +183,17 @@
           "why": "Buoyant husks ride ocean currents to colonize islands."
         },
         {
+          "text": "Kangaroo joey developing in the pouch",
+          "why": "Offspring stays attached to the mother. The opposite of dispersal.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 3,
+      "subId": "3b",
+      "options": [
+        {
           "text": "Spider hatchlings ballooning on silk",
           "why": "Silk threads catch the wind, scattering young far apart."
         },
@@ -108,14 +202,15 @@
           "why": "Hook-and-loop seeds hitch rides to distant habitats."
         },
         {
-          "text": "Kangaroo joey developing in the pouch",
-          "why": "Offspring stays attached to the mother. The opposite of dispersal.",
+          "text": "Salmon returning to their natal streams to spawn",
+          "why": "Returning to the parent location. Anti-dispersal, not dispersal.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 4,
+      "subId": "4a",
       "options": [
         {
           "text": "Cheetah speed selecting for faster prey",
@@ -126,6 +221,17 @@
           "why": "Return to water reshaped the entire body plan around swimming."
         },
         {
+          "text": "Sessile coral polyps filter feeding",
+          "why": "Corals don't move. No locomotion to contribute to anything.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 4,
+      "subId": "4b",
+      "options": [
+        {
           "text": "Bird flight opening aerial niches",
           "why": "Powered flight unlocked ecological space no other vertebrate filled."
         },
@@ -134,14 +240,15 @@
           "why": "Walking upright let hands specialize for tools and manipulation."
         },
         {
-          "text": "Sessile coral polyps filter feeding",
-          "why": "Corals don't move. No locomotion to contribute to anything.",
+          "text": "Wind-dispersed dandelion seeds",
+          "why": "Passive transport, not self-powered locomotion.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 5,
+      "subId": "5a",
       "options": [
         {
           "text": "Enzyme specificity from active site shape",
@@ -152,6 +259,17 @@
           "why": "Kinks in lipid chains keep the bilayer fluid at cell temperatures."
         },
         {
+          "text": "Predator-prey population cycles",
+          "why": "An emergent system-level pattern, not a property of a component.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 5,
+      "subId": "5b",
+      "options": [
+        {
           "text": "Hemoglobin's cooperative binding",
           "why": "A property of one protein that shapes how oxygen is transported."
         },
@@ -160,14 +278,15 @@
           "why": "Hydrophobic and van der Waals interactions between stacked bases."
         },
         {
-          "text": "Predator-prey population cycles",
-          "why": "An emergent system-level pattern, not a property of a component.",
+          "text": "Biodiversity of a rainforest ecosystem",
+          "why": "A whole-system property, not the property of any component.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 6,
+      "subId": "6a",
       "options": [
         {
           "text": "Photosynthesis feeding most food chains",
@@ -178,6 +297,17 @@
           "why": "Human skin needs photons to make an essential vitamin."
         },
         {
+          "text": "Fireflies producing bioluminescence",
+          "why": "They make light, don't depend on it. Keyword trap.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 6,
+      "subId": "6b",
+      "options": [
+        {
           "text": "Chemosynthetic vent tube worms",
           "why": "Whole ecosystems thrive in total darkness. Light isn't essential everywhere."
         },
@@ -186,14 +316,15 @@
           "why": "Biological clocks are set by the light-dark cycle."
         },
         {
-          "text": "Fireflies producing bioluminescence",
-          "why": "They make light, don't depend on it. Keyword trap.",
+          "text": "Deep-sea anglerfish luring prey with a lure",
+          "why": "The fish generates the light for hunting. Light as tool, not dependency.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 7,
+      "subId": "7a",
       "options": [
         {
           "text": "Enzyme active site specificity",
@@ -204,6 +335,17 @@
           "why": "Each antibody binds one molecular target with high precision."
         },
         {
+          "text": "Mitochondrial ATP production",
+          "why": "A universal core process. Neither specific nor versatile in the relevant sense.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 7,
+      "subId": "7b",
+      "options": [
+        {
           "text": "Generalist omnivores eating many foods",
           "why": "Versatility lets them exploit shifting resources."
         },
@@ -212,14 +354,15 @@
           "why": "One cell type can become many. Maximum versatility."
         },
         {
-          "text": "Mitochondrial ATP production",
-          "why": "A universal core process. Neither specific nor versatile in the relevant sense.",
+          "text": "Lactase persistence in dairy-farming populations",
+          "why": "An evolved trait, not a specificity-vs-versatility trade-off.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 8,
+      "subId": "8a",
       "options": [
         {
           "text": "Photoautotrophs using CO₂ and light",
@@ -230,6 +373,17 @@
           "why": "External digestion, then absorption of dead matter."
         },
         {
+          "text": "Ribosomes translating mRNA",
+          "why": "Biosynthesis inside every cell, not a mode of nutrition.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 8,
+      "subId": "8b",
+      "options": [
+        {
           "text": "Holozoic mammals ingesting food",
           "why": "Internal digestion of whole food, with waste as output."
         },
@@ -238,14 +392,15 @@
           "why": "Inorganic chemicals in, organic compounds out."
         },
         {
-          "text": "Ribosomes translating mRNA",
-          "why": "This is biosynthesis inside every cell, not a mode of nutrition.",
+          "text": "Mitosis producing two daughter cells",
+          "why": "A cell-division process, not a nutrition mode. No inputs in the relevant sense.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 9,
+      "subId": "9a",
       "options": [
         {
           "text": "Lock-and-key model of enzymes",
@@ -256,6 +411,17 @@
           "why": "Visualizes proteins floating in a lipid sea. Guides thinking."
         },
         {
+          "text": "Direct microscopy of a cell",
+          "why": "This is observation, not modeling. The opposite approach.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 9,
+      "subId": "9b",
+      "options": [
+        {
           "text": "Lincoln index for population size",
           "why": "Mark-recapture math estimates what can't be counted directly."
         },
@@ -264,14 +430,15 @@
           "why": "An idealized baseline that reveals when evolution is happening."
         },
         {
-          "text": "Direct microscopy of a cell",
-          "why": "This is observation, not modeling. The opposite approach.",
+          "text": "A photograph of a whole ecosystem",
+          "why": "A direct record, not a simplified representation. Not a model.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 10,
+      "subId": "10a",
       "options": [
         {
           "text": "Carrying capacity set by resources",
@@ -282,6 +449,17 @@
           "why": "All active sites occupied. Rate can't go higher."
         },
         {
+          "text": "The genetic code having 64 codons",
+          "why": "An encoding property, not a capacity limit.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 10,
+      "subId": "10b",
+      "options": [
+        {
           "text": "Hemoglobin oxygen-carrying capacity",
           "why": "Four binding sites per molecule. A hard ceiling."
         },
@@ -290,14 +468,15 @@
           "why": "At high light, CO₂ becomes the bottleneck."
         },
         {
-          "text": "The genetic code having 64 codons",
-          "why": "An encoding property, not a capacity limit.",
+          "text": "Mendel's 3:1 ratio in monohybrid crosses",
+          "why": "A predicted frequency, not a capacity constraint.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 11,
+      "subId": "11a",
       "options": [
         {
           "text": "Bacterial rapid nutrient uptake",
@@ -308,6 +487,17 @@
           "why": "Large mass, low SA:V. Heat is lost slowly."
         },
         {
+          "text": "Cheetah reaching 100 km/h",
+          "why": "Speed comes from limb proportions, not size category.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 11,
+      "subId": "11b",
+      "options": [
+        {
           "text": "Insect tracheal gas delivery",
           "why": "Small bodies let air tubes reach every cell without lungs."
         },
@@ -316,14 +506,15 @@
           "why": "Only a huge mouth and gut can process enough small prey."
         },
         {
-          "text": "Cheetah reaching 100 km/h",
-          "why": "Speed comes from limb proportions, not size category.",
+          "text": "Octopus camouflaging on the sea floor",
+          "why": "A neural and pigment ability. Unrelated to being big or small.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 12,
+      "subId": "12a",
       "options": [
         {
           "text": "Morphogen gradients in embryos",
@@ -334,6 +525,17 @@
           "why": "Selective transcription produces cell-specific proteins."
         },
         {
+          "text": "Binary fission in bacteria",
+          "why": "Produces identical daughter cells. No differentiation at all.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 12,
+      "subId": "12b",
+      "options": [
+        {
           "text": "X-inactivation in female mammals",
           "why": "Random silencing creates differentiated cell lineages."
         },
@@ -342,14 +544,15 @@
           "why": "External cues push uncommitted cells toward a fate."
         },
         {
-          "text": "Binary fission in bacteria",
-          "why": "Produces identical daughter cells. No differentiation at all.",
+          "text": "DNA replication before mitosis",
+          "why": "Copies the genome identically. Doesn't drive specialization.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 13,
+      "subId": "13a",
       "options": [
         {
           "text": "Mammalian blood circulation",
@@ -360,6 +563,17 @@
           "why": "Parallel transport systems for water and sugars."
         },
         {
+          "text": "Paramecium beating cilia to feed",
+          "why": "Unicellular. No multicellular problem to solve.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 13,
+      "subId": "13b",
+      "options": [
+        {
           "text": "Insect tracheal system",
           "why": "Air tubes bring O₂ directly to every cell."
         },
@@ -368,14 +582,15 @@
           "why": "Being thin means no cell is far from the outside."
         },
         {
-          "text": "Paramecium beating cilia to feed",
-          "why": "Unicellular. No multicellular problem to solve.",
+          "text": "A yeast cell budding off a daughter",
+          "why": "Single-celled reproduction. No distribution problem exists.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 14,
+      "subId": "14a",
       "options": [
         {
           "text": "Breathing rate rising during exercise",
@@ -386,6 +601,17 @@
           "why": "Exchange supplies CO₂ to a metabolic pathway in real time."
         },
         {
+          "text": "Hemoglobin cooperative O₂ binding",
+          "why": "Transport between exchange and metabolism. Is neither.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 14,
+      "subId": "14b",
+      "options": [
+        {
           "text": "Fish gills extracting dissolved O₂",
           "why": "Exchange surface directly feeds cellular respiration."
         },
@@ -394,14 +620,15 @@
           "why": "Metabolic CO₂ triggers extra O₂ delivery where it's needed."
         },
         {
-          "text": "Hemoglobin cooperative O₂ binding",
-          "why": "This is transport. Sits between exchange and metabolism, is neither.",
+          "text": "Myoglobin storing oxygen in muscle",
+          "why": "Intracellular storage, not exchange or metabolism itself.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 15,
+      "subId": "15a",
       "options": [
         {
           "text": "Competitive enzyme inhibitors",
@@ -412,6 +639,17 @@
           "why": "End product shuts off the enzyme that starts the pathway."
         },
         {
+          "text": "ATP activating muscle contraction",
+          "why": "This is activation, not inhibition. The opposite.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 15,
+      "subId": "15b",
+      "options": [
+        {
           "text": "GABA reducing neural firing",
           "why": "Inhibitory neurotransmitter keeps circuits in check."
         },
@@ -420,14 +658,15 @@
           "why": "They stop cell division when something is wrong."
         },
         {
-          "text": "ATP activating muscle contraction",
-          "why": "This is activation, not inhibition. The opposite.",
+          "text": "Signal amplification in a kinase cascade",
+          "why": "Amplifies the signal rather than inhibiting anything.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 16,
+      "subId": "16a",
       "options": [
         {
           "text": "Darwin's finches on the Galápagos",
@@ -438,6 +677,17 @@
           "why": "New habitats and niches drove rapid divergence."
         },
         {
+          "text": "Identical twins sharing DNA",
+          "why": "Genetic sameness. The opposite of diversification.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 16,
+      "subId": "16b",
+      "options": [
+        {
           "text": "Hawaiian honeycreepers radiating",
           "why": "Isolation let many species emerge from one."
         },
@@ -446,14 +696,15 @@
           "why": "A new cultural environment selected for a new allele."
         },
         {
-          "text": "Identical twins sharing DNA",
-          "why": "Genetic sameness. The opposite of diversification.",
+          "text": "Cloning a sheep from a somatic cell",
+          "why": "Deliberate genetic duplication. No divergence involved.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 17,
+      "subId": "17a",
       "options": [
         {
           "text": "Ocean acidification damaging corals",
@@ -464,6 +715,17 @@
           "why": "CO₂ is the dominant long-lived greenhouse gas."
         },
         {
+          "text": "CFCs depleting the ozone layer",
+          "why": "Different molecules, different problem. Atmospheric but unrelated.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 17,
+      "subId": "17b",
+      "options": [
+        {
           "text": "Plant C:N ratio shifting with CO₂",
           "why": "More carbon in tissues means less nitrogen per bite for herbivores."
         },
@@ -472,14 +734,15 @@
           "why": "Warming redraws where organisms can live."
         },
         {
-          "text": "CFCs depleting the ozone layer",
-          "why": "Different molecules, different problem. Atmospheric but unrelated.",
+          "text": "Plastic microparticles in the ocean",
+          "why": "A pollution issue, but not connected to CO₂ levels.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 18,
+      "subId": "18a",
       "options": [
         {
           "text": "Photosynthesis turning light into sugar",
@@ -490,6 +753,17 @@
           "why": "Chemical energy in phosphate bonds becomes mechanical work."
         },
         {
+          "text": "Osmosis across a membrane",
+          "why": "Passive movement down a gradient. No energy transformed.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 18,
+      "subId": "18b",
+      "options": [
+        {
           "text": "Chemiosmosis making ATP",
           "why": "Proton gradient energy is captured in ATP's bonds."
         },
@@ -498,14 +772,15 @@
           "why": "Chemical energy becomes visible photons."
         },
         {
-          "text": "Osmosis across a membrane",
-          "why": "Passive movement down a gradient. No energy transformed.",
+          "text": "Diffusion of oxygen into a cell",
+          "why": "Passive down-gradient movement. No conversion.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 19,
+      "subId": "19a",
       "options": [
         {
           "text": "Semi-conservative DNA replication",
@@ -516,6 +791,17 @@
           "why": "Halve-then-restore keeps chromosome number stable across generations."
         },
         {
+          "text": "Crossing over in prophase I",
+          "why": "Generates variation. The opposite of continuity.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 19,
+      "subId": "19b",
+      "options": [
+        {
           "text": "DNA polymerase proofreading",
           "why": "Error-checking keeps mutation rates extremely low."
         },
@@ -524,14 +810,15 @@
           "why": "Every daughter cell inherits the full genome unchanged."
         },
         {
-          "text": "Crossing over in prophase I",
-          "why": "Generates variation. The opposite of continuity.",
+          "text": "Independent assortment in meiosis",
+          "why": "Shuffles parental chromosomes. Generates variation, not continuity.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 20,
+      "subId": "20a",
       "options": [
         {
           "text": "Transcription proceeding 5' to 3'",
@@ -542,6 +829,17 @@
           "why": "Sugars flow only from where they're made to where they're used."
         },
         {
+          "text": "CO₂ diffusion across an alveolus",
+          "why": "Direction depends entirely on the gradient. No inherent direction.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 20,
+      "subId": "20b",
+      "options": [
+        {
           "text": "Nerve impulses along an axon",
           "why": "The refractory period forces the signal to travel one way."
         },
@@ -550,14 +848,15 @@
           "why": "Muscular waves push contents in one direction only."
         },
         {
-          "text": "CO₂ diffusion across an alveolus",
-          "why": "Direction depends entirely on the gradient. No inherent direction.",
+          "text": "Heat loss from a warm body to cold air",
+          "why": "Direction set by temperature difference, not by the biology itself.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 21,
+      "subId": "21a",
       "options": [
         {
           "text": "Wolf pack hunting together",
@@ -568,6 +867,17 @@
           "why": "Classic interspecific competition at a kill."
         },
         {
+          "text": "A cell undergoing mitosis",
+          "why": "No interaction between organisms at all. Wrong scale.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 21,
+      "subId": "21b",
+      "options": [
+        {
           "text": "Male deer rutting for mates",
           "why": "Intraspecific competition for reproduction."
         },
@@ -576,14 +886,15 @@
           "why": "Interspecific mutualism. Different species exchanging resources."
         },
         {
-          "text": "A cell undergoing mitosis",
-          "why": "No interaction between organisms at all. Wrong scale.",
+          "text": "An enzyme binding its substrate",
+          "why": "A molecular event, not an interaction between organisms.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 22,
+      "subId": "22a",
       "options": [
         {
           "text": "MacArthur's warblers in tree zones",
@@ -594,6 +905,17 @@
           "why": "Coexisting species evolve different beaks to use different seeds."
         },
         {
+          "text": "Clownfish and anemone mutualism",
+          "why": "Cooperation between species. Not a competition mechanism at all.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 22,
+      "subId": "22b",
+      "options": [
+        {
           "text": "Nocturnal vs diurnal activity",
           "why": "Temporal partitioning splits the day between competitors."
         },
@@ -602,14 +924,15 @@
           "why": "Stratified feeding divides the same plants into separate niches."
         },
         {
-          "text": "Clownfish and anemone mutualism",
-          "why": "Cooperation between species. Not a competition mechanism at all.",
+          "text": "Predators hunting their prey",
+          "why": "An across-trophic-level interaction, not competition between competitors.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 23,
+      "subId": "23a",
       "options": [
         {
           "text": "Selective breeding of modern wheat",
@@ -620,6 +943,17 @@
           "why": "No human hand. Pure natural selection."
         },
         {
+          "text": "Mitosis in an onion root tip",
+          "why": "A neutral biological process. Doesn't engage the distinction.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 23,
+      "subId": "23b",
+      "options": [
+        {
           "text": "CRISPR-edited crops",
           "why": "Artificial process reshaping what evolution took millennia to do."
         },
@@ -628,14 +962,15 @@
           "why": "Human design inserted into a living system."
         },
         {
-          "text": "Mitosis in an onion root tip",
-          "why": "A neutral biological process. Doesn't engage the distinction.",
+          "text": "Bacteria evolving antibiotic resistance in a hospital",
+          "why": "Natural selection, even though the pressure is human-caused.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 24,
+      "subId": "24a",
       "options": [
         {
           "text": "Bacterial generation times in minutes",
@@ -646,6 +981,17 @@
           "why": "Action potentials travel and reset almost instantly."
         },
         {
+          "text": "Avogadro's constant",
+          "why": "A number, not a timescale. Not even time.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 24,
+      "subId": "24b",
+      "options": [
+        {
           "text": "Evolution over millions of years",
           "why": "Speciation typically unfolds across deep time."
         },
@@ -654,14 +1000,15 @@
           "why": "An annual cycle tied to day length and temperature."
         },
         {
-          "text": "Avogadro's constant",
-          "why": "A number, not a timescale. Not even time.",
+          "text": "Body mass of an elephant",
+          "why": "A size, not a duration. Wrong kind of quantity.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 25,
+      "subId": "25a",
       "options": [
         {
           "text": "Random quadrat placement in grassland",
@@ -672,6 +1019,17 @@
           "why": "Sampling lets you infer population size without counting everyone."
         },
         {
+          "text": "Counting every tree in a forest",
+          "why": "A census, not sampling. The opposite approach.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 25,
+      "subId": "25b",
+      "options": [
+        {
           "text": "Replicate samples for variance",
           "why": "Multiple samples reveal how representative any one is."
         },
@@ -680,14 +1038,15 @@
           "why": "Systematic sampling captures how communities change with conditions."
         },
         {
-          "text": "Counting every tree in a forest",
-          "why": "That's a census, not sampling. The opposite approach.",
+          "text": "Cherry-picking the most impressive specimens",
+          "why": "Biased selection. Violates the whole point of sampling.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 26,
+      "subId": "26a",
       "options": [
         {
           "text": "DNA replication in S phase",
@@ -698,6 +1057,17 @@
           "why": "2n becomes n. Halving is the defining feature."
         },
         {
+          "text": "Carbon-14 dating of remains",
+          "why": "Radioactive decay is physical, not biological.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 26,
+      "subId": "26b",
+      "options": [
+        {
           "text": "Bacterial binary fission",
           "why": "One cell doubles its contents, then splits in two."
         },
@@ -706,14 +1076,15 @@
           "why": "Under ideal conditions, populations double at a fixed interval."
         },
         {
-          "text": "Carbon-14 dating of remains",
-          "why": "Radioactive decay is physical, not biological. 'Half' in the name is a trap.",
+          "text": "Protein synthesis producing polypeptides",
+          "why": "Amino acids link sequentially. No doubling or halving involved.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 27,
+      "subId": "27a",
       "options": [
         {
           "text": "Blood supplying cells with oxygen",
@@ -724,6 +1095,17 @@
           "why": "Leaves make more than they use. Growing tissues need the surplus."
         },
         {
+          "text": "Cell membrane enclosing the cytoplasm",
+          "why": "A structural boundary, not a distribution system.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 27,
+      "subId": "27b",
+      "options": [
+        {
           "text": "Xylem carrying water to leaves",
           "why": "Photosynthesis and cooling both depend on root-sourced water."
         },
@@ -732,14 +1114,15 @@
           "why": "Without return flow, tissues swell and circulation fails."
         },
         {
-          "text": "Cell membrane enclosing the cytoplasm",
-          "why": "A structural boundary, not a distribution system.",
+          "text": "The nucleus storing DNA",
+          "why": "Storage, not distribution. Materials don't leave for other cells.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 28,
+      "subId": "28a",
       "options": [
         {
           "text": "Enzyme denaturation above optimum",
@@ -750,6 +1133,17 @@
           "why": "Incubation warmth decides male or female."
         },
         {
+          "text": "Human ABO blood type",
+          "why": "Set by alleles at conception. Temperature has no effect.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 28,
+      "subId": "28b",
+      "options": [
+        {
           "text": "Coral bleaching from thermal stress",
           "why": "Warm water expels the symbiotic algae corals depend on."
         },
@@ -758,14 +1152,15 @@
           "why": "Lipids stiffen when cold and loosen when warm."
         },
         {
-          "text": "Human ABO blood type",
-          "why": "Set by alleles at conception. Temperature has no effect.",
+          "text": "Eye colour inherited from parents",
+          "why": "A genetic trait. Temperature plays no role.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 29,
+      "subId": "29a",
       "options": [
         {
           "text": "ATP as universal energy currency",
@@ -776,6 +1171,17 @@
           "why": "All cellular life stores its information in DNA."
         },
         {
+          "text": "Chitin in fungal cell walls",
+          "why": "Only fungi and arthropods. Not universal at all.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 29,
+      "subId": "29b",
+      "options": [
+        {
           "text": "The same 20 amino acids in proteins",
           "why": "Nearly every organism builds proteins from the same alphabet."
         },
@@ -784,14 +1190,15 @@
           "why": "Universal architecture for separating inside from outside."
         },
         {
-          "text": "Chitin in fungal cell walls",
-          "why": "Only fungi and arthropods. Not universal at all.",
+          "text": "Hemoglobin in vertebrate blood",
+          "why": "A useful molecule but restricted to certain lineages. Not universal.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 30,
+      "subId": "30a",
       "options": [
         {
           "text": "Darwin's natural selection",
@@ -802,6 +1209,17 @@
           "why": "All life is cells. Sweeping, testable, predictive."
         },
         {
+          "text": "A catalogue of every known beetle",
+          "why": "A list, not a theory. No explanatory power.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 30,
+      "subId": "30b",
+      "options": [
+        {
           "text": "Endosymbiotic origin of mitochondria",
           "why": "Multiple independent lines of evidence converge on one story."
         },
@@ -810,14 +1228,15 @@
           "why": "The structure itself suggested how copying must work."
         },
         {
-          "text": "A catalogue of every known beetle",
-          "why": "That's a list, not a theory. No explanatory power.",
+          "text": "A single anecdote about an unusual animal",
+          "why": "One observation, not a framework for understanding.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 31,
+      "subId": "31a",
       "options": [
         {
           "text": "Dodo extinction from introduced predators",
@@ -828,6 +1247,17 @@
           "why": "Persistence through adaptation to a changing environment."
         },
         {
+          "text": "Individual aging and death",
+          "why": "Organism-level mortality. Doesn't determine whether a species persists.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 31,
+      "subId": "31b",
+      "options": [
+        {
           "text": "Coelacanth as a living fossil",
           "why": "A lineage surviving almost unchanged across deep time."
         },
@@ -836,14 +1266,15 @@
           "why": "Sudden human pressure collapsed a once-vast population."
         },
         {
-          "text": "Individual aging and death",
-          "why": "Organism-level mortality. Doesn't determine whether a species persists.",
+          "text": "A zoo population growing in captivity",
+          "why": "An individual collection, not a measure of species survival in the wild.",
           "impostor": true
         }
       ]
     },
     {
       "qIndex": 32,
+      "subId": "32a",
       "options": [
         {
           "text": "Human height as a continuous trait",
@@ -854,6 +1285,17 @@
           "why": "A single gene, four phenotypes, no in-between."
         },
         {
+          "text": "Identical twins sharing all traits",
+          "why": "Genetic sameness shows neither kind of variation.",
+          "impostor": true
+        }
+      ]
+    },
+    {
+      "qIndex": 32,
+      "subId": "32b",
+      "options": [
+        {
           "text": "Skin colour from polygenic inheritance",
           "why": "Multiple loci add up to a smooth range of shades."
         },
@@ -862,8 +1304,8 @@
           "why": "One gene, two sharp categories, classic discontinuous variation."
         },
         {
-          "text": "Identical twins sharing all traits",
-          "why": "Genetic sameness shows neither kind of variation.",
+          "text": "A species going extinct",
+          "why": "Loss of a population, not a pattern of variation within one.",
           "impostor": true
         }
       ]

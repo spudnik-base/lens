@@ -1,14 +1,14 @@
 'use client';
 
-// Overview screen. Section 7.6 in spirit, but simpler: one flat list
-// of 32 questions, pencil tick beside each that has been examined, a
-// hand-lettered progress bar at the top, and a reset button in pencil
-// marginalia for starting over.
+// Overview screen. Flat list of 32 linking questions. A lens gets a
+// checkmark when both its sub-cards (a + b) have been examined in
+// Study. Tapping a row jumps to Study on the first unseen sub-card
+// for that lens.
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import type { Subject } from '@/types/subject';
-import { useProgress } from '@/lib/progress';
+import { useProgress, countExaminedLenses } from '@/lib/progress';
 import { Ornament } from '@/components/field/Ornament';
 import { Checkmark } from '@/components/field/Checkmark';
 import { PencilProgressBar } from '@/components/field/PencilProgressBar';
@@ -16,21 +16,23 @@ import { PencilProgressBar } from '@/components/field/PencilProgressBar';
 export function BrowseClient({ subject }: { subject: Subject }) {
   const { studied, hydrated, reset } = useProgress(subject.id);
   const total = subject.questions.length;
-  const doneCount = hydrated ? studied.size : 0;
+  const examined = hydrated ? countExaminedLenses(studied, total) : 0;
   const [confirmReset, setConfirmReset] = useState(false);
 
   const rows = useMemo(
     () =>
       subject.questions.map((q, i) => {
         const qIndex = i + 1;
-        return { qIndex, text: q, done: studied.has(qIndex) };
+        const aDone = studied.has(`${qIndex}a`);
+        const bDone = studied.has(`${qIndex}b`);
+        return { qIndex, text: q, done: aDone && bDone, partial: aDone || bDone };
       }),
     [subject.questions, studied]
   );
 
   return (
     <div>
-      {/* Status bar --------------------------------------------------- */}
+      {/* Status bar */}
       <div className="flex items-center justify-between pb-4">
         <Link href="/" className="marg" style={{ color: 'var(--pencil)' }}>
           &larr; HOME
@@ -39,7 +41,7 @@ export function BrowseClient({ subject }: { subject: Subject }) {
         <div className="marg">{total} LENSES</div>
       </div>
 
-      {/* Title plate --------------------------------------------------- */}
+      {/* Title plate */}
       <header className="text-center pt-6 pb-5">
         <div className="marg mb-4">IB BIOLOGY</div>
         <h1 className="editorial" style={{ fontSize: 'var(--fs-xl)', lineHeight: 1 }}>
@@ -50,16 +52,20 @@ export function BrowseClient({ subject }: { subject: Subject }) {
         </div>
       </header>
 
-      {/* Progress bar ------------------------------------------------- */}
+      {/* Progress bar */}
       <div className="mt-2 mb-8">
-        <PencilProgressBar total={total} label="LENSES EXAMINED" />
+        <PencilProgressBar
+          value={examined}
+          total={total}
+          label="LENSES EXAMINED"
+        />
       </div>
 
       <div className="rule my-5" />
 
-      {/* Lens list ----------------------------------------------------- */}
+      {/* Lens list */}
       <ul className="flex flex-col">
-        {rows.map(({ qIndex, text, done }) => (
+        {rows.map(({ qIndex, text, done, partial }) => (
           <li key={qIndex}>
             <Link
               href={`/study?q=${qIndex}`}
@@ -83,19 +89,32 @@ export function BrowseClient({ subject }: { subject: Subject }) {
               </span>
               <span
                 className="editorial flex-1"
-                style={{ fontSize: 'var(--fs-md)', lineHeight: 1.35 }}
+                style={{
+                  fontSize: 'var(--fs-md)',
+                  lineHeight: 1.35,
+                  opacity: done ? 0.55 : 1,
+                }}
               >
                 {text}
               </span>
-              <span className="shrink-0 w-6 mt-1" aria-hidden="true">
-                {done && <Checkmark size={18} />}
+              <span className="shrink-0 w-6 mt-1 flex items-center gap-0.5" aria-hidden="true">
+                {done ? (
+                  <Checkmark size={18} />
+                ) : partial ? (
+                  <span
+                    className="font-mono"
+                    style={{ fontSize: 9, color: 'var(--ink-green)', letterSpacing: '0.05em' }}
+                  >
+                    1/2
+                  </span>
+                ) : null}
               </span>
             </Link>
           </li>
         ))}
       </ul>
 
-      {/* Reset --------------------------------------------------------- */}
+      {/* Reset */}
       <div className="mt-14 text-center">
         {!confirmReset ? (
           <button
@@ -103,7 +122,7 @@ export function BrowseClient({ subject }: { subject: Subject }) {
             className="marg"
             style={{ color: 'var(--pencil)', background: 'transparent' }}
             onClick={() => setConfirmReset(true)}
-            disabled={doneCount === 0}
+            disabled={examined === 0 && !studied.size}
           >
             ERASE ALL MARKS
           </button>

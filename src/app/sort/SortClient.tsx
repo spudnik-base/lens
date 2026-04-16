@@ -35,6 +35,7 @@ const FEEDBACK_MS = 220;
 
 type Judgment = {
   qIndex: number;
+  subId: string;
   question: string;
   text: string;
   why: string;
@@ -45,6 +46,7 @@ type Judgment = {
 
 type DeckItem = {
   qIndex: number;
+  subId: string;
   optionIdx: number;
   isImpostor: boolean;
 };
@@ -124,6 +126,7 @@ function buildDeck(subject: Subject): DeckItem[] {
     for (const optionIdx of optIdxs) {
       out.push({
         qIndex: card.qIndex,
+        subId: card.subId,
         optionIdx,
         isImpostor: !!card.options[optionIdx].impostor,
       });
@@ -251,8 +254,8 @@ function PlayingScreen({
 
   const current = state.deck[state.cursor];
   const card = useMemo(
-    () => subject.cards.find((c) => c.qIndex === current.qIndex) as Card,
-    [subject.cards, current.qIndex]
+    () => subject.cards.find((c) => c.subId === current.subId) as Card,
+    [subject.cards, current.subId]
   );
   const option = card.options[current.optionIdx];
   const question = subject.questions[current.qIndex - 1];
@@ -271,6 +274,7 @@ function PlayingScreen({
 
     const j: Judgment = {
       qIndex: current.qIndex,
+      subId: current.subId,
       question,
       text: option.text,
       why: option.why,

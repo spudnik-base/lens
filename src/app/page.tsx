@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { PageFrame } from '@/components/layout/PageFrame';
 import { Ornament } from '@/components/field/Ornament';
-import { PencilProgressBar } from '@/components/field/PencilProgressBar';
 import { getSubject, DEFAULT_SUBJECT_ID } from '@/lib/content';
+import { HomeProgress } from './_home/HomeProgress';
 
 // Home, "inside cover" of the journal. Section 7.1.
 //
-// Intentionally static on the server. The PencilProgressBar is the
-// one client island on this screen: it reads localStorage to show
+// Intentionally static on the server. HomeProgress is the one client
+// island on this screen: it reads localStorage to show
 // how many lenses have been examined, so students see at a glance
 // where they are in the deck and can pick Study to continue from the
 // first unstudied card.
@@ -76,7 +76,7 @@ export default function HomePage() {
 
       {/* Progress bar, the hydrated client island --------------------- */}
       <div className="mt-8">
-        <PencilProgressBar total={totalQuestions} label="LENSES EXAMINED" />
+        <HomeProgress totalQuestions={totalQuestions} />
       </div>
 
       {/* Credit line --------------------------------------------------- */}
