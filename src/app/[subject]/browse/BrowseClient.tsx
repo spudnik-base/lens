@@ -58,7 +58,7 @@ export function BrowseClient({ subject }: { subject: Subject }) {
 
       {/* Title plate */}
       <header className="text-center pt-6 pb-5">
-        <div className="marg mb-4">IB BIOLOGY</div>
+        <div className="marg mb-4">{subject.name.toUpperCase()}</div>
         <h1 className="editorial" style={{ fontSize: 'var(--fs-xl)', lineHeight: 1 }}>
           Field Guide
         </h1>
